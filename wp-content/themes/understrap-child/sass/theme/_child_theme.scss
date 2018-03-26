@@ -1,0 +1,38 @@
+.button {
+  @include button;
+  cursor: pointer;
+}
+
+.primary {
+  @include button-bg($rr-Yellow);
+}
+
+.secondary {
+  @include button-bg($rr-Blue);
+}
+
+.success {
+  @include button-bg($rr-Green);
+}
+
+.teal-btn {
+  @include button-bg(#59c7c7);
+}
+
+.alert-button {
+  @include button-bg($rr-Red);
+}
+
+.gold {
+  @include button-bg(goldenrod);
+  color: $text-Dark!important;
+}
+
+.silver {
+  @include button-bg(#607d8b);
+}
+
+// // Navigation
+// #wrapper-navbar {
+//   background: $rr-Blue;
+// }
