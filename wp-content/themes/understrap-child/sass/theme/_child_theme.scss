@@ -32,7 +32,173 @@
   @include button-bg(#607d8b);
 }
 
-// // Navigation
-// #wrapper-navbar {
-//   background: $rr-Blue;
-// }
+/**
+*
+* 
+* HEADER
+*
+*
+**/
+.bg-blue{
+  background: $rr-Blue;
+}
+.main-nav {
+  padding: 20px 0;
+  .logo {
+    max-width: 300px;
+  }
+}
+#accreditation-new-row {
+  position: relative;
+  height: 90px;
+  z-index: 1;
+  #header-credits {
+    padding-top: 10px;
+    .header-accreditation {
+      display: inline;
+      padding-right: 20px;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+        @include hover-color-transition();
+      }
+    }
+    a {
+      text-decoration: none;
+      &:active {
+        text-decoration: none;
+      }
+    }
+    #header-years {
+      opacity: 0.5;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+/**
+*
+* 
+* CONTENT
+*
+*
+**/
+.margin-top-20{
+  margin-top: 20px;
+}
+.margin-top-30{
+  margin-top: 30px;
+}
+.margin-top-40{
+  margin-top: 40px;
+}
+.mortgage-content{
+  margin: 30px 0;
+}
+.margin-auto {
+  margin: 0 auto;
+}
+// Slide 1
+.img-magnifier-container {
+  position: relative;
+  z-index:10;
+  &:hover{
+    .img-magnifier-glass {
+      width: 90%;
+      height: 300px;
+    }
+  }
+}
+.img-magnifier-glass {
+  position: absolute;
+  border: 2px solid #000;
+  // border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 0;
+  height: 0;
+  z-index: 20;
+}
+.video-container{
+  position: relative;
+  cursor: pointer;
+  border: 5px solid black;
+  outline: 1px solid #737373;
+  // overflow: hidden;
+  // z-index: 1;
+  // &:after{
+  //   content:'';
+  //   position: absolute;
+  //   top:0;
+  //   height:109%;
+  //   width:30%;
+  //   background: linear-gradient(-83deg, transparent, transparent, rgba(255, 255, 255, 0.6), transparent, transparent);
+  //   margin: -6px auto;
+  //   left: 22%;
+  // }
+  // iframe{
+  //   z-index: 2;
+  // }
+  &:hover{
+    .fa-youtube-play{
+      transform: scale(1.2);
+      transition: .5s;
+    }
+  }
+  img{
+    max-width: 100%;
+    min-width: 100%;
+  }
+  iframe {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: auto;
+  }
+  .fa-youtube-play{
+    position: absolute;
+    left:0;right:0;
+    margin: 0 auto;
+    top: 43%;
+    font-size: 3rem;
+    color: #FF000B;
+    max-width: 50px;
+    background: radial-gradient(white 11%, transparent, transparent);
+    transition: .5s;    
+  }
+}
+
+
+// Slide 2
+
+/**
+*
+* 
+* FOOTER
+*
+*
+**/
+
+
+/**
+*
+* 
+* MEDIA QUERIES
+*
+*
+**/
+@media (max-width: 425px) {
+  #accreditation-new-row {
+    #header-credits {
+      .header-accreditation {
+        padding-right: 0px;
+      }
+      #header-bbb, #header-rockford {
+        width: 117px!important;
+      }
+      #header-years {
+        width: 46px!important;
+      }
+    }
+  }
+}

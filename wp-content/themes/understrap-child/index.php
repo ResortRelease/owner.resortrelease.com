@@ -14,12 +14,9 @@
 get_header(); ?>
 
 
-<div id="content" class="container">
+<div id="content" class="container margin-top-30">
 	<?php include("mortgage-1.php");?>
 </div>
-<div class="button secondary" id="prev" data-prev="0">Prev</div>
-<div class="button primary" id="next" data-next="2">Next</div>
-
 
 <?php get_footer(); ?>
 <script>
