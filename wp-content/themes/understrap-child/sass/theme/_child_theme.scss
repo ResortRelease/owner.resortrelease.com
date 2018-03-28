@@ -32,13 +32,13 @@
   @include button-bg(#607d8b);
 }
 
-/**
+/**********************************************
 *
 * 
 * HEADER
 *
 *
-**/
+**********************************************/
 .bg-blue{
   background: $rr-Blue;
 }
@@ -77,13 +77,30 @@
     }
   }
 }
-/**
+/**********************************************
 *
 * 
 * CONTENT
 *
 *
-**/
+**********************************************/
+section{
+  width: 100%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 90vh;
+  padding: 30px 0;
+  h1{
+    color: #770909;
+  }
+  &:nth-child(even){
+    background: #f5f5f5;
+    h1{
+      color:rgb(51, 42, 82);
+    }
+  }
+}
 .margin-top-20{
   margin-top: 20px;
 }
@@ -92,9 +109,6 @@
 }
 .margin-top-40{
   margin-top: 40px;
-}
-.mortgage-content{
-  margin: 30px 0;
 }
 .margin-auto {
   margin: 0 auto;
@@ -105,14 +119,15 @@
   z-index:10;
   &:hover{
     .img-magnifier-glass {
-      width: 90%;
+      width: 98%;
       height: 300px;
+      border: 2px solid #000;
     }
   }
 }
 .img-magnifier-glass {
   position: absolute;
-  border: 2px solid #000;
+  border: 0px solid #000;
   // border-radius: 50%;
   cursor: none;
   /*Set the size of the magnifier glass:*/
@@ -121,7 +136,8 @@
   z-index: 20;
 }
 .video-container{
-  position: relative;
+  position: sticky;
+  top: 0;
   cursor: pointer;
   border: 5px solid black;
   outline: 1px solid #737373;
@@ -167,19 +183,372 @@
     transition: .5s;    
   }
 }
+// CheckBoxes
+$checked-color: #af2828;
+$unchecked-color: rgb(51, 42, 82);
+$checkbox-height: 30px;
+$background-color:#f5f5f5;
+$font-color:#efefef;
+$duration: .4s;
+@-moz-keyframes dothabottomcheck{
+  0% { height: 0; }
+  100% { height: $checkbox-height/2; }
+}
 
+@-webkit-keyframes dothabottomcheck{
+  0% { height: 0; }
+  100% { height: $checkbox-height/2; }
+}
 
+@keyframes dothabottomcheck{
+  0% { height: 0; }
+  100% { height: $checkbox-height/2;  }
+}
+
+@keyframes dothatopcheck{
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: $checkbox-height * 1.2; }
+}
+@-webkit-keyframes dothatopcheck{
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: $checkbox-height * 1.2; }
+}
+@-moz-keyframes dothatopcheck{
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: $checkbox-height * 1.2; }
+}
+
+input[type=checkbox]{
+  display:none;
+}
+input[type="checkbox"]:checked + label {
+  transition: .5s;
+  color:$checked-color!important;
+}
+.cl{
+  font-size: 18px;
+  position: relative;
+  margin-left: 0px;
+  line-height: 23px;
+  left: 20px;
+}
+.checkboxes .col-12{
+  display: flex;
+  label{
+    flex: 0 0 auto;
+  }
+}
+.checked{
+  transition: .5s;
+  color:$checked-color!important;
+}
+.unchecked{
+  transition: .5s;
+  color: $unchecked-color;
+}
+.check-box {
+  height: $checkbox-height;
+  width: $checkbox-height;
+  background-color: transparent;
+  border: $checkbox-height * .1 solid $unchecked-color;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: border-color ease $duration/2;
+  -o-transition: border-color ease $duration/2;
+  -webkit-transition: border-color ease $duration/2;
+  transition: border-color ease $duration/2;
+  cursor:pointer;
+  div{
+    position: relative;
+    left: 80px;
+    font-size: 1.3rem;
+    width: max-content;
+  }
+  &::before, &::after {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      height: 0;
+      width: $checkbox-height * .2;
+      background-color: $checked-color;
+      display: inline-block;
+      -moz-transform-origin: left top;
+      -ms-transform-origin: left top;
+      -o-transform-origin: left top;
+      -webkit-transform-origin: left top;
+      transform-origin: left top;
+      border-radius: 5px;
+      content: ' ';
+      -webkit-transition: opacity ease .5;
+      -moz-transition: opacity ease .5;
+      transition: opacity ease .5;
+  }
+  &::before {
+      top:$checkbox-height * .72;
+      left: $checkbox-height * .41;
+      box-shadow: 0 0 0 $checkbox-height * .05 $background-color;
+      -moz-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+  }
+  &::after {
+      top: $checkbox-height * .37;
+      left: $checkbox-height * .05;
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+  }
+}
+input[type=checkbox]:checked + .check-box,
+.check-box.checked{
+  border-color:$checked-color;
+  &::after{
+      height: $checkbox-height * .5;
+      -moz-animation: dothabottomcheck $duration/2 ease 0s forwards;
+      -o-animation: dothabottomcheck $duration/2 ease 0s forwards;
+      -webkit-animation: dothabottomcheck $duration/2 ease 0s forwards;
+      animation: dothabottomcheck $duration/2 ease 0s forwards;
+  }
+  &::before{
+      height: $checkbox-height * 1.2;
+      -moz-animation: dothatopcheck $duration ease 0s forwards;
+      -o-animation: dothatopcheck $duration ease 0s forwards;
+      -webkit-animation: dothatopcheck $duration ease 0s forwards;
+      animation: dothatopcheck $duration ease 0s forwards;
+  }
+}
+// End CheckBoxes
+// Calculator
+#mortgage-calc {
+  padding: 20px;
+  #mc{
+    padding: 20px;
+    background: #414143;
+    box-shadow: 0 10px 0 #231F20;
+    color: $rr-White;
+    border-radius: 10px;
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+    #branding{
+      font-style: italic;
+      position: absolute;
+      top: 2px;
+      right: 20px;
+      color: #ECF0F1;
+    }
+    #mortgage-calc-header {
+      border: 1px solid #ECF0F1;
+      border-radius: 3px;
+      max-width: 950px;
+      margin: 0 auto;
+      background: #131111;
+      background-image: url(data:image/png;base64,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);
+      box-shadow: inset 0px 10px #171314;
+      color: #A9D037;
+      font-size: 3rem;
+      font-family: courier;
+      text-transform: uppercase;
+    }
+    .calc-border {
+      border: 2px solid #171314;
+      padding: 20px;
+      box-shadow: 0 5px 0 #171314, inset 0px 5px #8A8A8C;
+      border-radius: 10px;
+    }
+    .out-header{
+      font-size: $font-Size-Header-LG;
+      text-shadow: -2px 2px 0 #231F20;
+    }
+    .small-text {
+      font-size: 1rem;
+      text-shadow: -2px 2px 0 #2c3e50;
+      &.red{
+        text-shadow: -2px 2px 0 #8a0011;
+      }
+    }
+    .input-header {
+      font-size: $font-Size-Header;
+      text-shadow: -2px 2px 0 #231F20;
+      margin-bottom: 5px;
+    }
+    .output {
+      border-radius: 10px;
+      color: $rr-White;
+      padding: 8px;
+      &.xtra {
+        padding-bottom: 2px;
+      }
+      &.blue{
+        background: rgb(59, 80, 104);
+        box-shadow: inset 0px 10px #2c3e50;
+        text-shadow: -2px 2px 0 #2c3e50;
+        font-size: $font-Size-Header-LG;
+      }
+      &.red {
+        background: #a70000;
+        box-shadow: inset 0px 10px #8a0011;
+        text-shadow: -2px 2px 0 #8a0011;
+        font-size: $font-Size-Header-LG;
+        transition: 0.5s;        
+        &:hover {
+          transform: scale(1.2);
+          transition: 0.5s;
+        }
+        .small-text{
+          text-shadow: -2px 2px 0 #8a0011;
+        }
+      }
+    }
+    .input-calc{
+      background: #ECF0F1;
+      box-shadow: 0 5px 0 #171314;
+      border: none;
+      border-radius: 10px;
+      min-width: 100%;
+      max-width: 100%;
+      padding: 8px;
+      padding-left: 40px;
+      color: #2c3e50;
+      font-size: 1.2rem;
+      &::placeholder{
+        font-size: .8rem;
+        font-style: italic;
+        opacity: 0.6;
+      }
+      &:not(:focus){
+        color: $rr-Blue;
+        transition: .5s;
+      }
+      &.calculate {
+        background: $rr-Green;
+        transition: .2s;
+        color: $rr-White;
+        text-transform: uppercase;        
+        &:hover, &:active {
+          transition: .2s;
+          transform: translateY(3px);
+          cursor: pointer;
+          box-shadow: 0 1px 0 #171314;
+        }
+      }
+    }
+    .input-type {
+      position: absolute;
+      font-size: 1.5rem;
+      left: 24px;
+      top: 34px;
+      color: #2c3e50;
+    }
+  }
+  #error-msg{
+    color: #a70000;
+    text-shadow: none !important;
+    background: rgba(255, 102, 102, 0.3);
+    border: 1px solid #a1574e;
+    font-size: 0.9rem !important;
+    font-style: italic;
+    &[data-bg="false"]{
+      background: none;
+      border: 0px;
+    }
+  }
+  // Animation Delays
+  #x-20Years{animation-delay: .5s}
+  #x-30Years{animation-delay: 1s}
+}
+// End Calculator
+.qa{
+  font-weight: bold;
+  &.q{
+    color:#0896E5;
+  }
+  &.a{
+    color:#31800C;
+  }
+}
+.highlight{
+  background: #FCF2A5;
+}
+#rr-logo-start{
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+}
 // Slide 2
 
-/**
+/**********************************************
 *
 * 
 * FOOTER
 *
 *
-**/
-
-
+**********************************************/
+#footer{
+  background: $rr-Blue;
+  padding: 30px;
+  color: rgba($text-Light, 0.5);
+  .button{
+    font-size: 2.5rem;
+    margin: 0 20px;
+    border-radius: 40px;
+    &#prev{
+      &:before{
+        font-family: FontAwesome;
+        content:'\f137';
+        padding-right: 20px;
+      }
+    }
+    &#next{
+      &:after{
+        font-family: FontAwesome;
+        content:'\f138';
+        padding-left: 20px;
+      }
+    }
+  }
+}
+#show-price-all {
+	display: none;
+  background: rgb(216, 191, 190);
+  position: fixed;
+  top: 40px;
+  right: 0px;
+  z-index: 99;
+  height: 80px;
+  max-width: 280px;
+  min-width: 230px;
+  font-weight: 700;
+  box-shadow: 0 0 35px 2px rgba(0,0,0,0.24);
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #a94442;
+  border-right: 0;
+  span {
+    font-size: 1rem;
+  }
+  span::first-line{
+    font-size: 3rem;
+  }
+  h1 {
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+  .thirtyYears{
+    bottom: 8px;
+  }
+}
 /**
 *
 * 
@@ -198,6 +567,17 @@
       }
       #header-years {
         width: 46px!important;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .img-magnifier-container {
+    &:hover{
+      .img-magnifier-glass {
+        width: 0;
+        height: 0;
+        border: none;
       }
     }
   }

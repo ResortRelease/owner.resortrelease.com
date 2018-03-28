@@ -11502,13 +11502,13 @@ a.skip-link {
   transform: translateY(2px) !important;
 }
 
-/**
+/**********************************************
 *
 * 
 * HEADER
 *
 *
-**/
+**********************************************/
 .bg-blue {
   background: #0e76bc;
 }
@@ -11559,13 +11559,34 @@ a.skip-link {
   opacity: 0.7;
 }
 
-/**
+/**********************************************
 *
 * 
 * CONTENT
 *
 *
-**/
+**********************************************/
+section {
+  width: 100%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 90vh;
+  padding: 30px 0;
+}
+
+section h1 {
+  color: #770909;
+}
+
+section:nth-child(even) {
+  background: #f5f5f5;
+}
+
+section:nth-child(even) h1 {
+  color: #332a52;
+}
+
 .margin-top-20 {
   margin-top: 20px;
 }
@@ -11578,10 +11599,6 @@ a.skip-link {
   margin-top: 40px;
 }
 
-.mortgage-content {
-  margin: 30px 0;
-}
-
 .margin-auto {
   margin: 0 auto;
 }
@@ -11592,13 +11609,14 @@ a.skip-link {
 }
 
 .img-magnifier-container:hover .img-magnifier-glass {
-  width: 90%;
+  width: 98%;
   height: 300px;
+  border: 2px solid #000;
 }
 
 .img-magnifier-glass {
   position: absolute;
-  border: 2px solid #000;
+  border: 0px solid #000;
   cursor: none;
   /*Set the size of the magnifier glass:*/
   width: 0;
@@ -11607,7 +11625,8 @@ a.skip-link {
 }
 
 .video-container {
-  position: relative;
+  position: sticky;
+  top: 0;
   cursor: pointer;
   border: 5px solid black;
   outline: 1px solid #737373;
@@ -11642,13 +11661,447 @@ a.skip-link {
   transition: .5s;
 }
 
-/**
+@-moz-keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 15px;
+  }
+}
+
+@-webkit-keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 15px;
+  }
+}
+
+@keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 15px;
+  }
+}
+
+@keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 36px;
+  }
+}
+
+@-webkit-keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 36px;
+  }
+}
+
+@-moz-keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 36px;
+  }
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label {
+  transition: .5s;
+  color: #af2828 !important;
+}
+
+.cl {
+  font-size: 18px;
+  position: relative;
+  margin-left: 0px;
+  line-height: 23px;
+  left: 20px;
+}
+
+.checkboxes .col-12 {
+  display: flex;
+}
+
+.checkboxes .col-12 label {
+  flex: 0 0 auto;
+}
+
+.checked {
+  transition: .5s;
+  color: #af2828 !important;
+}
+
+.unchecked {
+  transition: .5s;
+  color: #332a52;
+}
+
+.check-box {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: 3px solid #332a52;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: border-color ease 0.2s;
+  -o-transition: border-color ease 0.2s;
+  -webkit-transition: border-color ease 0.2s;
+  transition: border-color ease 0.2s;
+  cursor: pointer;
+}
+
+.check-box div {
+  position: relative;
+  left: 80px;
+  font-size: 1.3rem;
+  width: max-content;
+}
+
+.check-box::before, .check-box::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  height: 0;
+  width: 6px;
+  background-color: #af2828;
+  display: inline-block;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -o-transform-origin: left top;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  border-radius: 5px;
+  content: ' ';
+  -webkit-transition: opacity ease .5;
+  -moz-transition: opacity ease .5;
+  transition: opacity ease .5;
+}
+
+.check-box::before {
+  top: 21.6px;
+  left: 12.3px;
+  box-shadow: 0 0 0 1.5px #f5f5f5;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.check-box::after {
+  top: 11.1px;
+  left: 1.5px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked + .check-box,
+.check-box.checked {
+  border-color: #af2828;
+}
+
+input[type=checkbox]:checked + .check-box::after,
+.check-box.checked::after {
+  height: 15px;
+  -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+  -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+  -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+  animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+
+input[type=checkbox]:checked + .check-box::before,
+.check-box.checked::before {
+  height: 36px;
+  -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+  -o-animation: dothatopcheck 0.4s ease 0s forwards;
+  -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+  animation: dothatopcheck 0.4s ease 0s forwards;
+}
+
+#mortgage-calc {
+  padding: 20px;
+}
+
+#mortgage-calc #mc {
+  padding: 20px;
+  background: #414143;
+  box-shadow: 0 10px 0 #231F20;
+  color: #ffffff;
+  border-radius: 10px;
+  max-width: 900px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#mortgage-calc #mc #branding {
+  font-style: italic;
+  position: absolute;
+  top: 2px;
+  right: 20px;
+  color: #ECF0F1;
+}
+
+#mortgage-calc #mc #mortgage-calc-header {
+  border: 1px solid #ECF0F1;
+  border-radius: 3px;
+  max-width: 950px;
+  margin: 0 auto;
+  background: #131111;
+  background-image: url(data:image/png;base64,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);
+  box-shadow: inset 0px 10px #171314;
+  color: #A9D037;
+  font-size: 3rem;
+  font-family: courier;
+  text-transform: uppercase;
+}
+
+#mortgage-calc #mc .calc-border {
+  border: 2px solid #171314;
+  padding: 20px;
+  box-shadow: 0 5px 0 #171314, inset 0px 5px #8A8A8C;
+  border-radius: 10px;
+}
+
+#mortgage-calc #mc .out-header {
+  font-size: 2rem;
+  text-shadow: -2px 2px 0 #231F20;
+}
+
+#mortgage-calc #mc .small-text {
+  font-size: 1rem;
+  text-shadow: -2px 2px 0 #2c3e50;
+}
+
+#mortgage-calc #mc .small-text.red {
+  text-shadow: -2px 2px 0 #8a0011;
+}
+
+#mortgage-calc #mc .input-header {
+  font-size: 1.125rem;
+  text-shadow: -2px 2px 0 #231F20;
+  margin-bottom: 5px;
+}
+
+#mortgage-calc #mc .output {
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 8px;
+}
+
+#mortgage-calc #mc .output.xtra {
+  padding-bottom: 2px;
+}
+
+#mortgage-calc #mc .output.blue {
+  background: #3b5068;
+  box-shadow: inset 0px 10px #2c3e50;
+  text-shadow: -2px 2px 0 #2c3e50;
+  font-size: 2rem;
+}
+
+#mortgage-calc #mc .output.red {
+  background: #a70000;
+  box-shadow: inset 0px 10px #8a0011;
+  text-shadow: -2px 2px 0 #8a0011;
+  font-size: 2rem;
+  transition: 0.5s;
+}
+
+#mortgage-calc #mc .output.red:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+#mortgage-calc #mc .output.red .small-text {
+  text-shadow: -2px 2px 0 #8a0011;
+}
+
+#mortgage-calc #mc .input-calc {
+  background: #ECF0F1;
+  box-shadow: 0 5px 0 #171314;
+  border: none;
+  border-radius: 10px;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  padding-left: 40px;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+#mortgage-calc #mc .input-calc::placeholder {
+  font-size: .8rem;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+#mortgage-calc #mc .input-calc:not(:focus) {
+  color: #0e76bc;
+  transition: .5s;
+}
+
+#mortgage-calc #mc .input-calc.calculate {
+  background: #8BC34A;
+  transition: .2s;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+#mortgage-calc #mc .input-calc.calculate:hover, #mortgage-calc #mc .input-calc.calculate:active {
+  transition: .2s;
+  transform: translateY(3px);
+  cursor: pointer;
+  box-shadow: 0 1px 0 #171314;
+}
+
+#mortgage-calc #mc .input-type {
+  position: absolute;
+  font-size: 1.5rem;
+  left: 24px;
+  top: 34px;
+  color: #2c3e50;
+}
+
+#mortgage-calc #error-msg {
+  color: #a70000;
+  text-shadow: none !important;
+  background: rgba(255, 102, 102, 0.3);
+  border: 1px solid #a1574e;
+  font-size: 0.9rem !important;
+  font-style: italic;
+}
+
+#mortgage-calc #error-msg[data-bg="false"] {
+  background: none;
+  border: 0px;
+}
+
+#mortgage-calc #x-20Years {
+  animation-delay: .5s;
+}
+
+#mortgage-calc #x-30Years {
+  animation-delay: 1s;
+}
+
+.qa {
+  font-weight: bold;
+}
+
+.qa.q {
+  color: #0896E5;
+}
+
+.qa.a {
+  color: #31800C;
+}
+
+.highlight {
+  background: #FCF2A5;
+}
+
+#rr-logo-start {
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+}
+
+/**********************************************
 *
 * 
 * FOOTER
 *
 *
-**/
+**********************************************/
+#footer {
+  background: #0e76bc;
+  padding: 30px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#footer .button {
+  font-size: 2.5rem;
+  margin: 0 20px;
+  border-radius: 40px;
+}
+
+#footer .button#prev:before {
+  font-family: FontAwesome;
+  content: '\f137';
+  padding-right: 20px;
+}
+
+#footer .button#next:after {
+  font-family: FontAwesome;
+  content: '\f138';
+  padding-left: 20px;
+}
+
+#show-price-all {
+  display: none;
+  background: #d8bfbe;
+  position: fixed;
+  top: 40px;
+  right: 0px;
+  z-index: 99;
+  height: 80px;
+  max-width: 280px;
+  min-width: 230px;
+  font-weight: 700;
+  box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #a94442;
+  border-right: 0;
+}
+
+#show-price-all span {
+  font-size: 1rem;
+}
+
+#show-price-all span::first-line {
+  font-size: 3rem;
+}
+
+#show-price-all h1 {
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+#show-price-all .thirtyYears {
+  bottom: 8px;
+}
+
 /**
 *
 * 
@@ -11665,5 +12118,13 @@ a.skip-link {
   }
   #accreditation-new-row #header-credits #header-years {
     width: 46px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .img-magnifier-container:hover .img-magnifier-glass {
+    width: 0;
+    height: 0;
+    border: none;
   }
 }

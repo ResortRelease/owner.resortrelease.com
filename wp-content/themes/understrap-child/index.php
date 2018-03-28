@@ -13,40 +13,30 @@
 
 get_header(); ?>
 
-
-<div id="content" class="container margin-top-30">
+<div id="content" class="margin-top-30">
 	<?php include("mortgage-1.php");?>
 </div>
 
 <?php get_footer(); ?>
 <script>
 	// Click Next Change Page
-	var prevNum, nextNum;
-	jQuery('#next').click(function(){	
-		prevNum = jQuery('#prev').attr('data-prev');
-		nextNum = jQuery('#next').attr('data-next'); 
-		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ nextNum +".php", 
+	var cp = jQuery('.current-page').attr('data-page');
+	cp = parseInt(cp);
+	jQuery('#next').click(function(){
+		cp == 5 ? cp = 5 : cp = cp + 1;
+		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ cp +".php", 
 		type: 'POST',
-		success: function(result){
+		success: function(result, textStatus, jqXHR){
 				jQuery("#content").html(result);
 		}});
-		nextNum == 5 ? nextNum = 5 : nextNum++;
-		prevNum == 4 ? prevNum = 4 : prevNum++;
-		jQuery('#next').attr('data-next', nextNum);
-		jQuery('#prev').attr('data-prev', prevNum);
 	});
 	// Click Prev Change Page
-	jQuery('#prev').click(function(){	
-		prevNum = jQuery('#prev').attr('data-prev');
-		nextNum = jQuery('#next').attr('data-next'); 
-		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ prevNum +".php", 
+	jQuery('#prev').click(function(){
+		cp == 1 ? cp = 1 : cp = cp - 1;	
+		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ cp +".php", 
 		type: 'POST',
 		success: function(result){
 				jQuery("#content").html(result);
 		}});
-		nextNum == 2 ? nextNum = 2 : nextNum--;
-		prevNum == 1 ? prevNum = 1 : prevNum--;
-		jQuery('#next').attr('data-next', nextNum);
-		jQuery('#prev').attr('data-prev', prevNum);
 	});
 </script>
