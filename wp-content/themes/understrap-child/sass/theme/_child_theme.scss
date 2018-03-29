@@ -31,7 +31,65 @@
 .silver {
   @include button-bg(#607d8b);
 }
-
+section{
+  width: 100%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 90vh;
+  padding: 30px 0;
+  h1{
+    color: #770909;
+    text-transform: capitalize;
+  }
+  &:nth-child(even){
+    background: $even-section;
+    h1{
+      color:rgb(51, 42, 82);
+      text-transform: capitalize;
+    }
+  }
+}
+.margin-auto {
+  margin: 0 auto;
+}
+.margin-top-20{
+  margin-top: 20px;
+}
+.margin-top-30{
+  margin-top: 30px;
+}
+.margin-top-40{
+  margin-top: 40px;
+}
+.h-number {
+  font-family: serif;
+  color: $rr-GreenDark;
+}
+p{
+  font-size: 1.2rem;
+}
+.p-number {
+  font-size: 2rem;
+  font-family: serif;
+  color: #770909;
+}
+.p-link, .p-header {
+  font-size: 2rem;
+  color: $text-Blue;
+  text-transform: capitalize;
+}
+.p-link{
+  &:before{
+    font-family: FontAwesome;
+    content:'\f0c1';
+    margin-right: 20px;
+    color: white;
+    background: #3a96e6;
+    padding: 3px;
+    border-radius: 3px;
+  }
+}
 /**********************************************
 *
 * 
@@ -84,35 +142,6 @@
 *
 *
 **********************************************/
-section{
-  width: 100%;
-  display: table;
-  margin: 0;
-  max-width: none;
-  height: 90vh;
-  padding: 30px 0;
-  h1{
-    color: #770909;
-  }
-  &:nth-child(even){
-    background: #f5f5f5;
-    h1{
-      color:rgb(51, 42, 82);
-    }
-  }
-}
-.margin-top-20{
-  margin-top: 20px;
-}
-.margin-top-30{
-  margin-top: 30px;
-}
-.margin-top-40{
-  margin-top: 40px;
-}
-.margin-auto {
-  margin: 0 auto;
-}
 // Slide 1
 .img-magnifier-container {
   position: relative;
@@ -473,7 +502,7 @@ input[type=checkbox]:checked + .check-box,
 .qa{
   font-weight: bold;
   &.q{
-    color:#0896E5;
+    color:$text-Blue;
   }
   &.a{
     color:#31800C;
@@ -488,7 +517,30 @@ input[type=checkbox]:checked + .check-box,
   height: auto;
 }
 // Slide 2
-
+#beat-the-clock {
+  background: #EFEFEF;
+  position: relative;
+}
+.select2-selection{
+  background: $bg-White;
+  // max-width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.select2-dropdown{
+  // max-width: 200px;
+}
+.scroll-div{
+  max-height: 500px;
+  overflow-y: scroll;
+  border: 2px solid $text-Blue;
+  .scroll-img{
+    height: 100%;
+  }
+}
+#bbb-ratings, #rci-img {
+  border: 2px solid $text-Blue;  
+}
 /**********************************************
 *
 * 

@@ -204,6 +204,7 @@
 <script>
 jQuery(document).ready(function(){
   magnify("bill-of-rights", 2); 
+  
 });
 // Youtube Function to swap images for video
 "use strict";

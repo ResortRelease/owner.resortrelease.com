@@ -11502,6 +11502,76 @@ a.skip-link {
   transform: translateY(2px) !important;
 }
 
+section {
+  width: 100%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 90vh;
+  padding: 30px 0;
+}
+
+section h1 {
+  color: #770909;
+  text-transform: capitalize;
+}
+
+section:nth-child(even) {
+  background: #f5f5f5;
+}
+
+section:nth-child(even) h1 {
+  color: #332a52;
+  text-transform: capitalize;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.h-number {
+  font-family: serif;
+  color: #577d2a;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.p-number {
+  font-size: 2rem;
+  font-family: serif;
+  color: #770909;
+}
+
+.p-link, .p-header {
+  font-size: 2rem;
+  color: #0896E5;
+  text-transform: capitalize;
+}
+
+.p-link:before {
+  font-family: FontAwesome;
+  content: '\f0c1';
+  margin-right: 20px;
+  color: white;
+  background: #3a96e6;
+  padding: 3px;
+  border-radius: 3px;
+}
+
 /**********************************************
 *
 * 
@@ -11566,43 +11636,6 @@ a.skip-link {
 *
 *
 **********************************************/
-section {
-  width: 100%;
-  display: table;
-  margin: 0;
-  max-width: none;
-  height: 90vh;
-  padding: 30px 0;
-}
-
-section h1 {
-  color: #770909;
-}
-
-section:nth-child(even) {
-  background: #f5f5f5;
-}
-
-section:nth-child(even) h1 {
-  color: #332a52;
-}
-
-.margin-top-20 {
-  margin-top: 20px;
-}
-
-.margin-top-30 {
-  margin-top: 30px;
-}
-
-.margin-top-40 {
-  margin-top: 40px;
-}
-
-.margin-auto {
-  margin: 0 auto;
-}
-
 .img-magnifier-container {
   position: relative;
   z-index: 10;
@@ -12035,6 +12068,31 @@ input[type=checkbox]:checked + .check-box::before,
   margin: 0 auto;
   max-width: 300px;
   height: auto;
+}
+
+#beat-the-clock {
+  background: #EFEFEF;
+  position: relative;
+}
+
+.select2-selection {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.scroll-div {
+  max-height: 500px;
+  overflow-y: scroll;
+  border: 2px solid #0896E5;
+}
+
+.scroll-div .scroll-img {
+  height: 100%;
+}
+
+#bbb-ratings, #rci-img {
+  border: 2px solid #0896E5;
 }
 
 /**********************************************
