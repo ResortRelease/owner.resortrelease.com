@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<div id="content" class="margin-top-30">
+<div id="content">
 	<?php include("mortgage-1.php");?>
 </div>
 
