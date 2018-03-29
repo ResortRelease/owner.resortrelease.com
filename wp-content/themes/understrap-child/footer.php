@@ -14,9 +14,10 @@
     <div class="button success" id="prev">Prev</i></div>
     <div class="button success" id="next">Next</div>
     <div class="row">
-      <div class="col-md-4 text-left margin-top-20">
+      <div class="col-md-12 text-center margin-top-30">
         Resort Release is not a law firm, and the employees of Resort Release are not attorneys.
-        Terms and Privacy
+        <a href="https://www.resortrelease.com/terms-and-conditions" target="_blank"> Terms and Privacy.</a></br>
+        © 2018 ResortRelease
       </div>
     </div>
   </div>
