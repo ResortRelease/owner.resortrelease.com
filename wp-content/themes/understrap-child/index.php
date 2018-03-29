@@ -21,13 +21,13 @@ get_header(); ?>
 <script>
 	// Click Next Change Page
 	// To be removed
-	jQuery(document).ready(function(){
-		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ 2 +".php", 
-		type: 'POST',
-		success: function(result, textStatus, jqXHR){
-				jQuery("#content").html(result);
-		}});
-	})
+	// jQuery(document).ready(function(){
+	// 	jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ 2 +".php", 
+	// 	type: 'POST',
+	// 	success: function(result, textStatus, jqXHR){
+	// 			jQuery("#content").html(result);
+	// 	}});
+	// })
 
 
 	var cp = jQuery('.current-page').attr('data-page');
