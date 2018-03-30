@@ -11663,6 +11663,7 @@ p {
   cursor: pointer;
   border: 5px solid black;
   outline: 1px solid #737373;
+  height: 308px;
 }
 
 .video-container img {

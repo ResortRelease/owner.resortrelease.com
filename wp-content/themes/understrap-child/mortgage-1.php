@@ -9,13 +9,9 @@
       </div>
       <!-- Mildred Video -->
       <div class="col-md-6 ">
-        <div id="movie-area" class="img-fluid video-container">
-          <img class="swap-video" src="wp-content/themes/understrap-child/assets/slides/1/mqdefault.jpg" alt="Mildred video">  
-          <i class="fa fa-youtube-play"></i>          
+        <div class="video-container">
+          <div id="uW9XULgawnA" class="youtube" data-params="modestbranding=1&amp;showinfo=0&amp;rel=0&amp;controls=1&amp;vq=hd720&amp;allowfullscreen=allowfullscreen"></div>
         </div>
-        <!-- <div class="video-container">
-          <div id="3tKatApzA-w" class="youtube" data-params="modestbranding=1&amp;showinfo=0&amp;rel=0&amp;controls=1&amp;vq=hd720&amp;allowfullscreen=allowfullscreen"></div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -214,25 +210,17 @@ jQuery(window).bind("load", function() {
 // Youtube Function to swap images for video
 "use strict";
 jQuery(function($) {
-  $("#movie-area img").on('click', function(){
-    $('#movie-area').load('wp-content/themes/understrap-child/movie.php');
-  });
-  $("#movie-area i").on('click', function(){
-    $('#movie-area').load('wp-content/themes/understrap-child/movie.php');
+  $(".youtube").each(function() {
+    $(this).append($('<img/>', {'src': 'https://i.ytimg.com/vi/' + this.id + '/mqdefault.jpg'}));
+    $(this).append($('<i class="fa fa-youtube-play"></i>'));
+    $(document).delegate('#'+this.id, 'click', function() {
+      var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
+      if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+      var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
+      $(this).replaceWith(iframe);
+    });
   });
 });
-// jQuery(function($) {
-//   $(".youtube").each(function() {
-//     $(this).append($('<img/>', {'src': 'https://i.ytimg.com/vi/' + this.id + '/maxresdefault.jpg'}));
-//     $(this).append($('<i class="fa fa-youtube-play"></i>'));
-//     $(document).delegate('#'+this.id, 'click', function() {
-//       var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
-//       if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
-//       var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
-//       $(this).replaceWith(iframe);
-//     });
-//   });
-// });
 jQuery(":checkbox").change(function() {
     if(this.checked) {
       var thisId = jQuery(this).attr('id');
