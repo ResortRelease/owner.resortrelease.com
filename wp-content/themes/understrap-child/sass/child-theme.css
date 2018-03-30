@@ -12433,6 +12433,9 @@ input[type=checkbox]:checked + .check-box::before,
 }
 
 @media (max-width: 768px) {
+  .p-link {
+    font-size: 1.5rem !important;
+  }
   .img-magnifier-container:hover .img-magnifier-glass {
     width: 0;
     height: 0;

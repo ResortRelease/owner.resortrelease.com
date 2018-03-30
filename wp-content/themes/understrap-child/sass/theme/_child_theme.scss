@@ -870,6 +870,9 @@ input[type=checkbox]:checked + .check-box,
 }
 
 @media (max-width: 768px) {
+  .p-link{
+    font-size:1.5rem!important;
+  }
   .img-magnifier-container {
     &:hover{
       .img-magnifier-glass {
