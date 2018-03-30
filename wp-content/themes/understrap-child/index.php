@@ -14,7 +14,7 @@
 get_header(); ?>
 
 <div id="content">
-	<?php include("mortgage-1.php");?>
+	<?php include("mortgage-2.php");?>
 </div>
 
 <?php get_footer(); ?>

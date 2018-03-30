@@ -11665,7 +11665,7 @@ p {
   cursor: pointer;
   border: 5px solid black;
   outline: 1px solid #737373;
-  height: 308px;
+  height: max-content;
 }
 
 .video-container img {
@@ -12118,10 +12118,12 @@ input[type=checkbox]:checked + .check-box::before,
   border-radius: 20px;
   border: 2px solid #FFE2A3;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.55);
+  max-width: 100%;
 }
 
 .select2-selection {
   background: #ffffff;
+  max-width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -12322,7 +12324,7 @@ input[type=checkbox]:checked + .check-box::before,
 .plan-list .list {
   text-align: left;
   display: inline-block;
-  width: 50%;
+  width: 82%;
 }
 
 /**********************************************
