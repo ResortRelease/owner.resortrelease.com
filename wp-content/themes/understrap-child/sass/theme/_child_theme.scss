@@ -520,7 +520,11 @@ input[type=checkbox]:checked + .check-box,
 #beat-the-clock {
   background: #EFEFEF;
   position: relative;
+  border-radius: 20px;
+  border: 2px solid #FFE2A3;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.55);
 }
+
 .select2-selection{
   background: $bg-White;
   // max-width: 200px;
@@ -538,9 +542,18 @@ input[type=checkbox]:checked + .check-box,
     height: 100%;
   }
 }
+
+// Slide 3
 #bbb-ratings, #rci-img {
-  border: 2px solid $text-Blue;  
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.55);
 }
+.box-image{
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #FFE2A3;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.55);
+}
+
 
 // Slide 4
 

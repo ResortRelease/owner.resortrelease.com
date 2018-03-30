@@ -2,7 +2,7 @@
   <div class="container text-center mortgage-content">
     <h1 class="h-number">1</h1>
     <h1>You Have The Right To Be Informed</h1>
-
+    <hr>
     <div class="row">
       <div class="col-md-8 offset-md-2 text-justify margin-top-20">
         <p>Most timeshare owners were victim of fraudulent sales practices because their sales agents promise cant be verified for months or even years. These agents have seemingly no checks and balances because they know that your right to cancel will expire in a few days, but you might not even try to use it for a whole year. By the time you realize you have been deceived, there isn’t a way to easily cancel your contract without professional help.</p>
@@ -106,20 +106,6 @@
       </div>
     </div>
 
-  </div>
-</section>
-<section>
-  <div class="container text-center">
-    <h1>Properties owned by RCI</h1>
-    <div class="col-md-8 offset-md-2 margin-top-20">
-      <div class="margin-auto">
-        <a href="https://csapp.800helpfla.com/cspublicapp/businesssearch/businesssearch.aspx" rel="nofollow"><img id="rci-img" src="wp-content/themes/understrap-child/assets/slides/2/rci.jpg" alt="RCI Owned"></a>
-      </img>
-      <div class="margin-auto margin-top-20">
-        <h1>BBB complaints</h1>
-        <img id="bbb-ratings" src="wp-content/themes/understrap-child/assets/slides/2/BBB.jpg" alt="BBB Screenshot">
-      </img>
-    </div>
   </div>
 </section>
 <script>

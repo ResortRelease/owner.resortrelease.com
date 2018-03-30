@@ -1,6 +1,8 @@
 <section>
   <div class="container text-center mortgage-content">
+  <h1 class="h-number">3</h1>
   <h1>Transfer Fees Price Structure</h1>
+  <hr>
   <div class="container margin-top-40">
     <div id="chart-container">
       <div id="chart-col-1">

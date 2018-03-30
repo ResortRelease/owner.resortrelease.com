@@ -1,8 +1,16 @@
-<div class="container text-center mortgage-content">
-  <h1>Mortgage 5</h1>
-  <div class="row margin-top-20">
-    <div class="col-md-6">Bill Of Rights</div>
-    <div class="col-md-6">Video</div>
+<section>
+  <div class="container text-center mortgage-content">
+  <h1 class="h-number">4</h1>
+  <h1>Timeshare Cost Overview</h1>
+  <hr>
+  <div class="margin-top-20 text-center">
+    <div class="">
+      <img src="wp-content/themes/understrap-child/assets/slides/5/services-overview.png" alt="Services Overview Resort Release">
+    </div>
+    <div class="margin-top-20">
+      <img src="wp-content/themes/understrap-child/assets/slides/5/three-guarantees.jpg" alt="Three Guarantees Resort Release">
+    </div>
   </div>
 
-</div>
+  </div>
+</section>

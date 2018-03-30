@@ -1,6 +1,7 @@
 <section>
   <div class="container text-center">
     <h1>Timeshare Consumer Rights</h1>
+    <hr>
     <div class="row margin-top-20">
       <!-- Bill of Rights -->    
       <div class="col-md-6 img-magnifier-container">
