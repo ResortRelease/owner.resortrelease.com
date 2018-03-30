@@ -20,25 +20,11 @@ get_header(); ?>
 <?php get_footer(); ?>
 <script>
 	// Click Next Change Page
-	// To be removed
-	// jQuery(document).ready(function(){
-	// 	jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ 5 +".php", 
-	// 	type: 'POST',
-	// 	success: function(result, textStatus, jqXHR){
-	// 			jQuery("#content").html(result);
-	// 	}});
-	// })
-
-
 	var cp = jQuery('.current-page').attr('data-page');
 	cp = parseInt(cp);
 	jQuery('#next').click(function(){
 		cp == 5 ? cp = 5 : cp = cp + 1;
-		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ cp +".php", 
-		type: 'POST',
-		success: function(result, textStatus, jqXHR){
-				jQuery("#content").html(result);
-		}});
+		ajaxCall(cp)
 		jQuery('html, body').animate({
 			scrollTop: jQuery('#content').offset().top
 		}, 10, 'linear');
@@ -46,12 +32,15 @@ get_header(); ?>
 	// Click Prev Change Page
 	jQuery('#prev').click(function(){
 		cp == 1 ? cp = 1 : cp = cp - 1;	
+		ajaxCall(cp);
+	});
+	function ajaxCall(cp){
 		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ cp +".php", 
 		type: 'POST',
 		success: function(result){
 				jQuery("#content").html(result);
 		}});
-	});
+	}
 </script>
 <script>
 	// Magnify Function
