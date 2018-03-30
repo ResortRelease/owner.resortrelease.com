@@ -11645,6 +11645,7 @@ p {
   width: 98%;
   height: 300px;
   border: 2px solid #000;
+  cursor: zoom-in;
 }
 
 .img-magnifier-glass {
@@ -11655,6 +11656,7 @@ p {
   width: 0;
   height: 0;
   z-index: 20;
+  background: #ffffff;
 }
 
 .video-container {
