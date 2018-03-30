@@ -81,8 +81,8 @@
 <section>
   <div class="container text-center">
     <h1 clas>Calculator</h1>
-    <div id="mortgage-calc" class="row">
-      <div class="container">
+    <div id="mortgage-calc" class="col-12">
+      <div>
         <div class=""  id="mc">
           <small id="branding">Resort Release ®</small>
           <div class="calc-border">
