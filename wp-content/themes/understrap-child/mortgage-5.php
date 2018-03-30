@@ -46,3 +46,6 @@
 
   </div>
 </section>
+<script>
+  jQuery('#next').addClass('disabled');
+</script>

@@ -110,6 +110,7 @@
 </section>
 <script>
   jQuery(document).ready(function(){
+    jQuery('#prev').removeClass('disabled');
     var elements = jQuery(document).find('select.form-control');
     for (var i = 0, l = elements.length; i < l; i++) {
       var $select = jQuery(elements[i]), $label = $select.parents('.form-group').find('label');

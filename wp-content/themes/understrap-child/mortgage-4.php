@@ -34,3 +34,6 @@
   </div>
 </div>
 </section>
+<script>
+  jQuery('#next').removeClass('disabled');
+</script>

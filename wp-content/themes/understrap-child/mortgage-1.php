@@ -19,7 +19,7 @@
 <section>
   <div class="container text-center" id="check-container">
     <h1>Signs You May Be A Victim of Timeshare Fraud</h1>
-    <div class="checkboxes text-left">
+    <div class="text-left">
       <div class="checkboxes margin-top-40">
         <div class="col-12">
           <input type="checkbox" id="cb1" />
@@ -203,9 +203,6 @@
 </section>
 
 <script>
-jQuery(window).bind("load", function() {  
-  magnify("bill-of-rights", 2); 
-});
 	// jQuery('#movie-area').load('wp-content/themes/understrap-child/movie.php');
 // Youtube Function to swap images for video
 "use strict";
@@ -231,5 +228,9 @@ jQuery(":checkbox").change(function() {
       var dataId = jQuery('span[data-id="'+thisId+'"]');
       dataId.toggleClass('checked').toggleClass('unchecked');
     }
+});
+jQuery(window).bind("load", function() {  
+  magnify("bill-of-rights", 2); 
+  jQuery('#prev').addClass('disabled');
 });
 </script>

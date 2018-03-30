@@ -261,6 +261,13 @@ $duration: .4s;
   100% { height: $checkbox-height * 1.2; }
 }
 
+.checkboxes {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 15px solid #af2929;
+  border-style: inset;
+}
 input[type=checkbox]{
   display:none;
 }
@@ -284,10 +291,12 @@ input[type="checkbox"]:checked + label {
 .checked{
   transition: .5s;
   color:$checked-color!important;
+  font-weight: bold;
 }
 .unchecked{
   transition: .5s;
   color: $unchecked-color;
+  font-weight: bold;
 }
 .check-box {
   height: $checkbox-height;
@@ -773,11 +782,15 @@ input[type=checkbox]:checked + .check-box,
   background: $rr-Blue;
   padding: 30px;
   color: rgba($text-Light, 0.5);
+  .disabled{
+    opacity: 0.5;
+  }
   .button{
     font-size: 2.5rem;
     margin: 10px 20px;
     border-radius: 40px;
     &#prev{
+      width: 60%;
       &:before{
         font-family: FontAwesome;
         content:'\f137';
@@ -785,6 +798,7 @@ input[type=checkbox]:checked + .check-box,
       }
     }
     &#next{
+      width: 60%;
       &:after{
         font-family: FontAwesome;
         content:'\f138';

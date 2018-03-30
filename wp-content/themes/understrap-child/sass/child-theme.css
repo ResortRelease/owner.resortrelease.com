@@ -11770,6 +11770,14 @@ p {
   }
 }
 
+.checkboxes {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 15px solid #af2929;
+  border-style: inset;
+}
+
 input[type=checkbox] {
   display: none;
 }
@@ -11798,11 +11806,13 @@ input[type="checkbox"]:checked + label {
 .checked {
   transition: .5s;
   color: #af2828 !important;
+  font-weight: bold;
 }
 
 .unchecked {
   transition: .5s;
   color: #332a52;
+  font-weight: bold;
 }
 
 .check-box {
@@ -12328,16 +12338,28 @@ input[type=checkbox]:checked + .check-box::before,
   color: rgba(255, 255, 255, 0.5);
 }
 
+#footer .disabled {
+  opacity: 0.5;
+}
+
 #footer .button {
   font-size: 2.5rem;
   margin: 10px 20px;
   border-radius: 40px;
 }
 
+#footer .button#prev {
+  width: 60%;
+}
+
 #footer .button#prev:before {
   font-family: FontAwesome;
   content: '\f137';
   padding-right: 20px;
+}
+
+#footer .button#next {
+  width: 60%;
 }
 
 #footer .button#next:after {
