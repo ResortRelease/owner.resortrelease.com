@@ -106,6 +106,16 @@ p{
     max-width: 300px;
   }
 }
+#breadcrumbs {
+  ol{
+    li{
+      color: $rr-Blue;
+      &.active{
+        color: #6c757d;
+      }
+    }
+  }
+}
 #accreditation-new-row {
   position: relative;
   height: 90px;

@@ -13,16 +13,35 @@
 
 get_header(); ?>
 
+<div id="breadcrumbs"><!-- Breadcrumbs -->
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item 1">1</li>
+			<li class="breadcrumb-item 2">2</li>
+			<li class="breadcrumb-item 3">3</li>
+			<li class="breadcrumb-item 4">4</li>
+			<li class="breadcrumb-item 5">5</li>
+		</ol>
+	</nav>
+</div><!-- End Breadcrumbs -->
+
 <div id="content">
 	<?php include("mortgage-1.php");?>
 </div>
 
 <?php get_footer(); ?>
 <script>
+	// Load Current Page
+	jQuery(document).ready(function(){
+		var lastPage = window.location.hash;
+		lastPage = lastPage.replace("#", "");		
+		ajaxCall(lastPage);
+		// jQuery('.current-page').attr('data-page', lastPage);
+	})
 	// Click Next Change Page
-	var cp = jQuery('.current-page').attr('data-page');
-	cp = parseInt(cp);
 	jQuery('#next').click(function(){
+		var cp = jQuery('.current-page').attr('data-page');
+		cp = parseInt(cp);
 		cp == 5 ? cp = 5 : cp = cp + 1;
 		ajaxCall(cp)
 		jQuery('html, body').animate({
@@ -31,6 +50,8 @@ get_header(); ?>
 	});
 	// Click Prev Change Page
 	jQuery('#prev').click(function(){
+		var cp = jQuery('.current-page').attr('data-page');
+		cp = parseInt(cp);
 		cp == 1 ? cp = 1 : cp = cp - 1;	
 		ajaxCall(cp);
 	});
@@ -39,6 +60,8 @@ get_header(); ?>
 		type: 'POST',
 		success: function(result){
 				jQuery("#content").html(result);
+				location.hash = cp;
+				jQuery('.current-page').attr('data-page', cp);
 		}});
 	}
 </script>

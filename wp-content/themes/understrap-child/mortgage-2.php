@@ -1,6 +1,6 @@
 <section>
   <div class="container text-center mortgage-content">
-    <h1 class="h-number">1</h1>
+    <h1 class="h-number">2</h1>
     <h1>You Have The Right To Be Informed</h1>
     <hr>
     <div class="row">
@@ -76,7 +76,7 @@
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              1A
+              2A
             </div>
           </div>
           <div class="col-md-10">
@@ -93,7 +93,7 @@
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              1B
+              2B
             </div>
           </div>
           <div class="col-md-10">
@@ -111,6 +111,10 @@
 <script>
   jQuery(document).ready(function(){
     jQuery('#prev').removeClass('disabled');
+    jQuery('.breadcrumb li').each(function( index ){
+      jQuery(this).removeClass('active').removeAttr( "aria-current" )
+    });
+    jQuery('.breadcrumb li.2').addClass('active').attr("aria-current", "page");
     var elements = jQuery(document).find('select.form-control');
     for (var i = 0, l = elements.length; i < l; i++) {
       var $select = jQuery(elements[i]), $label = $select.parents('.form-group').find('label');

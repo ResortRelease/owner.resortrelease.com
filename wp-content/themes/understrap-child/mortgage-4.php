@@ -1,6 +1,6 @@
 <section>
   <div class="container text-center mortgage-content">
-  <h1 class="h-number">3</h1>
+  <h1 class="h-number">4</h1>
   <h1>Transfer Fees Price Structure</h1>
   <hr>
   <div class="container margin-top-40">
@@ -35,5 +35,11 @@
 </div>
 </section>
 <script>
+jQuery(document).ready(function(){  
   jQuery('#next').removeClass('disabled');
+  jQuery('.breadcrumb li').each(function( index ){
+    jQuery(this).removeClass('active').removeAttr( "aria-current" )
+  });
+  jQuery('.breadcrumb li.4').addClass('active').attr("aria-current", "page");
+});
 </script>

@@ -1,5 +1,6 @@
 <section>
   <div class="container text-center">
+    <h1 class="h-number">1</h1>
     <h1>Timeshare Consumer Rights</h1>
     <hr>
     <div class="row margin-top-20">
@@ -206,6 +207,14 @@
 </section>
 
 <script>
+jQuery(window).ready(function(){
+  jQuery('.breadcrumb li').each(function( index ){
+    jQuery(this).removeClass('active').removeAttr( "aria-current" );
+  });
+  jQuery('.breadcrumb li.1').addClass('active').attr("aria-current", "page");
+  magnify("bill-of-rights", 2); 
+  jQuery('#prev').addClass('disabled');
+});
 	// jQuery('#movie-area').load('wp-content/themes/understrap-child/movie.php');
 // Youtube Function to swap images for video
 "use strict";
@@ -231,9 +240,5 @@ jQuery(":checkbox").change(function() {
       var dataId = jQuery('span[data-id="'+thisId+'"]');
       dataId.toggleClass('checked').toggleClass('unchecked');
     }
-});
-jQuery(window).bind("load", function() {  
-  magnify("bill-of-rights", 2); 
-  jQuery('#prev').addClass('disabled');
 });
 </script>

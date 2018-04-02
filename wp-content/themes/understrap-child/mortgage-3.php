@@ -1,6 +1,6 @@
 <section>
   <div class="container text-center">
-    <h1 class="h-number">2</h1>
+    <h1 class="h-number">3</h1>
     <h1>Resort and exchange company secrets revealed</h1>
     <hr>
     <div class="row">
@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-2">
           <div class="p-number">
-            2A
+            3A
           </div>
         </div>
         <div class="col-md-8">
@@ -29,7 +29,7 @@
       <div class="row margin-top-30">
         <div class="col-md-2">
           <div class="p-number">
-            2B
+            3B
           </div>
         </div>
         <div class="col-md-8">
@@ -42,3 +42,11 @@
     </div>
   
 </section>
+<script>
+jQuery(document).ready(function(){
+  jQuery('.breadcrumb li').each(function( index ){
+    jQuery(this).removeClass('active').removeAttr( "aria-current" )
+  });
+  jQuery('.breadcrumb li.3').addClass('active').attr("aria-current", "page");
+});
+</script>

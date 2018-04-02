@@ -1,6 +1,6 @@
 <section>
   <div class="container text-center mortgage-content">
-  <h1 class="h-number">4</h1>
+  <h1 class="h-number">5</h1>
   <h1>Timeshare Cost Overview</h1>
   <hr>
   <div class="margin-top-20 text-center">
@@ -47,5 +47,12 @@
   </div>
 </section>
 <script>
+jQuery(document).ready(function(){ 
   jQuery('#next').addClass('disabled');
+  jQuery('#prev').removeClass('disabled');  
+  jQuery('.breadcrumb li').each(function( index ){
+    jQuery(this).removeClass('active').removeAttr( "aria-current" )
+  });
+  jQuery('.breadcrumb li.5').addClass('active').attr("aria-current", "page");
+});
 </script>

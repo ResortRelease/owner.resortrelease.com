@@ -11591,6 +11591,14 @@ p {
   max-width: 300px;
 }
 
+#breadcrumbs ol li {
+  color: #0e76bc;
+}
+
+#breadcrumbs ol li.active {
+  color: #6c757d;
+}
+
 #accreditation-new-row {
   position: relative;
   height: 90px;
