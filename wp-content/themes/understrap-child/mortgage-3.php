@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-8">
           <div class="margin-auto">
-              <a href="https://csapp.800helpfla.com/cspublicapp/businesssearch/businesssearch.aspx" rel="nofollow"><img id="rci-img" src="wp-content/themes/understrap-child/assets/slides/2/rci.jpg" alt="RCI Owned"></a>
+              <a href="https://csapp.800helpfla.com/cspublicapp/businesssearch/businesssearch.aspx" rel="nofollow"><img id="rci-img" src="../wp-content/themes/understrap-child/assets/slides/2/rci.jpg" alt="RCI Owned"></a>
             </img>
           </div>
         </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="col-md-8">
           <div class="margin-auto">
-          <img id="bbb-ratings" src="wp-content/themes/understrap-child/assets/slides/2/BBB.jpg" alt="BBB Screenshot">
+          <img id="bbb-ratings" src="../wp-content/themes/understrap-child/assets/slides/2/BBB.jpg" alt="BBB Screenshot">
             </img>
           </div>
         </div>

@@ -6,10 +6,10 @@
     <div class="row margin-top-20">
       <!-- Bill of Rights -->    
       <div class="col-md-6 img-magnifier-container d-none d-sm-block">
-        <img id="bill-of-rights" src="wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
+        <img id="bill-of-rights" src="../wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
       </div>
       <div class="col-12 d-block d-sm-none">
-        <img src="wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
+        <img src="../wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
       </div>
       <!-- Mildred Video -->
       <div class="col-md-6 ">
@@ -201,7 +201,7 @@
       </div>
     </div>
     <div class="margin-top-40">
-      <img id="rr-logo-start" src="wp-content/themes/understrap-child/assets/logos/ResortRelease.png" alt="Resort Release Color Logo">
+      <img id="rr-logo-start" src="../wp-content/themes/understrap-child/assets/logos/ResortRelease.png" alt="Resort Release Color Logo">
     </div>
   </div>
 </section>

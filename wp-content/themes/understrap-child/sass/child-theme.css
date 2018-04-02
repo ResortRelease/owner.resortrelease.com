@@ -11594,10 +11594,15 @@ p {
 #breadcrumbs ol li {
   color: #0e76bc;
   cursor: pointer;
+  padding-right: 5px;
 }
 
 #breadcrumbs ol li.active {
   color: #6c757d;
+}
+
+#breadcrumbs ol li:hover {
+  text-decoration: underline;
 }
 
 #accreditation-new-row {
@@ -11645,6 +11650,53 @@ p {
 *
 *
 **********************************************/
+#splash {
+  min-height: 75vh;
+}
+
+#splash h1 {
+  text-align: center;
+  padding: 36px 10px 20px 10px;
+}
+
+#splash #mortgage, #splash #transfer {
+  text-align: center;
+  margin: 60px 0 80px;
+  display: block;
+}
+
+#splash #mortgage a img, #splash #transfer a img {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  transition: .3s;
+  transition-timing-function: ease-in-out;
+  transform: translateY(0px);
+}
+
+#splash #mortgage a:hover, #splash #transfer a:hover {
+  text-decoration: none;
+}
+
+#splash #mortgage a:hover img, #splash #transfer a:hover img {
+  cursor: pointer;
+  width: 300px;
+  height: auto;
+  transition: .3s;
+  transition-timing-function: ease-in-out;
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #171314;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+#splash #mortgage a h2, #splash #transfer a h2 {
+  padding: 10px 10px 0 10px;
+}
+
 .img-magnifier-container {
   position: relative;
   z-index: 10;
@@ -12346,6 +12398,7 @@ input[type=checkbox]:checked + .check-box::before,
   background: #0e76bc;
   padding: 30px;
   color: rgba(255, 255, 255, 0.5);
+  min-height: 10vh;
 }
 
 #footer .disabled {

@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * Template Name: Mortgage
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -12,29 +12,20 @@
  */
 
 get_header(); ?>
-
-<div id="splash" class="container">
-	<div class="row">
-		<div class="col-12">
-			<h1>Choose your Current Timeshare Ownership</h1>
-		</div>
-		<div id="mortgage" class="col-6">
-			<a href="mortgage">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/icons/icon-mortgage.png" alt="Mortgage" alt="">
-			</a>
-			<h2>Mortgage</h2>
-			<p>short description for mortgage</p>
-	</div>
-		<div id="transfer" class="col-6">
-			<a href="#">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/icons/icon-transfer.png" alt="Transfer" alt="">
-			</a>
-			<h2>Transfer</h2>
-			<p>short description for transfer</p>
-		</div>
-	</div>
+<div id="breadcrumbs"><!-- Breadcrumbs -->
+	<nav aria-label="breadcrumb" class="container">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item 1 page" data-page="1">1</li>
+			<li class="breadcrumb-item 2 page" data-page="2">2</li>
+			<li class="breadcrumb-item 3 page" data-page="3">3</li>
+			<li class="breadcrumb-item 4 page" data-page="4">4</li>
+			<li class="breadcrumb-item 5 page" data-page="5">5</li>
+		</ol>
+	</nav>
+</div><!-- End Breadcrumbs -->
+<div id="content">
+	<?php include("mortgage-1.php");?>
 </div>
-
 <?php get_footer(); ?>
 <script>
 	// Load Current Page
@@ -49,7 +40,7 @@ get_header(); ?>
 		ajaxCall(page);
 	});
 	function ajaxCall(currentPage){
-		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ currentPage +".php", 
+		jQuery.ajax({url: "../wp-content/themes/understrap-child/mortgage-"+ currentPage +".php", 
 		type: 'POST',
 		success: function(result){
 				jQuery("#content").html(result);
