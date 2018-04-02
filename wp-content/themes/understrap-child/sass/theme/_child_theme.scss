@@ -114,6 +114,9 @@ p{
       &.active{
         color: #6c757d;
       }
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -158,6 +161,7 @@ p{
   position: relative;
   z-index:10;
   &:hover{
+    cursor: zoom-in;
     .img-magnifier-glass {
       width: 98%;
       height: 300px;

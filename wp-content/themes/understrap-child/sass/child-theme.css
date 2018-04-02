@@ -11600,6 +11600,10 @@ p {
   color: #6c757d;
 }
 
+#breadcrumbs ol li:hover {
+  text-decoration: underline;
+}
+
 #accreditation-new-row {
   position: relative;
   height: 90px;
@@ -11648,6 +11652,10 @@ p {
 .img-magnifier-container {
   position: relative;
   z-index: 10;
+}
+
+.img-magnifier-container:hover {
+  cursor: zoom-in;
 }
 
 .img-magnifier-container:hover .img-magnifier-glass {
