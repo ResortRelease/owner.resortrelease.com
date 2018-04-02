@@ -37,10 +37,10 @@
       <span class="list">100% money back guarantee!</span>
     </div>
     <div class="margin-top-20 text-center">
-      <img src="wp-content/themes/understrap-child/assets/slides/5/services-overview.png" alt="Services Overview Resort Release">
+      <img src="../wp-content/themes/understrap-child/assets/slides/5/services-overview.png" alt="Services Overview Resort Release">
     </div>
     <div class="margin-top-20 text-center">
-      <img src="wp-content/themes/understrap-child/assets/slides/5/three-guarantees.jpg" alt="Three Guarantees Resort Release">
+      <img src="../wp-content/themes/understrap-child/assets/slides/5/three-guarantees.jpg" alt="Three Guarantees Resort Release">
     </div>
   </div>
 

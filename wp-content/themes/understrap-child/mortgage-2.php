@@ -10,7 +10,7 @@
     </div>
     <div class="row" id="beat-the-clock">
       <div  class="text-center margin-top-20 col-md-6">
-        <img id="beat-the-clock-img" src="wp-content/themes/understrap-child/assets/slides/2/Beattheclock.png" alt="Beat the clock" class="img-fluid">
+        <img id="beat-the-clock-img" src="../wp-content/themes/understrap-child/assets/slides/2/Beattheclock.png" alt="Beat the clock" class="img-fluid">
       </div>
       <div class="col-md-6">
       <div>
@@ -82,7 +82,7 @@
           <div class="col-md-10">
             <a href="http://www.sellmytimesharenow.com/timeshare/All+Timeshare/vacation/buy-timeshare/sellPrice+asc%2Cresort+asc%2Cmin_week+asc/" target="_blank" rel="nofollow"><p class="p-link">SellMyTimeshareNow.com</p>
             <div class="scroll-div img-fluid">
-              <img id="smtn-shot" class="img-fluid scroll-img" src="wp-content/themes/understrap-child/assets/slides/2/smtn.jpg" alt="SMTP Screenshot">
+              <img id="smtn-shot" class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/2/smtn.jpg" alt="SMTP Screenshot">
             </div></a>
           </div>
         </div>
@@ -99,7 +99,7 @@
           <div class="col-md-10">
             <a href="https://www.ebay.com/sch/Timeshares-for-Sale/15897/i.html?_from=R40&_nkw=timeshare&_sop=15" target="_blank" rel="nofollow"><p class="p-link">eBay</p>
             <div class="scroll-div img-fluid">
-              <img id="ebay-shot" class="img-fluid scroll-img" src="wp-content/themes/understrap-child/assets/slides/2/ebay.jpg" alt="eBay Screenshot">
+              <img id="ebay-shot" class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/2/ebay.jpg" alt="eBay Screenshot">
             </div></a>
           </div>
         </div>
