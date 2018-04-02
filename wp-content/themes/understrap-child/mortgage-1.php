@@ -213,32 +213,10 @@ jQuery(window).ready(function(){
   });
   jQuery('.breadcrumb li.1').addClass('active').attr("aria-current", "page");
   magnify("bill-of-rights", 2); 
-  jQuery('#prev').addClass('disabled');
+  jQuery('#prev').addClass('disabled').attr('data-page', "1");
+  jQuery('#next').removeClass('disabled').attr('data-page', "2");
 });
 	// jQuery('#movie-area').load('wp-content/themes/understrap-child/movie.php');
-// Youtube Function to swap images for video
-"use strict";
-jQuery(function($) {
-  $(".youtube").each(function() {
-    $(this).append($('<img/>', {'src': 'https://i.ytimg.com/vi/' + this.id + '/mqdefault.jpg'}));
-    $(this).append($('<i class="fa fa-youtube-play"></i>'));
-    $(document).delegate('#'+this.id, 'click', function() {
-      var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
-      if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
-      var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
-      $(this).replaceWith(iframe);
-    });
-  });
-});
-jQuery(":checkbox").change(function() {
-    if(this.checked) {
-      var thisId = jQuery(this).attr('id');
-      var dataId = jQuery('span[data-id="'+thisId+'"]');
-      dataId.toggleClass('checked').toggleClass('unchecked');
-    }else {
-      var thisId = jQuery(this).attr('id');
-      var dataId = jQuery('span[data-id="'+thisId+'"]');
-      dataId.toggleClass('checked').toggleClass('unchecked');
-    }
-});
+// Youtube Function to swap images for video MINIFIED
+"use strict";jQuery(function(t){t(".youtube").each(function(){t(this).append(t("<img/>",{src:"https://i.ytimg.com/vi/"+this.id+"/mqdefault.jpg"})),t(this).append(t('<i class="fa fa-youtube-play"></i>')),t(document).delegate("#"+this.id,"click",function(){var e="https://www.youtube.com/embed/"+this.id+"?autoplay=1&autohide=1";t(this).data("params")&&(e+="&"+t(this).data("params"));var i=t("<iframe/>",{frameborder:"0",src:e,width:t(this).width(),height:t(this).height()});t(this).replaceWith(i)})})}),jQuery(":checkbox").change(function(){if(this.checked){var t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}else{t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}});
 </script>

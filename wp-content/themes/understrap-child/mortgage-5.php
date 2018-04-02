@@ -48,8 +48,8 @@
 </section>
 <script>
 jQuery(document).ready(function(){ 
-  jQuery('#next').addClass('disabled');
-  jQuery('#prev').removeClass('disabled');  
+  jQuery('#prev').removeClass('disabled').attr("data-page", "4");  
+  jQuery('#next').addClass('disabled').attr("data-page", "5");
   jQuery('.breadcrumb li').each(function( index ){
     jQuery(this).removeClass('active').removeAttr( "aria-current" )
   });

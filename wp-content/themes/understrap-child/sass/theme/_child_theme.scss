@@ -110,6 +110,7 @@ p{
   ol{
     li{
       color: $rr-Blue;
+      cursor: pointer;
       &.active{
         color: #6c757d;
       }

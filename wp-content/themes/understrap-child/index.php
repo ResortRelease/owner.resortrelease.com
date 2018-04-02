@@ -16,11 +16,11 @@ get_header(); ?>
 <div id="breadcrumbs"><!-- Breadcrumbs -->
 	<nav aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item 1">1</li>
-			<li class="breadcrumb-item 2">2</li>
-			<li class="breadcrumb-item 3">3</li>
-			<li class="breadcrumb-item 4">4</li>
-			<li class="breadcrumb-item 5">5</li>
+			<li class="breadcrumb-item 1 page" data-page="1">1</li>
+			<li class="breadcrumb-item 2 page" data-page="2">2</li>
+			<li class="breadcrumb-item 3 page" data-page="3">3</li>
+			<li class="breadcrumb-item 4 page" data-page="4">4</li>
+			<li class="breadcrumb-item 5 page" data-page="5">5</li>
 		</ol>
 	</nav>
 </div><!-- End Breadcrumbs -->
@@ -36,229 +36,30 @@ get_header(); ?>
 		var lastPage = window.location.hash;
 		lastPage = lastPage.replace("#", "");		
 		ajaxCall(lastPage);
-		// jQuery('.current-page').attr('data-page', lastPage);
 	})
-	// Click Next Change Page
-	jQuery('#next').click(function(){
-		var cp = jQuery('.current-page').attr('data-page');
-		cp = parseInt(cp);
-		cp == 5 ? cp = 5 : cp = cp + 1;
-		ajaxCall(cp)
-		jQuery('html, body').animate({
-			scrollTop: jQuery('#content').offset().top
-		}, 10, 'linear');
+	// Click .page to Change Page
+	jQuery('.page').click(function(){
+		var page = jQuery(this).attr('data-page');
+		ajaxCall(page);
 	});
-	// Click Prev Change Page
-	jQuery('#prev').click(function(){
-		var cp = jQuery('.current-page').attr('data-page');
-		cp = parseInt(cp);
-		cp == 1 ? cp = 1 : cp = cp - 1;	
-		ajaxCall(cp);
-	});
-	function ajaxCall(cp){
-		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ cp +".php", 
+	function ajaxCall(currentPage){
+		jQuery.ajax({url: "wp-content/themes/understrap-child/mortgage-"+ currentPage +".php", 
 		type: 'POST',
 		success: function(result){
 				jQuery("#content").html(result);
-				location.hash = cp;
-				jQuery('.current-page').attr('data-page', cp);
+				location.hash = currentPage;
+				jQuery('.current-page').attr('data-page', currentPage);
 		}});
 	}
 </script>
 <script>
-	// Magnify Function
-	function magnify(imgID, zoom) {
-		var img, glass, w, h, bw;
-		img = document.getElementById(imgID);
-		/*create magnifier glass:*/
-		glass = document.createElement("DIV");
-		glass.setAttribute("class", "img-magnifier-glass");
-		/*insert magnifier glass:*/
-		img.parentElement.insertBefore(glass, img);
-		/*set background properties for the magnifier glass:*/
-		glass.style.backgroundImage = "url('" + img.src + "')";
-		glass.style.backgroundRepeat = "no-repeat";
-		glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-		bw = 3;
-		w = glass.offsetWidth / 2;
-		h = glass.offsetHeight / 2;
-		/*execute a function when someone moves the magnifier glass over the image:*/
-		glass.addEventListener("mousemove", moveMagnifier);
-		img.addEventListener("mousemove", moveMagnifier);
-		/*and also for touch screens:*/
-		glass.addEventListener("touchmove", moveMagnifier);
-		img.addEventListener("touchmove", moveMagnifier);
-		function moveMagnifier(e) {
-			var pos, x, y;
-			/*prevent any other actions that may occur when moving over the image*/
-			e.preventDefault();
-			/*get the cursor's x and y positions:*/
-			pos = getCursorPos(e);
-			x = pos.x;
-			y = pos.y;
-			/*prevent the magnifier glass from being positioned outside the image:*/
-			if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-			if (x < w / zoom) {x = w / zoom;}
-			if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-			if (y < h / zoom) {y = h / zoom;}
-			/*set the position of the magnifier glass:*/
-			glass.style.left = (x - w) + "px";
-			glass.style.top = (y - h) + "px";
-			/*display what the magnifier glass "sees":*/
-			glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
-		}
-		function getCursorPos(e) {
-			var a, x = 0, y = 0;
-			e = e || window.event;
-			/*get the x and y positions of the image:*/
-			a = img.getBoundingClientRect();
-			/*calculate the cursor's x and y coordinates, relative to the image:*/
-			x = e.pageX - a.left;
-			y = e.pageY - a.top;
-			/*consider any page scrolling:*/
-			x = x - window.pageXOffset;
-			y = y - window.pageYOffset;
-			return {x : x, y : y};
-		}
-	}
+	// Magnify Function, Minified 
+	function magnify(e,t){var n,i,o,a,s;function d(e){var d,g,r,f,l,p,u;e.preventDefault(),p=0,u=0,f=(f=e)||window.event,l=n.getBoundingClientRect(),p=f.pageX-l.left,u=f.pageY-l.top,p-=window.pageXOffset,u-=window.pageYOffset,r=(d={x:p,y:u}).y,(g=d.x)>n.width-o/t&&(g=n.width-o/t),g<o/t&&(g=o/t),r>n.height-a/t&&(r=n.height-a/t),r<a/t&&(r=a/t),i.style.left=g-o+"px",i.style.top=r-a+"px",i.style.backgroundPosition="-"+(g*t-o+s)+"px -"+(r*t-a+s)+"px"}n=document.getElementById(e),(i=document.createElement("DIV")).setAttribute("class","img-magnifier-glass"),n.parentElement.insertBefore(i,n),i.style.backgroundImage="url('"+n.src+"')",i.style.backgroundRepeat="no-repeat",i.style.backgroundSize=n.width*t+"px "+n.height*t+"px",s=3,o=i.offsetWidth/2,a=i.offsetHeight/2,i.addEventListener("mousemove",d),n.addEventListener("mousemove",d),i.addEventListener("touchmove",d),n.addEventListener("touchmove",d)}
 
-	// Calculator Function
-	jQuery(function($){
-			$("input").keypress(function (e) {
-					if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
-							$('#calculate-btn').click();
-							return false;
-					} else {
-							return true;
-					}
-			});
-		});
-		// Add Commas
-		function addCommas(nStr) {
-			nStr += "";
-			var x = nStr.split(".");
-			var x1 = x[0];
-			var x2 = x.length > 1 ? "." + x[1] : "";
-			var rgx = /(\d+)(\d{3})/;
-			while (rgx.test(x1)) {
-				x1 = x1.replace(rgx, "$1" + "," + "$2");
-			}
-			return x1 + x2;
-		}
-		// Variables
-		// Outputs
-		function total(){
-			jQuery(function($){
-				// outputs
-				var cao = $("#x-CAO"), // Current Annual Obligations 
-						mgt = $("#x-MGT"), // Mortgage Grand Total.
-						totalTenYears = $("#x-10Years"), // 10 Years.
-						totalTwentyYears = $("#x-20Years"), // 20 Years.
-						totalThirtyYears = $("#x-30Years"), // 30 Years.
-						errors = $("#error-msg"); // Errors.
-				var flag = true;
-				// User Inputs
-				var inMPA = parseFloat($("#in-MPA").val()),
-						op = parseFloat($("#in-OP").val()),
-						dp = parseFloat($("#in-DP").val());
-				var initialCalc = 0;
-				// Button Click
-				// Calculating Current Annual Obligations & Mortgage Grand Total.
-				if (inMPA){
-					// Check for value
-					isNaN(op) ? op = 0 : op = op;
-					isNaN(dp) ? dp = 0 : dp = dp;
-					var myCAO = inMPA * 12,
-							myMGT = inMPA * op + dp;
-					cao.html("$" + addCommas(myCAO.toFixed(0)));
-					mgt.removeClass("blue").addClass("red").html("$" + addCommas(myMGT.toFixed(0)));
-					errors.html("&nbsp;").attr("data-bg", "false");
-					$('html, body').animate({
-						scrollTop: $("#outputs").offset().top-220
-					}, 800);
-				}
-				// Calculating Maintenance Fees.
-				var freq = $("#frequency").val(),
-						fees = parseFloat($("#mFees").val()) * freq,
-						inc = parseFloat($("#increase").val()) / 100,
-						membership = parseFloat($("#rci").val()),
-						exchange = parseFloat($("#ecd").val()),
-						initialCalc = 0;
-				// Validate the form
-				function validateForm() {
-					isNaN(membership) ? membership = 0 : membership = membership;
-					isNaN(exchange) ? exchange = 0 : exchange = exchange;
-					isNaN(inc) ? inc = 0 : inc = inc;
-					if (isNaN(fees)) {
-						// errors.html("Payment amount missing!").attr("data-bg", "true");
-						flag = false;
-					}else if (inc == 0){
-						// errors.html("No annual increase").attr("data-bg", "true");
-					}else {
-						// errors.html("&nbsp;").attr("data-bg", "false");
-					}
-				}validateForm();
-				// Calculate initial
-				function initial(){
-					if(flag == true) {
-						isNaN(myMGT) ? myMGT = 0 : myMGT = myMGT;
-						initialCalc = myMGT + fees + membership + exchange;
-					}
-				}initial();
-				// Calculate over the years
-				function calcYears(){
-					if(flag == true) {
-						var a = fees,
-								b = membership,
-								c = exchange;
-						var sumTotal = initialCalc;            
-						myCAO = myCAO + fees + membership + exchange;          
-						cao.html("$" + addCommas(myCAO.toFixed(0)));     
-						// Loop to calculate
-						for(var i = 0; i < 29; i++){
-							// compound is initialCalc + every loop sum 
-							var calcA = a + (a * inc),
-									calcB = b + (b * inc),
-									calcC = c + (c * inc);
-							var total = calcA + calcB + calcC;
-							sumTotal += total;
-							
-							// 8 18 28 = 10 20 30 years respectively toFixed(2)
-							if(i == 8){
-								totalTenYears.html("");
-								totalTenYears.prepend("$"+addCommas(sumTotal.toFixed(2)) + "<div class='small-text text-center'>10 years</div>");
-								cao.html();
-							}
-							if(i == 18){
-								totalTwentyYears.html("");
-								totalTwentyYears.prepend("$"+addCommas(sumTotal.toFixed(2)) + "<div class='small-text text-center'>20 years</div>"); 
-							}
-							if(i == 28){ 
-								totalThirtyYears.html("");
-								totalThirtyYears.removeClass("blue").addClass("red").prepend("$"+addCommas(sumTotal.toFixed(2)) + "<div class='small-text text-center red'>30 years</div>");
-								showPrice(sumTotal.toFixed(2));
-							}
-							a = calcA
-							b = calcB
-							c = calcC
-						};
-					}
-				}calcYears();
-				// Show price banner
-				function showPrice(sum){
-					var showPrice = '<h1>$'+addCommas(sum)+'</h1>Expected Debt To Resort';
-					$("#show-price-all").show().find(".thirtyYears").html(showPrice);
-					createCookie('showPrice',showPrice);
-					function createCookie(name,value) {
-						document.cookie = name + "=" + value + "; path=/";
-					}
-				};
-			});
-		};
+	// Calculator Function Minified
+	function addCommas(a){for(var e=(a+="").split("."),t=e[0],s=e.length>1?"."+e[1]:"",r=/(\d+)(\d{3})/;r.test(t);)t=t.replace(r,"$1,$2");return t+s}function total(){jQuery(function(a){var e=a("#x-CAO"),t=a("#x-MGT"),s=a("#x-10Years"),r=a("#x-20Years"),l=a("#x-30Years"),o=a("#error-msg"),d=!0,i=parseFloat(a("#in-MPA").val()),m=parseFloat(a("#in-OP").val()),n=parseFloat(a("#in-DP").val()),c=0;if(i){m=isNaN(m)?0:m,n=isNaN(n)?0:n;var p=12*i,v=i*m+n;e.html("$"+addCommas(p.toFixed(0))),t.removeClass("blue").addClass("red").html("$"+addCommas(v.toFixed(0))),o.html("&nbsp;").attr("data-bg","false"),a("html, body").animate({scrollTop:a("#outputs").offset().top-220},800)}var h=a("#frequency").val(),u=parseFloat(a("#mFees").val())*h,x=parseFloat(a("#increase").val())/100,f=parseFloat(a("#rci").val()),C=parseFloat(a("#ecd").val());c=0;function F(e){var t,s,r="<h1>$"+addCommas(e)+"</h1>Expected Debt To Resort";a("#show-price-all").show().find(".thirtyYears").html(r),t="showPrice",s=r,document.cookie=t+"="+s+"; path=/"}f=isNaN(f)?0:f,C=isNaN(C)?0:C,x=isNaN(x)?0:x,isNaN(u)&&(d=!1),1==d&&(v=isNaN(v)?0:v,c=v+u+f+C),function(){if(1==d){var a=u,t=f,o=C,i=c;p=p+u+f+C,e.html("$"+addCommas(p.toFixed(0)));for(var m=0;m<29;m++){var n=a+a*x,v=t+t*x,h=o+o*x;i+=n+v+h,8==m&&(s.html(""),s.prepend("$"+addCommas(i.toFixed(2))+"<div class='small-text text-center'>10 years</div>"),e.html()),18==m&&(r.html(""),r.prepend("$"+addCommas(i.toFixed(2))+"<div class='small-text text-center'>20 years</div>")),28==m&&(l.html(""),l.removeClass("blue").addClass("red").prepend("$"+addCommas(i.toFixed(2))+"<div class='small-text text-center red'>30 years</div>"),F(i.toFixed(2))),a=n,t=v,o=h}}}()})}jQuery(function(a){a("input").keypress(function(e){return!(e.which&&13==e.which||e.keyCode&&13==e.keyCode)||(a("#calculate-btn").click(),!1)})});
 
-
-		// Cookie Script
-		/*! jquery.cookie v1.4.1 | MIT */
+	// Cookie Script
 	// All this code was backed up from footer-js.js
 	// this is the minified Jquery.cookie ext script minified
 	!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?a(require("jquery")):a(jQuery)}(function(a){function b(a){return h.raw?a:encodeURIComponent(a)}function c(a){return h.raw?a:decodeURIComponent(a)}function d(a){return b(h.json?JSON.stringify(a):String(a))}function e(a){0===a.indexOf('"')&&(a=a.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return a=decodeURIComponent(a.replace(g," ")),h.json?JSON.parse(a):a}catch(b){}}function f(b,c){var d=h.raw?b:e(b);return a.isFunction(c)?c(d):d}var g=/\+/g,h=a.cookie=function(e,g,i){if(void 0!==g&&!a.isFunction(g)){if(i=a.extend({},h.defaults,i),"number"==typeof i.expires){var j=i.expires,k=i.expires=new Date;k.setTime(+k+864e5*j)}return document.cookie=[b(e),"=",d(g),i.expires?"; expires="+i.expires.toUTCString():"",i.path?"; path="+i.path:"",i.domain?"; domain="+i.domain:"",i.secure?"; secure":""].join("")}for(var l=e?void 0:{},m=document.cookie?document.cookie.split("; "):[],n=0,o=m.length;o>n;n++){var p=m[n].split("="),q=c(p.shift()),r=p.join("=");if(e&&e===q){l=f(r,g);break}e||void 0===(r=f(r))||(l[q]=r)}return l};h.defaults={},a.removeCookie=function(b,c){return void 0===a.cookie(b)?!1:(a.cookie(b,"",a.extend({},c,{expires:-1})),!a.cookie(b))}});

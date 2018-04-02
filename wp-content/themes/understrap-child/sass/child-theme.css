@@ -11593,6 +11593,7 @@ p {
 
 #breadcrumbs ol li {
   color: #0e76bc;
+  cursor: pointer;
 }
 
 #breadcrumbs ol li.active {

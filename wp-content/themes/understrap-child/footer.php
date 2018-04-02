@@ -11,9 +11,8 @@
 <div id="footer" class="container-fluid">
   <div class="container text-center">
     <div class="row">
-      <div class="col-md-6 col-12 text-center"><div class="button success" id="prev">Prev</i></div></div>
-      <div class="col-md-6 col-12 text-center"><div class="button success" id="next">Next</div></div>
-      <div class="current-page" data-page="1"></div>     
+      <div class="col-md-6 col-12 text-center"><div class="button success page" id="prev" data-page="1">Prev</i></div></div>
+      <div class="col-md-6 col-12 text-center"><div class="button success page" id="next" data-page="2">Next</div></div>    
     </div>
     <div class="row">
       <div class="col-md-12 text-center margin-top-30">
