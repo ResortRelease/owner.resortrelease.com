@@ -15,11 +15,11 @@ get_header(); ?>
 <div id="breadcrumbs"><!-- Breadcrumbs -->
 	<nav aria-label="breadcrumb" class="container">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item 1 page" data-page="1">1</li>
-			<li class="breadcrumb-item 2 page" data-page="2">2</li>
-			<li class="breadcrumb-item 3 page" data-page="3">3</li>
-			<li class="breadcrumb-item 4 page" data-page="4">4</li>
-			<li class="breadcrumb-item 5 page" data-page="5">5</li>
+			<li class="breadcrumb-item 1 page-label" data-page="1">1</li>
+			<li class="breadcrumb-item 2 page-label" data-page="2">2</li>
+			<li class="breadcrumb-item 3 page-label" data-page="3">3</li>
+			<li class="breadcrumb-item 4 page-label" data-page="4">4</li>
+			<li class="breadcrumb-item 5 page-label" data-page="5">5</li>
 		</ol>
 	</nav>
 </div><!-- End Breadcrumbs -->
@@ -31,22 +31,25 @@ get_header(); ?>
 	// Load Current Page
 	jQuery(document).ready(function(){
 		var lastPage = window.location.hash;
-		lastPage = lastPage.replace("#", "");		
+		lastPage == "" ? lastPage = 1 : lastPage = lastPage.replace("#", "");
 		ajaxCall(lastPage);
 	})
 	// Click .page to Change Page
-	jQuery('.page').click(function(){
+	jQuery('.page-label').on('click', function(e){
 		var page = jQuery(this).attr('data-page');
 		ajaxCall(page);
+		e.stopImmediatePropagation();
+    return false;
 	});
 	function ajaxCall(currentPage){
 		jQuery.ajax({url: "../wp-content/themes/understrap-child/mortgage-"+ currentPage +".php", 
-		type: 'POST',
+		type: 'GET',
 		success: function(result){
 				jQuery("#content").html(result);
 				location.hash = currentPage;
-				jQuery('.current-page').attr('data-page', currentPage);
-		}});
+			},
+      error: function(){}
+    });
 	}
 </script>
 <script>
