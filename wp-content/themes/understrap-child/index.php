@@ -25,7 +25,7 @@ get_header(); ?>
 			<p>short description for mortgage</p>
 	</div>
 		<div id="transfer" class="col-6">
-			<a href="#">
+			<a href="transfer">
 				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/icons/icon-transfer.png" alt="Transfer" alt="">
 			</a>
 			<h2>Transfer</h2>

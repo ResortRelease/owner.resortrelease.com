@@ -14,7 +14,16 @@
       <!-- Mildred Video -->
       <div class="col-md-6 ">
         <div class="video-container">
-          <div id="uW9XULgawnA" class="youtube" data-params="modestbranding=1&amp;showinfo=0&amp;rel=0&amp;controls=1&amp;vq=hd720&amp;allowfullscreen=allowfullscreen"></div>
+          <div class="video-container-border">
+            <img id="video-img" src="../wp-content/themes/understrap-child/assets/slides/1/mqdefault.jpg" alt="Timeshare - Mildred" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <i class="fa fa-youtube-play" data-toggle="modal" data-target=".bd-example-modal-lg"></i>
+          </div>
+          <div class="subheader">
+            <h3>Timeshare Investigation - Mildred</h3>
+          </div>
+          <dib class="badges">
+            <img src="../wp-content/themes/understrap-child/assets/slides/1/3_badges.png" alt="" class="img-fluid">
+          </dib>
         </div>
       </div>
     </div>
@@ -65,14 +74,16 @@
       <div class="margin-top-40">
       <u><i>***The above indications are examples only; individual circumstances with timeshare companies must be evaluated before any determination or allegation of misrepresentation or fraud can be made.</i></u>
       </div>
-      <div class="margin-top-40">
+      <div class="margin-top-40 text-center">
         <h2 style="color: #0896E5">“You’ll Likely Need Professional Attorneys Help To Take On Today’s Multi-Billion Dollar Resorts And Win“</h2>
       </div>
-      <div class="margin-top-20">
-        <span class="qa q">Q: </span><span><b>Why have these timeshare scams persisted over the past 30 years and what can you do to help fight these fraudulent resorts?</b></span>
-      </div>
-      <div class="margin-top-20">
-        <span class="highlight"><span class="qa a">A: </span><b>Today’s timeshare scams aren’t going away.</b></span> As a matter of fact, these reported scams seem to never die off for a variety of reasons. Deceitful and malicious sales tactics combined with resorts represented by powerful lobbyists in your  government may prevent sweeping changes from likely happening. However, YOU CAN fight for your rights and take a stand against unfair or deceptive sales tactics.</span>
+      <div class="col-md-8 offset-md-2">
+        <div class="margin-top-20">
+          <span class="qa q">Q: </span><span><b>Why have these timeshare scams persisted over the past 30 years and what can you do to help fight these fraudulent resorts?</b></span>
+        </div>
+        <div class="margin-top-20 answer">
+          <span class="highlight"><span class="qa a">A: </span><b>Today’s timeshare scams aren’t going away.</b></span> As a matter of fact, these reported scams seem to never die off for a variety of reasons. Deceitful and malicious sales tactics combined with resorts represented by powerful lobbyists in your  government may prevent sweeping changes from likely happening. However, YOU CAN fight for your rights and take a stand against unfair or deceptive sales tactics.</span>
+        </div>
       </div>
 
     </div>
@@ -80,7 +91,7 @@
 </section>
 <section>
   <div class="container text-center">
-    <h1 clas>Calculator</h1>
+    <h1 id="calculator">Calculator</h1>
     <div id="mortgage-calc" class="col-12">
       <div>
         <div class=""  id="mc">
@@ -205,7 +216,15 @@
     </div>
   </div>
 </section>
-
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://www.youtube.com/embed/uW9XULgawnA?autoplay=0&autohide=1&rel=0" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 jQuery(window).ready(function(){
   jQuery('.breadcrumb li').each(function( index ){
@@ -215,8 +234,10 @@ jQuery(window).ready(function(){
   magnify("bill-of-rights", 2); 
   jQuery('#prev').addClass('disabled').attr('data-page', "1");
   jQuery('#next').removeClass('disabled').attr('data-page', "2");
+  jQuery('#calculator').on('click', function(){
+    jQuery('#mortgage-calc').toggle();
+  });
 });
-	// jQuery('#movie-area').load('wp-content/themes/understrap-child/movie.php');
-// Youtube Function to swap images for video MINIFIED
-"use strict";jQuery(function(t){t(".youtube").each(function(){t(this).append(t("<img/>",{src:"https://i.ytimg.com/vi/"+this.id+"/mqdefault.jpg"})),t(this).append(t('<i class="fa fa-youtube-play"></i>')),t(document).delegate("#"+this.id,"click",function(){var e="https://www.youtube.com/embed/"+this.id+"?autoplay=1&autohide=1";t(this).data("params")&&(e+="&"+t(this).data("params"));var i=t("<iframe/>",{frameborder:"0",src:e,width:t(this).width(),height:t(this).height()});t(this).replaceWith(i)})})}),jQuery(":checkbox").change(function(){if(this.checked){var t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}else{t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}});
+// Checkboxes minified MINIFIED
+jQuery(":checkbox").change(function(){if(this.checked){var t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}else{t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}});
 </script>

@@ -36,15 +36,15 @@ section{
   display: table;
   margin: 0;
   max-width: none;
-  height: 90vh;
+  height: 70vh;
   padding: 30px 0;
-  h1{
+  h1, h2{
     color: #770909;
     text-transform: capitalize;
   }
   &:nth-child(even){
     background: $even-section;
-    h1{
+    h1, h2{
       color:rgb(51, 42, 82);
       text-transform: capitalize;
     }
@@ -210,8 +210,8 @@ p{
   z-index:10;
   &:hover{
     .img-magnifier-glass {
-      width: 98%;
-      height: 300px;
+      width: 100%;
+      height: 600px;
       border: 2px solid #000;
       cursor: zoom-in;
     }
@@ -228,34 +228,24 @@ p{
   z-index: 20;
   background: $bg-White;
 }
+.subheader{
+  margin-top: 20px;
+}
 .video-container{
   position: sticky;
   top: 0;
   cursor: pointer;
-  border: 5px solid black;
-  outline: 1px solid #737373;
   height: max-content;
-  // overflow: hidden;
-  // z-index: 1;
-  // &:after{
-  //   content:'';
-  //   position: absolute;
-  //   top:0;
-  //   height:109%;
-  //   width:30%;
-  //   background: linear-gradient(-83deg, transparent, transparent, rgba(255, 255, 255, 0.6), transparent, transparent);
-  //   margin: -6px auto;
-  //   left: 22%;
-  // }
-  // iframe{
-  //   z-index: 2;
-  // }
-  img{
+  .video-container-border{
+    border: 5px solid black;
+    outline: 2px solid #737373;
+  }
+  #video-img{
     transition: .5s;
     filter: sepia(0.3);
   }
   &:hover{
-    img{
+    #video-img{
       transition: .5s;
       filter: sepia(0);
     }
@@ -277,7 +267,7 @@ p{
     position: absolute;
     left:0;right:0;
     margin: 0 auto;
-    top: 43%;
+    top: 22%;
     font-size: 3rem;
     color: #FF000B;
     max-width: 50px;
@@ -288,8 +278,8 @@ p{
 // CheckBoxes
 $checked-color: #af2828;
 $unchecked-color: rgb(51, 42, 82);
-$checkbox-height: 30px;
-$background-color:#f5f5f5;
+$checkbox-height: 20px;
+$background-color:#ece7c2;
 $font-color:#efefef;
 $duration: .4s;
 @-moz-keyframes dothabottomcheck{
@@ -324,11 +314,11 @@ $duration: .4s;
 }
 
 .checkboxes {
-  background: white;
   border-radius: 10px;
-  padding: 10px;
-  border: 15px solid #af2929;
-  border-style: inset;
+  padding: 60px 40px;
+  border: 15px solid #807b62;
+  border-style: solid;
+  background: #ece7c2;
 }
 input[type=checkbox]{
   display:none;
@@ -459,7 +449,11 @@ input[type=checkbox]:checked + .check-box,
     visibility: hidden;
   }
 }
+#calculator{
+  cursor: pointer;
+}
 #mortgage-calc {
+  display: none;
   padding: 20px;
   #mc{
     padding: 20px;
@@ -607,6 +601,10 @@ input[type=checkbox]:checked + .check-box,
     color:#31800C;
   }
 }
+.answer{
+  padding-left: 30px;
+  border-left: 2px solid #ccc;
+}
 .highlight{
   background: #FCF2A5;
 }
@@ -624,6 +622,10 @@ input[type=checkbox]:checked + .check-box,
   box-shadow: 0px 0px 10px rgba(0,0,0,0.55);
 }
 
+.select2-results__options{
+  max-height: 200px;
+  overflow: scroll;
+} 
 .select2-selection{
   background: $bg-White;
   max-width: 100%;
@@ -643,7 +645,7 @@ input[type=checkbox]:checked + .check-box,
 }
 
 // Slide 3
-#bbb-ratings, #rci-img {
+#bbb-ratings{
   box-shadow: 0px 0px 10px rgba(0,0,0,0.55);
 }
 .box-image{
@@ -906,6 +908,12 @@ input[type=checkbox]:checked + .check-box,
 *
 *
 **/
+@media (max-width: 375px) {
+  .chart-color.chart-header.ribbon-content{
+    font-size: 1rem!important;
+  }
+}
+
 @media (max-width: 425px) {
   #accreditation-new-row {
     #header-credits {
@@ -923,6 +931,11 @@ input[type=checkbox]:checked + .check-box,
   .chart-header {
     font-size: 12px !important;
 
+  }
+  .chart{
+    li div{
+      height: 70px!important;
+    }
   }
 }
 @media (max-width: 468px) {
