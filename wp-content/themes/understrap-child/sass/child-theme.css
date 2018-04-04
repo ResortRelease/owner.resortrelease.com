@@ -11707,7 +11707,6 @@ p {
   height: 600px;
   border: 2px solid #000;
   cursor: zoom-in;
-  background-size: 1050px 1650px !important;
 }
 
 .img-magnifier-glass {
@@ -11719,6 +11718,7 @@ p {
   height: 0;
   z-index: 20;
   background: #ffffff;
+  background-size: 1050px 1650px !important;
 }
 
 .subheader {

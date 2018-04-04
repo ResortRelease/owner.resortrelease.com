@@ -214,7 +214,6 @@ p{
       height: 600px;
       border: 2px solid #000;
       cursor: zoom-in;
-      background-size: 1050px 1650px!important; 
     }
   }
 }
@@ -228,6 +227,7 @@ p{
   height: 0;
   z-index: 20;
   background: $bg-White;
+  background-size: 1050px 1650px!important; 
 }
 .subheader{
   margin-top: 20px;
