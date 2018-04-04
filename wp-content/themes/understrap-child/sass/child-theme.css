@@ -11511,7 +11511,7 @@ section {
   padding: 30px 0;
 }
 
-section h1, section h2 {
+section h1, section h2, section h3 {
   color: #770909;
   text-transform: capitalize;
 }
@@ -11520,7 +11520,7 @@ section:nth-child(even) {
   background: #f5f5f5;
 }
 
-section:nth-child(even) h1, section:nth-child(even) h2 {
+section:nth-child(even) h1, section:nth-child(even) h2, section:nth-child(even) h3 {
   color: #332a52;
   text-transform: capitalize;
 }
@@ -12409,6 +12409,29 @@ input[type=checkbox]:checked + .check-box::before,
   width: 82%;
 }
 
+.timeshare-video {
+  border: 5px solid #332a52;
+  padding-bottom: 3px;
+}
+
+.pay-subheader:before {
+  font-family: FontAwesome;
+  content: "\f111";
+  padding-right: 5px;
+  font-size: .7rem;
+}
+
+.pay-bullet {
+  padding-left: 20px;
+}
+
+.pay-bullet:before {
+  font-family: FontAwesome;
+  content: "\f1ce";
+  padding-right: 5px;
+  font-size: .7rem;
+}
+
 /**********************************************
 *
 * 
@@ -12487,13 +12510,64 @@ input[type=checkbox]:checked + .check-box::before,
   bottom: 8px;
 }
 
-/**
+/*******************************************
 *
 * 
-* MEDIA QUERIES
+* MEDIA QUERIES & KEYFRAMES
 *
 *
-**/
+********************************************/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+.zoomInDown {
+  -webkit-animation-name: zoomInDown;
+  animation-name: zoomInDown;
+}
+
 @media (max-width: 375px) {
   .chart-color.chart-header.ribbon-content {
     font-size: 1rem !important;

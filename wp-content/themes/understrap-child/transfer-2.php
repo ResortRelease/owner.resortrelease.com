@@ -62,11 +62,6 @@
 </section>
 <script>
 jQuery(window).ready(function(){
-  jQuery('.breadcrumb li').each(function( index ){
-    jQuery(this).removeClass('active').removeAttr( "aria-current" );
-  });
-  jQuery('.breadcrumb li.2').addClass('active').attr("aria-current", "page");
-  jQuery('#prev').removeClass('disabled').attr('data-page', "1");
-  jQuery('#next').removeClass('disabled').attr('data-page', "3");
+  changePageIndex(2,1,3);
 });
 </script>

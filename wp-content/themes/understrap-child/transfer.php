@@ -19,7 +19,10 @@ get_header(); ?>
 			<li class="breadcrumb-item 2 page-label" data-page="2">2</li>
 			<li class="breadcrumb-item 3 page-label" data-page="3">3</li>
 			<li class="breadcrumb-item 4 page-label" data-page="4">4</li>
-			<li class="breadcrumb-item 5 page-label" data-page="5">5</li>
+      <li class="breadcrumb-item 5 page-label" data-page="5">5</li>
+      <li class="breadcrumb-item 6 page-label" data-page="6">6</li>
+      <li class="breadcrumb-item 7 page-label" data-page="7">7</li>
+      <li class="breadcrumb-item 8 page-label" data-page="8">8</li>
 		</ol>
 	</nav>
 </div><!-- End Breadcrumbs -->
@@ -53,6 +56,14 @@ get_header(); ?>
 	}
 </script>
 <script>
+  function changePageIndex(cp, pp, np){
+    jQuery('.breadcrumb li').each(function( index ){
+      jQuery(this).removeClass('active').removeAttr( "aria-current" );
+    });
+    jQuery('.breadcrumb li.'+cp).addClass('active').attr("aria-current", "page");
+    jQuery('#prev').addClass('disabled').attr('data-page', pp);
+    jQuery('#next').removeClass('disabled').attr('data-page', np);
+  }
 	// Magnify Function, Minified 
 	function magnify(e,t){var n,i,o,a,s;function d(e){var d,g,r,f,l,p,u;e.preventDefault(),p=0,u=0,f=(f=e)||window.event,l=n.getBoundingClientRect(),p=f.pageX-l.left,u=f.pageY-l.top,p-=window.pageXOffset,u-=window.pageYOffset,r=(d={x:p,y:u}).y,(g=d.x)>n.width-o/t&&(g=n.width-o/t),g<o/t&&(g=o/t),r>n.height-a/t&&(r=n.height-a/t),r<a/t&&(r=a/t),i.style.left=g-o+"px",i.style.top=r-a+"px",i.style.backgroundPosition="-"+(g*t-o+s)+"px -"+(r*t-a+s)+"px"}n=document.getElementById(e),(i=document.createElement("DIV")).setAttribute("class","img-magnifier-glass"),n.parentElement.insertBefore(i,n),i.style.backgroundImage="url('"+n.src+"')",i.style.backgroundRepeat="no-repeat",i.style.backgroundSize=n.width*t+"px "+n.height*t+"px",s=3,o=i.offsetWidth/2,a=i.offsetHeight/2,i.addEventListener("mousemove",d),n.addEventListener("mousemove",d),i.addEventListener("touchmove",d),n.addEventListener("touchmove",d)}
 
