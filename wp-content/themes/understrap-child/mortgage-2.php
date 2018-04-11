@@ -72,10 +72,10 @@
     </div>
   </div>
 </section>
-<section>
+<section class=" margin-bottom-30">
   <div class="container">
 <!-- SMTN and Ebay -->
-  <div class="row margin-top-40 text-left">
+    <div class="row margin-top-40 text-left">
       <div class="col-12">
         <div class="row">
           <div class="col-md-1">
@@ -92,7 +92,8 @@
         </div>
       </div>
     </div>
-    <div class="row margin-top-20 text-left">
+    <hr class=" margin-top-40" />
+    <div class="row margin-top-30 text-left">
       <div class="col-12">
         <div class="row">
           <div class="col-md-1">

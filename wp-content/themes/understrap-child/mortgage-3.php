@@ -7,7 +7,7 @@
       <div class="col-md-8 offset-md-2 text-justify margin-top-20">
         <p><b>RCI is a division of the firm Wyndham Worldwide. This is currently 
           the largest Timeshare Exchange Company in the world.</b> The Companies featured 
-          in example <b class="p-number" style="font-size:inherit;">2A & 2B</b>  are operated by the RCI</p>
+          in example <b class="p-number" style="font-size:inherit;">3A & 3B</b>  are operated by the RCI</p>
       </div>
     </div>
     <div class="box-image row">
