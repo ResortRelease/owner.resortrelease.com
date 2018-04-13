@@ -18,8 +18,6 @@
 
       <div class="row">
         <div class="col-md-12 text-center margin-top-30">
-          Resort Release is not a law firm, and the employees of Resort Release are not attorneys.
-          <a href="https://www.resortrelease.com/terms-and-conditions" target="_blank" style="color: inherit; text-decoration: underline;"> Terms and Privacy.</a></br>
           © 2018 ResortRelease
         </div>
       </div>
