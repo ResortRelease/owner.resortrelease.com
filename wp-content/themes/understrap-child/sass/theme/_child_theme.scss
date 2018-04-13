@@ -38,13 +38,13 @@ section{
   max-width: none;
   height: 70vh;
   padding: 30px 0;
-  h1, h2{
+  h1, h2, h3 {
     color: #770909;
     text-transform: capitalize;
   }
   &:nth-child(even){
     background: $even-section;
-    h1, h2{
+    h1, h2, h3{
       color:rgb(51, 42, 82);
       text-transform: capitalize;
     }
@@ -236,6 +236,7 @@ p{
   height: 0;
   z-index: 20;
   background: $bg-White;
+  background-size: 1050px 1650px!important; 
 }
 .subheader{
   margin-top: 20px;
@@ -847,6 +848,31 @@ input[type=checkbox]:checked + .check-box,
 }
 
  //rightside-ribbon END
+
+//  TRANSFER PRESENTATION
+// Slide 1
+.timeshare-video{
+  border: 5px solid $unchecked-color;
+  padding-bottom: 3px;
+}
+// Slide 6
+.pay-subheader {
+  &:before{
+    font-family: FontAwesome;
+    content: "\f111";
+    padding-right: 5px;
+    font-size: .7rem;
+  }
+}
+.pay-bullet {
+  padding-left: 20px;
+  &:before{
+    font-family: FontAwesome;
+    content: "\f1ce";
+    padding-right: 5px;
+    font-size: .7rem;
+  }
+}
 /**********************************************
 *
 * 
@@ -913,13 +939,62 @@ input[type=checkbox]:checked + .check-box,
     bottom: 8px;
   }
 }
-/**
+/*******************************************
 *
 * 
-* MEDIA QUERIES
+* MEDIA QUERIES & KEYFRAMES
 *
 *
-**/
+********************************************/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+.zoomInDown {
+  -webkit-animation-name: zoomInDown;
+  animation-name: zoomInDown;
+}
 @media (max-width: 375px) {
   .chart-color.chart-header.ribbon-content{
     font-size: 1rem!important;
