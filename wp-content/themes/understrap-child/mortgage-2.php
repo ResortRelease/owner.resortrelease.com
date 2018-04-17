@@ -1,11 +1,13 @@
 <section>
   <div class="container text-center mortgage-content">
     <h1 class="h-number">2</h1>
-    <h1>You Have The Right To Be Informed</h1>
+    <h1>You Had The Right To Cancel</h1>
     <hr>
     <div class="row">
       <div class="col-md-8 offset-md-2 text-justify margin-top-20">
+        <p>You were never aware of the cancel period</p>
         <p>Most timeshare owners were victim of fraudulent sales practices because their sales agents promise cant be verified for months or even years. These agents have seemingly no checks and balances because they know that your right to cancel will expire in a few days, but you might not even try to use it for a whole year. By the time you realize you have been deceived, there isn’t a way to easily cancel your contract without professional help.</p>
+        <p>There's still a way to cancel!s</p>
       </div>
     </div>
     <div class="row margin-top-40" id="beat-the-clock">
@@ -72,45 +74,6 @@
     </div>
   </div>
 </section>
-<section>
-  <div class="container">
-<!-- SMTN and Ebay -->
-  <div class="row margin-top-40 text-left">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-md-1">
-            <div class="p-number">
-              2A
-            </div>
-          </div>
-          <div class="col-md-10">
-            <a href="http://www.sellmytimesharenow.com/timeshare/All+Timeshare/vacation/buy-timeshare/sellPrice+asc%2Cresort+asc%2Cmin_week+asc/" target="_blank" rel="nofollow"><p class="p-link">SellMyTimeshareNow.com</p></a>
-            <div class="scroll-div img-fluid">
-              <img id="smtn-shot" class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/2/smtn.jpg" alt="SMTP Screenshot">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row margin-top-20 text-left">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-md-1">
-            <div class="p-number">
-              2B
-            </div>
-          </div>
-          <div class="col-md-10">
-            <a href="https://www.ebay.com/sch/Timeshares-for-Sale/15897/i.html?_from=R40&_nkw=timeshare&_sop=15" target="_blank" rel="nofollow"><p class="p-link">eBay</p></a>
-            <div class="scroll-div img-fluid">
-              <img id="ebay-shot" class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/2/ebay.jpg" alt="eBay Screenshot">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <script>
   jQuery(document).ready(function(){
     jQuery('#prev').removeClass('disabled').attr('data-page', "1");
@@ -119,6 +82,7 @@
       jQuery(this).removeClass('active').removeAttr( "aria-current" )
     });
     jQuery('.breadcrumb li.2').addClass('active').attr("aria-current", "page");
+    jQuery('.red-car').css('left', '25%');
     // Minified Selector Code
     for(var elements=jQuery(document).find("select.form-control"),i=0,l=elements.length;i<l;i++){var $select=jQuery(elements[i]),$label=$select.parents(".form-group").find("label");$select.select2({allowClear:!1,placeholder:$select.data("placeholder"),minimumResultsForSearch:0,theme:"bootstrap",width:"100%"}),$label.on("click",function(e){jQuery(this).parents(".form-group").find("select").trigger("focus").select2("focus")}),$select.on("keydown",function(e){var t=jQuery(this),r=t.data("select2"),o=r.$container;if(void 0===e.which||$.inArray(e.which,[0,8,9,12,16,17,18,19,20,27,33,34,35,36,37,38,39,44,45,46,91,92,93,112,113,114,115,116,117,118,119,120,121,123,124,144,145,224,225,57392,63289])>=0)return!0;if(o.hasClass("select2-container--open"))return!0;t.select2("open");var l=r.dropdown.$search||r.selection.$search,a=$.inArray(e.which,[13,40,108])<0?String.fromCharCode(e.which):"";""!==a&&l.val(a).trigger("keyup")}),$select.on("select2:open",function(e){var t=jQuery(this),r=t.data("select2"),o=r.dropdown.$dropdown||r.selection.$dropdown,l=r.dropdown.$search||r.selection.$search,a=t.select2("data");o.hasClass("select2-dropdown--above")&&o.append(l.parents(".select2-search--dropdown").detach()),l.attr("placeholder",""!==a[0].text?a[0].text:t.data("placeholder"))})}
   });

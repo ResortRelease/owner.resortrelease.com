@@ -237,6 +237,7 @@ jQuery(window).ready(function(){
   jQuery('#calculator').on('click', function(){
     jQuery('#mortgage-calc').toggle();
   });
+  jQuery('.red-car').css('left', '9%');
 });
 // Checkboxes minified MINIFIED
 jQuery(":checkbox").change(function(){if(this.checked){var t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}else{t=jQuery(this).attr("id");jQuery('span[data-id="'+t+'"]').toggleClass("checked").toggleClass("unchecked")}});

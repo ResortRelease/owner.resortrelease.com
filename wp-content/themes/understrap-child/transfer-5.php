@@ -90,5 +90,6 @@
 <script>
 jQuery(window).ready(function(){
   changePageIndex(5,4,6);
+  jQuery('.red-car').css('left', '55%');  
 });
 </script>

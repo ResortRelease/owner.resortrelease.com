@@ -1,47 +1,55 @@
 <section>
-  <div class="container text-center mortgage-content">
-  <h1 class="h-number">4</h1>
-  <h1>Transfer Service Pricing Structure</h1>
-  <hr>
-  <div class="container margin-top-40">
-    <div id="chart-container">
-      <div id="chart-col-1">
-        <ul class="ribbon-l">
-          <li class="chart-color chart-header ribbon-content" >Annual Maintence Fees</li>
-        </ul>
-        <ul class="chart-content-l chart">
-          <li><div>$750</div></li>
-          <li><div>$751 - $999</div></li>
-          <li><div>$1000 - $1,299</div></li>
-          <li><div>$1,300 - $1,499</div></li>
-          <li><div>$1,500+</div></li>
-        </ul>
+  <div class="container text-center">
+    <h1 class="h-number">4</h1>
+    <h1>Resort and exchange company secrets revealed</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-justify margin-top-20">
+        <p><b>RCI is a division of the firm Wyndham Worldwide. This is currently 
+          the largest Timeshare Exchange Company in the world.</b> The Companies featured 
+          in example <b class="p-number" style="font-size:inherit;">2A & 2B</b>  are operated by the RCI</p>
       </div>
-      <div id="chart-col-2">
-        <ul class="ribbon-r">
-          <li class="chart-color chart-header ribbon-content" >Price</li>
-        </ul>
-        <ul class="chart-content-r chart">
-          <li><div>$4,595</div></li>
-          <li><div>$5,495</div></li>
-          <li><div>$5,995</div></li>
-          <li><div>$6,495</div></li>
-          <li><div>$6,496+</div></li>
-        </ul>
-      </div>      
     </div>
-    <div class="chart-color chart-footer text-right">&copy; 2018 ResortRelease</div>
-  </div>
-</div>
+    <div class="box-image row">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="p-number">
+            4A
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="margin-auto">
+              <img class="img-fluid" id="rci-img" src="../wp-content/themes/understrap-child/assets/slides/3/rci_zoom.jpg" alt="RCI Owned">
+            </img>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row margin-top-30">
+        <div class="col-md-2">
+          <div class="p-number">
+            4B
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="margin-auto">
+          <img id="bbb-ratings" src="../wp-content/themes/understrap-child/assets/slides/3/BBB.jpg" alt="BBB Screenshot">
+            </img>
+          </div>
+        </div>
+      </div>
+    </div>
+  
 </section>
 <script>
-jQuery(document).ready(function(){  
-  jQuery('#next').removeClass('disabled');
+jQuery(document).ready(function(){
   jQuery('.breadcrumb li').each(function( index ){
     jQuery(this).removeClass('active').removeAttr( "aria-current" )
   });
   jQuery('.breadcrumb li.4').addClass('active').attr("aria-current", "page");
   jQuery('#prev').removeClass('disabled').attr('data-page', "3");
   jQuery('#next').removeClass('disabled').attr('data-page', "5");
+  jQuery('.red-car').css('left', '57%');      
 });
 </script>

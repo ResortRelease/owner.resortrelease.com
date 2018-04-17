@@ -20,6 +20,7 @@ get_header(); ?>
 			<li class="breadcrumb-item 3 page-label" data-page="3">3</li>
 			<li class="breadcrumb-item 4 page-label" data-page="4">4</li>
 			<li class="breadcrumb-item 5 page-label" data-page="5">5</li>
+			<li class="breadcrumb-item 6 page-label" data-page="6">6</li>
 		</ol>
 	</nav>
 </div><!-- End Breadcrumbs -->
@@ -47,6 +48,7 @@ get_header(); ?>
 		success: function(result){
 				jQuery("#content").html(result);
 				location.hash = currentPage;
+				window.scrollTo(0, 0);
 			},
       error: function(){}
     });

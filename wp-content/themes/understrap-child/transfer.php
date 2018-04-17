@@ -50,6 +50,7 @@ get_header(); ?>
 		success: function(result){
 				jQuery("#content").html(result);
 				location.hash = currentPage;
+				window.scrollTo(0, 0);
 			},
       error: function(){}
     });
