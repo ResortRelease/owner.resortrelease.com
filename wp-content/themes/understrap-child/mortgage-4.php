@@ -10,7 +10,7 @@
           in example <b class="p-number" style="font-size:inherit;">2A & 2B</b>  are operated by the RCI</p>
       </div>
     </div>
-    <div class="box-image row">
+  <div class="box-image row">
       <div class="row">
         <div class="col-md-2">
           <div class="p-number">
@@ -25,22 +25,27 @@
         </div>
       </div>
 
-
-      <div class="row margin-top-30">
-        <div class="col-md-2">
-          <div class="p-number">
-            4B
-          </div>
+    <div class="row margin-top-30">
+      <div class="col-md-2">
+        <div class="p-number">
+          4B
         </div>
-        <div class="col-md-8">
-          <div class="margin-auto">
-          <img id="bbb-ratings" src="../wp-content/themes/understrap-child/assets/slides/3/BBB.jpg" alt="BBB Screenshot">
-            </img>
-          </div>
+      </div>
+      <div class="col-md-8">
+        <div class="margin-auto">
+          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Bluegreen.jpg" alt="BBB-Bluegreen"></img>
+          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Westgate.jpg" alt="BBB-Westgate"></img>
+          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Diamond.jpg" alt="BBB-Diamond"></img>
+          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Wyndham.jpg" alt="BBB-Wyndham" class="margin-top-20"></img>
+          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Silverleaf.jpg" alt="BBB-Silverleaf" class="margin-top-20"></img>
+          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Vistana.jpg" alt="BBB-Vistana" class="margin-top-20"></img>
+          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Marriot.jpg" alt="BBB-Marriot" class="margin-top-20"></img>
         </div>
       </div>
     </div>
-  
+
+  </div>
+  </div>
 </section>
 <script>
 jQuery(document).ready(function(){

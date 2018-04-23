@@ -10,7 +10,7 @@
 <?php if (!is_home()) :?>
   <div class="container svg-container">
     <img src="../wp-content/themes/understrap-child/assets/presentation-footer.svg" class="img-fluid" alt="Resort Release - Path To Timeshare Freedom">
-    <img src="../wp-content/themes/understrap-child/assets/red-car.svg" width="40px"  alt="Resort Release - Red Car" class="red-car">    
+    <img src="../wp-content/themes/understrap-child/assets/red-car.svg" width="55px"  alt="Resort Release - Red Car" class="red-car">    
   </div>
 <?php endif ;?>
   <div id="footer" class="container-fluid">

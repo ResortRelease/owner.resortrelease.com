@@ -46,10 +46,10 @@
     </div>
     <div class="plan-list">
       <span class="bullet"><i class="fa fa-check"></i></span>
-      <span class="list">GURANTEED TIMESHARE RELEASE</span>
+      <span class="list">GUARANTEED TIMESHARE RELEASE</span>
     </div>
     <div class="margin-top-20 text-center">
-      <img src="../wp-content/themes/understrap-child/assets/slides/5/services-overview.png" alt="Services Overview Resort Release">
+      <img src="../wp-content/themes/understrap-child/assets/slides/5/Welcome-Packet.jpg" alt="Services Overview Resort Release">
     </div>
     <div class="margin-top-20 text-center">
       <img src="../wp-content/themes/understrap-child/assets/slides/5/three-guarantees.jpg" alt="Three Guarantees Resort Release">
