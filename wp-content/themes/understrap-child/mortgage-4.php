@@ -33,13 +33,55 @@
       </div>
       <div class="col-md-8">
         <div class="margin-auto">
-          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Bluegreen.jpg" alt="BBB-Bluegreen"></img>
-          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Westgate.jpg" alt="BBB-Westgate"></img>
-          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Diamond.jpg" alt="BBB-Diamond"></img>
-          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Wyndham.jpg" alt="BBB-Wyndham" class="margin-top-20"></img>
-          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Silverleaf.jpg" alt="BBB-Silverleaf" class="margin-top-20"></img>
-          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Vistana.jpg" alt="BBB-Vistana" class="margin-top-20"></img>
-          <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Marriot.jpg" alt="BBB-Marriot" class="margin-top-20"></img>
+          <div class="bbb-company">
+            <img src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Bluegreen.jpg" alt="BBB-Bluegreen"></img>
+            <div class="complaint scroll-div">
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Bluegreen-BBB.jpg" alt="BBB-Bluegreen-complaint"></img>
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Bluegreen-BBB-2.jpg" alt="BBB-Bluegreen-complaint"></img>
+            </div>
+          </div>
+          <div class="bbb-company margin-top-20">
+            <img data-target="" src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Westgate.jpg" alt="BBB-Westgate"></img>
+            <div class="complaint scroll-div">
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Westgate-BBB.jpg" alt="BBB-Westgate-complaint"></img>
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Westgate-BBB-2.jpg" alt="BBB-Westgate-complaint"></img>
+            </div>
+          </div>
+          <div class="bbb-company margin-top-20">
+            <img data-target="" src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Diamond.jpg" alt="BBB-Diamond"></img>
+            <div class="complaint scroll-div">
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Diamond-BBB.jpg" alt="BBB-Diamond-complaint"></img>
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Diamond-BBB-2.jpg" alt="BBB-Diamond-complaint"></img>
+            </div>
+          </div>
+          <div class="bbb-company margin-top-20">
+            <img data-target="" src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Wyndham.jpg" alt="BBB-Wyndham" class="margin-top-20"></img>
+            <div class="complaint scroll-div">
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Wyndham-BBB.jpg" alt="BBB-Wyndham-complaint"></img>
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Wyndham-BBB-2.jpg" alt="BBB-Wyndham-complaint"></img>
+            </div>
+          </div>
+          <div class="bbb-company margin-top-20">
+            <img data-target="" src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Silverleaf.jpg" alt="BBB-Silverleaf" class="margin-top-20"></img>
+            <div class="complaint scroll-div">
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Silverleaf-BBB.jpg" alt="BBB-Silverleaf-complaint"></img>
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Silverleaf-BBB-2.jpg" alt="BBB-Silverleaf-complaint"></img>
+            </div>
+          </div>
+          <div class="bbb-company margin-top-20">
+            <img data-target="" src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Vistana.jpg" alt="BBB-Vistana" class="margin-top-20"></img>
+            <div class="complaint scroll-div">
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Vistana-BBB.jpg" alt="BBB-Vistana-complaint"></img>
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Vistana-BBB-2.jpg" alt="BBB-Vistana-complaint"></img>
+            </div>
+          </div>
+          <div class="bbb-company margin-top-20">
+            <img data-target="" src="../wp-content/themes/understrap-child/assets/slides/4/BBB-Marriot.jpg" alt="BBB-Marriot" class="margin-top-20"></img>
+            <div class="complaint scroll-div">
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Marriot-BBB.jpg" alt="BBB-Marriot-complaint"></img>
+              <img src="../wp-content/themes/understrap-child/assets/slides/Complaints/Marriot-BBB-2.jpg" alt="BBB-Marriot-complaint"></img>
+            </div>
+          </div>          
         </div>
       </div>
     </div>
@@ -55,6 +97,11 @@ jQuery(document).ready(function(){
   jQuery('.breadcrumb li.4').addClass('active').attr("aria-current", "page");
   jQuery('#prev').removeClass('disabled').attr('data-page', "3");
   jQuery('#next').removeClass('disabled').attr('data-page', "5");
-  jQuery('.red-car').css('left', '57%');      
+  jQuery('.red-car').css('left', '57%');
+
+  jQuery('.bbb-company').on('click', function(){
+    jQuery('.complaint').not(this).hide();
+    jQuery(this).find('.complaint').show();
+  })
 });
 </script>

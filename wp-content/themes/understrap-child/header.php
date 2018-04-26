@@ -35,7 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!--  Main Nav -->
 <div class="container-fluid bg-blue text-center main-nav">
-	<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/RR-logo.svg" alt="Resort Release Logo" class="logo margin-auto">
+	<a href="https://www.resortrelease.com" rel="noopener"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/RR-logo.svg" alt="Resort Release Logo" class="logo margin-auto"></a>
 </div>
 
 <!--  Logos -->

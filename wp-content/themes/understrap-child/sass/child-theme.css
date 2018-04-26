@@ -12245,6 +12245,14 @@ input[type=checkbox]:checked + .check-box::before,
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.55);
 }
 
+.complaint {
+  display: none;
+}
+
+.complaint.show {
+  display: block;
+}
+
 #chart-container {
   display: flex;
   align-items: center;
