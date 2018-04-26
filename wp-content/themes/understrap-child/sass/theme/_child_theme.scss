@@ -671,10 +671,7 @@ input[type=checkbox]:checked + .check-box,
 
 // Slide 4
 .complaint {
-  display: none;
-  &.show {
-    display: block;
-  }
+  // display: none;
 }
 #chart-container {
   display: flex;
