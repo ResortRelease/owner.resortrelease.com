@@ -1,7 +1,7 @@
 <section>
   <div class="container text-center">
     <h1 class="h-number">4</h1>
-    <h1>Resort and exchange company secrets revealed</h1>
+    <h1>Timeshare Industry Complaints</h1>
     <hr>
     <div class="row">
       <div class="col-md-8 offset-md-2 text-justify margin-top-20">

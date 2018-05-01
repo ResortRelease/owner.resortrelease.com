@@ -5,9 +5,12 @@
     <hr>
     <div class="row">
       <div class="col-md-8 offset-md-2 text-justify margin-top-20">
-        <p>You were never aware of the cancel period</p>
-        <p>Most timeshare owners were victim of fraudulent sales practices because their sales agents promise cant be verified for months or even years. These agents have seemingly no checks and balances because they know that your right to cancel will expire in a few days, but you might not even try to use it for a whole year. By the time you realize you have been deceived, there isn’t a way to easily cancel your contract without professional help.</p>
-        <p>There's still a way to cancel!</p>
+        <p>Did you know that you could have canceled your timeshare within the first few days of purchasing?</p>
+        <br>
+        <p>Many timeshare owners report being unaware of their brief legal right to cancel their timeshare 
+        contract. Unfortunately, the timeshare developers do not give you access to use your timeshare until 
+        AFTER your right to cancel has expired. This means that by the time you validate your salesman's promises 
+        to you, your ability to cancel the contract has already expired.</p>
       </div>
     </div>
     <div class="row margin-top-40" id="beat-the-clock">

@@ -2,7 +2,7 @@
   <div class="container text-center">
 <!-- SMTN and Ebay -->
   <h1 class="h-number">3</h1>
-  <h1>The Secondary Market</h1>
+  <h1>The Resale Market</h1>
   <hr>
   <div class="row margin-top-40 text-left">
       <div class="col-12">

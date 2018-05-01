@@ -91,7 +91,7 @@
 </section>
 <section>
   <div class="container text-center">
-    <h1 id="calculator">Calculator</h1>
+    <h1 id="calculator" class="open-calc">Calculator</h1>
     <div id="mortgage-calc" class="col-12">
       <div>
         <div class=""  id="mc">
@@ -211,7 +211,7 @@
         </div>
       </div>
     </div>
-    <div class="margin-top-40">
+    <div class="margin-top-40 open-calc">
       <img id="rr-logo-start" src="../wp-content/themes/understrap-child/assets/logos/ResortRelease.png" alt="Resort Release Color Logo">
     </div>
   </div>
@@ -234,7 +234,7 @@ jQuery(window).ready(function(){
   magnify("bill-of-rights", 2); 
   jQuery('#prev').addClass('disabled').attr('data-page', "1");
   jQuery('#next').removeClass('disabled').attr('data-page', "2");
-  jQuery('#calculator').on('click', function(){
+  jQuery('.open-calc').on('click', function(){
     jQuery('#mortgage-calc').toggle();
   });
   jQuery('.red-car').css('left', '9%');
