@@ -1,7 +1,7 @@
 <section>
   <div class="container text-center mortgage-content">
     <h1 class="h-number">2</h1>
-    <h1>You Had The Right To Cancel</h1>
+    <h1>Were You Aware You Had The Right To Cancel?</h1>
     <hr>
     <div class="row">
       <div class="col-md-8 offset-md-2 text-justify margin-top-20">

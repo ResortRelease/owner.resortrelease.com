@@ -21,7 +21,12 @@
         <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="next" data-page="2">Next</div></div>    
       </div>
       <?php endif ;?>
-
+      <div class="row text-left">
+        <div class="col-md-4 margin-top-40">
+          Resort Release is not a law firm, and the employees of Resort Release are not attorneys.
+          <br><a href="https://staging.resortrelease.com/terms-and-conditions" rel="noopener">Terms and Privacy</a>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-12 text-center margin-top-30">
           © 2018 ResortRelease
