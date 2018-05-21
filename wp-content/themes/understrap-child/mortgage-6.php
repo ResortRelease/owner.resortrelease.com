@@ -3,16 +3,7 @@
   <h1 class="h-number">6</h1>
   <h1>Timeshare Cost Overview</h1>
   <hr>
-  <?php include('calculator.php')?>  
-  <div class="margin-top-20 text-center">
-    <div class="text-center">
-      <img src="../wp-content/themes/understrap-child/assets/slides/5/Mortgage-Packet.jpg" alt="Services Overview Resort Release">
-    </div>
-    <div class="margin-top-20 text-center">
-      <img src="../wp-content/themes/understrap-child/assets/slides/5/badges.png" alt="Guarantees Resort Release">
-    </div>
-  </div>
-
+  <?php include('calculator.php')?> 
   </div>
 </section>
 <script>

@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="col-md-10">
-            <a href="http://www.sellmytimesharenow.com/timeshare/All+Timeshare/vacation/buy-timeshare/sellPrice+asc%2Cresort+asc%2Cmin_week+asc/" target="_blank" rel="nofollow"><p class="p-link">SellMyTimeshareNow.com</p></a>
+            <a href="http://www.sellmytimesharenow.com/timeshare/All+Timeshare/vacation/buy-timeshare/sellPrice+asc%2Cresort+asc%2Cmin_week+asc/" target="_self" rel="nofollow"><p class="p-link">SellMyTimeshareNow.com</p></a>
             <div class="scroll-div img-fluid">
               <img id="smtn-shot" class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/2/smtn.jpg" alt="SMTP Screenshot">
             </div>
@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="col-md-10">
-            <a href="https://www.ebay.com/sch/Timeshares-for-Sale/15897/i.html?_from=R40&_nkw=timeshare&_sop=15" target="_blank" rel="nofollow"><p class="p-link">eBay</p></a>
+            <a href="https://www.ebay.com/sch/Timeshares-for-Sale/15897/i.html?_from=R40&_nkw=timeshare&_sop=15" target="_self" rel="nofollow"><p class="p-link">eBay</p></a>
             <div class="scroll-div img-fluid">
               <img id="ebay-shot" class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/2/ebay.jpg" alt="eBay Screenshot">
             </div>
