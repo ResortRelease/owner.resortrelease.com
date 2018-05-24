@@ -43,7 +43,6 @@
             </div>
           </div>
           <div class="col-md-10">
-            <a href="https://www.ebay.com/sch/Timeshares-for-Sale/15897/i.html?_from=R40&_nkw=timeshare&_sop=15" target="_blank" rel="nofollow"><p class="p-link">eBay</p></a>
             <div class="scroll-div img-fluid">
               <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/3/Westgate-screenshot-2.png" alt="Westgate Resorts Timeshare">
             </div>
