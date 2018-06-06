@@ -306,7 +306,7 @@
     <div class="services-overview">
       <h1 class="text-center">Services Overview</h1>
       <div class="margin-top-20 text-center">
-        <img src="../wp-content/themes/understrap-child/assets/slides/5/services-overview.png" alt="Services Overview Resort Release">
+        <img src="../wp-content/themes/understrap-child/assets/slides/8/Transfer-Presentation.jpg" alt="Services Overview Resort Release">
       </div>
       <div class="margin-top-20 text-center">
         <img src="../wp-content/themes/understrap-child/assets/slides/5/three-guarantees.jpg" alt="Three Guarantees Resort Release">
