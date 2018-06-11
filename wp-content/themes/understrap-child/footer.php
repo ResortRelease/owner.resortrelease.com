@@ -7,6 +7,14 @@
  * @package understrap
  */
 ?>
+<style>
+  #divider{
+    border-color: #88bbde;
+    width: 30%;
+    float: left;
+    margin-top: 0;
+  }
+</style>
 <?php if (!is_home()) :?>
   <div class="container svg-container">
     <img src="../wp-content/themes/understrap-child/assets/presentation-footer.svg" class="img-fluid" alt="Resort Release - Path To Timeshare Freedom">
@@ -24,7 +32,20 @@
       <div class="row text-left">
         <div class="col-md-4 margin-top-40">
           Resort Release is not a law firm, and the employees of Resort Release are not attorneys.
-          <br><a href="https://staging.resortrelease.com/terms-and-conditions" rel="noopener">Terms and Privacy</a>
+          <br><a href="https://staging.resortrelease.com/terms-and-conditions" rel="noopener" style="color: #82b3d4;"><u> Terms and Privacy</u></a>
+        </div>
+        <div class="offset-md-4 col-md-4 margin-top-40">
+          <h3 id="nav-links">Nav Links</h3>
+          <hr id="divider">
+          <br>
+          <ul>
+            <a href="https://www.resortrelease.com/" style="color: inherit;"><li>Home</li></a>
+            <a href="https://www.resortrelease.com/3-reasons/" style="color: inherit;"><li>Client Survey</li></a>
+          </ul>
+          <br>
+          <a href="http://www.bbb.org/chicago/business-reviews/timeshare-advocates/american-resource-management-group-llc-in-rockford-il-88596110/" target="_blank" rel="noopener">
+						<img id="header-bbb" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/BBB.png" type="image/svg+xml" alt="Resort Release BBB" style="width: 150px; height: auto;"/>
+				  </a>
         </div>
       </div>
       <div class="row">

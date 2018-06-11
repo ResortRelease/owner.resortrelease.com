@@ -303,7 +303,12 @@
       });
       }
     </script>
-    <div class="services-overview">
+    <!-- <center>
+      <a data-toggle="collapse" href="#services-overview" role="button" aria-expanded="false" aria-controls="services-overview">
+        <img class="margin-top-40 page-label" src="../wp-content/themes/understrap-child/assets/logos/ResortRelease.png" alt="Resort Release Logo" style="max-width:300px;">
+      </a>
+    </center> -->
+    <div class="services-overview  margin-top-40" id="services-overview">
       <h1 class="text-center">Services Overview</h1>
       <div class="margin-top-20 text-center">
         <img src="../wp-content/themes/understrap-child/assets/slides/8/Transfer-Presentation.jpg" alt="Services Overview Resort Release">
