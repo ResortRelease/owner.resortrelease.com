@@ -24,7 +24,7 @@
   <div id="footer" class="container-fluid">
     <div class="container text-center">
       <?php if (!is_home()) :?>
-      <div class="row">
+      <div class="row" id="footer-buttons">
         <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="prev" data-page="1">Prev</i></div></div>
         <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="next" data-page="2">Next</div></div>    
       </div>
