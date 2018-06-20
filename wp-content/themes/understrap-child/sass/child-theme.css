@@ -11603,7 +11603,14 @@ p {
   max-width: 300px;
 }
 
+#breadcrumbs ol .breadcrumb-more i {
+  color: #6c757d;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
 #breadcrumbs ol li {
+  display: none;
   color: #0e76bc;
   cursor: pointer;
   padding-right: 5px;

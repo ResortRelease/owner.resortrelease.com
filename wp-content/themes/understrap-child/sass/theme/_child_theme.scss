@@ -117,7 +117,13 @@ p{
 }
 #breadcrumbs {
   ol{
+    .breadcrumb-more i{
+      color: #6c757d;
+      font-size:1.3rem; 
+      cursor: pointer;
+    }
     li{
+      display: none;
       color: $rr-Blue;
       cursor: pointer;
       padding-right: 5px;

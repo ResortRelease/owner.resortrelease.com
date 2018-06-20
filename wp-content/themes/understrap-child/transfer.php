@@ -15,6 +15,7 @@ get_header(); ?>
 <div id="breadcrumbs"><!-- Breadcrumbs -->
 	<nav aria-label="breadcrumb" class="container">
 		<ol class="breadcrumb">
+			<div class="breadcrumb-more" ><i class="fa fa-ellipsis-h"></i></div>
 			<li class="breadcrumb-item 1 page-label" data-page="1">1</li>
 			<li class="breadcrumb-item 2 page-label" data-page="2">2</li>
 			<li class="breadcrumb-item 3 page-label" data-page="3">3</li>
@@ -55,6 +56,10 @@ get_header(); ?>
       error: function(){}
     });
 	}
+	jQuery('.breadcrumb-more').on('click', function(){
+		jQuery(this).toggle('slow');
+		jQuery('.breadcrumb-item').toggle('slow');
+	});
 </script>
 <script>
   function changePageIndex(cp, pp, np){
