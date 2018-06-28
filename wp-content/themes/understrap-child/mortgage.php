@@ -30,10 +30,6 @@ get_header(); ?>
 </div>
 <?php get_footer(); ?>
 <script>
-	if(window.location.href.indexOf("consumer-rights") > -1) {
-  	jQuery('#breadcrumbs').hide();
-		jQuery('#footer-buttons').html('<a href="https://www.resortrelease.com" style="color: inherit; margin: 0 auto;"><h1 style="font-size: 50px;"><i class="fa fa-arrow-left"></i> Back To Resort Release</h1></a>');
-	}
 	// Load Current Page
 	jQuery(document).ready(function(){
 		var lastPage = window.location.hash;
