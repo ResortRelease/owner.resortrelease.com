@@ -4,7 +4,15 @@
     "type": "library",
     "license": "GPL-2.0",
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "monolog/monolog": "1.0.*",
+        "mautic/api-library": "*" 
+    },
+    "autoload":{
+        "autoload": {
+            "psr-4": {"Acme\\": "src/"}
+          }
+    },
     "keywords": ["wordpress","theme","bootstrap"],
     "homepage": "https://github.com/holger1411/understrap-child"
 }
