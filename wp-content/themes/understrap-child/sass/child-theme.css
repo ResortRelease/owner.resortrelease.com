@@ -49,7 +49,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @-ms-viewport {
@@ -12376,9 +12376,9 @@ a.skip-link {
 }
 
 .round-secondary {
-  background: #0e76bc;
-  -webkit-box-shadow: 0 3px 0 #0b5e96 !important;
-  box-shadow: 0 3px 0 #0b5e96 !important;
+  background: #38acb5;
+  -webkit-box-shadow: 0 3px 0 #2e8e96 !important;
+  box-shadow: 0 3px 0 #2e8e96 !important;
   border-radius: 50%;
   padding: 15px;
   margin-bottom: 10px;
@@ -12388,9 +12388,9 @@ a.skip-link {
 }
 
 .round-secondary:hover {
-  background: #0b5e96;
-  -webkit-box-shadow: 0 3px 0 #094975 !important;
-  box-shadow: 0 3px 0 #094975 !important;
+  background: #2e8e96;
+  -webkit-box-shadow: 0 3px 0 #26747b !important;
+  box-shadow: 0 3px 0 #26747b !important;
   -webkit-transition: all 0.2s ease-in !important;
   transition: all 0.2s ease-in !important;
   -webkit-transform: translateY(2px) !important;
@@ -12398,9 +12398,9 @@ a.skip-link {
 }
 
 .round-secondary:active {
-  background: #052c45;
-  -webkit-box-shadow: 0 3px 0 #094975 !important;
-  box-shadow: 0 3px 0 #094975 !important;
+  background: #1a4f54;
+  -webkit-box-shadow: 0 3px 0 #26747b !important;
+  box-shadow: 0 3px 0 #26747b !important;
   -webkit-transition: all 0.2s ease-in !important;
   transition: all 0.2s ease-in !important;
   -webkit-transform: translateY(2px) !important;

@@ -34,6 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body <?php body_class(); ?>>
 
 <!--  Main Nav -->
+<?php if (!is_page( array( 'login', 'user dashboard') )) {?>
 <div class="container-fluid bg-blue text-center main-nav">
 	<a href="https://www.resortrelease.com" rel="noopener"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/RR-logo.svg" alt="Resort Release Logo" class="logo margin-auto"></a>
 </div>
@@ -54,3 +55,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 	</div>
 </div>
+<?php } ?>

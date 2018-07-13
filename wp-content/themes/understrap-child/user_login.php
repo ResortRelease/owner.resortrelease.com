@@ -2,8 +2,7 @@
 /*
 Template Name: Login User
 */
-get_header();
-global $wpdb, $user_ID;  
+global $wpdb, $user_ID;
 //Check whether the user is already logged in  
 /* REGISTER NEW USER */
 if ($user_ID){
@@ -114,6 +113,7 @@ if($_POST)
     //echo "Invalid login details";  
    
 }
+get_header();
 ?>
 <style>
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
@@ -431,7 +431,7 @@ if($_POST)
                 </div>
                 <div class="col-6 form-group pull-right">
                   <input id="wp-submit" type="submit" name="wp-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-                  <input type="hidden" name="redirect_to" value="https://owner.resortrelease.com/user-dashboard">
+                  <input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>/user-dashboard">
                 </div>
               </form>
               <form id="register-form" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" role="form" style="display: none;">

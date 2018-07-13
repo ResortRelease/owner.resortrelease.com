@@ -12,15 +12,24 @@
   body {
     width: 100%;
     background: linear-gradient(#0e76bc, #0b7d68) !important;
-    /* background: -webkit-linear-gradient(left, #0e76bc, #24d3d3, #0e76bc, #24d3d3);
-    background: linear-gradient(to right, #0e76bc, #24d3d3, #0e76bc, #24d3d3); */
-    /* background-size: 600% 100%; */
-    /* -webkit-animation: HeroBG 20s ease infinite;
-            animation: HeroBG 20s ease infinite; */
+  }
+  a{
+    color: white;
+  }
+  a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  ul{
+    padding-left: 0;
   }
 </style>
-<h1>Settings</h1>
-<ul>
-  <li><i class="fa fa-map-pin"></i> Change Address</li>
-  <li><i class="fa fa-file-text"></i> See/Upload Pending Documents</li>
-</ul>
+<div class="more-info margin-top-20">
+  <i><h3 class="bold-name">Settings</h3></i>
+  <ul class="margin-top-20">
+    <!-- <li><i class="fa fa-map-pin"></i> Change Address</li>
+    <li><i class="fa fa-key"></i> Change Password</li>
+    <li><i class="fa fa-file-text"></i> See/Upload Pending Documents</li> -->
+    <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
+  </ul>
+</div>

@@ -3,7 +3,7 @@
 
     use Mautic\MauticApi;
     use Mautic\Auth\ApiAuth;
-
+    
     // session_start();
 
     // ApiAuth->newAuth() will accept an array of Auth settings

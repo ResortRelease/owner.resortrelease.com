@@ -2,64 +2,70 @@
   /*
   Template Name: User Dashboard
   */
-  get_header();
+  
+  global $wpdb, $user_ID;  
+    //Check whether the user is already logged in  
+    /* REGISTER NEW USER */
+  if (!$user_ID){
+      // They're already logged in, so we bounce them back to dashboard.  
+      header( 'Location:' . home_url().'/login' );  
+  }
+  require_once('api/mt.php');
+  require_once('header.php');
   $current_user = wp_get_current_user();
-  /**
-   * @example Safe usage: $current_user = wp_get_current_user();
-   * if ( !($current_user instanceof WP_User) )
-   *     return;
-   */
-  require 'api/mt.php';
-    $userEmail = $current_user->user_email;
-    $searchUser = $contactApi->getList($userEmail);
-    foreach($searchUser['contacts'] as $user){
-      $userArray = $user['fields']['all'];
-      $userId = $user['id'];
-      $fullname = $userArray['fullname'];
-      $email = $userArray['email'];
-      $phone = $userArray['phone'];
-      $stage = $user['stage']['name'];
-      $stageDesc = $user['stage']['description'];
-      $stageId = $user['stage']['id'];
-    }
-    //Determine the % of status by stage id.
-    switch ($stageId) {
-      case "1":
-          $progress = 0;
-          break;
-      case "2":
-          $progress = 10;
-          break;
-      case "3":
-          $progress = 20;
-          break;
-      case "4":
+  $userEmail = $current_user->user_email;
+  $searchUser = $contactApi->getList($userEmail);
+  $signout = wp_logout_url( home_url('/login') );
+  foreach($searchUser['contacts'] as $user){
+    $userArray = $user['fields']['all'];
+    $userId = $user['id'];
+    $fullname = $userArray['fullname'];
+    $email = $userArray['email'];
+    $phone = $userArray['phone'];
+    $stage = $user['stage']['name'];
+    $stageDesc = $user['stage']['description'];
+    $stageId = $user['stage']['id'];
+  }
+  //Determine the % of status by stage id.
+  switch ($stageId) {
+    case "1":
+        $progress = 25;
+        break;
+    case "2":
         $progress = 30;
         break;
-      case "5":
-        $progress = 40;
+    case "3":
+        $progress = 35;
         break;
-      case "6":
-        $progress = 50;
-        break;
-      case "7":
-        $progress = 60;
-        break;
-      case "8":
-        $progress = 70;
-        break;
-      case "9":
-        $progress = 80;
-        break;
-      case "10":
-        $progress = 90;
-        break;
-      case "11":
-        $progress = 100;
-        break;
-      default:
-          echo "Error";
-    }
+    case "4":
+      $progress = 40;
+      break;
+    case "5":
+      $progress = 45;
+      break;
+    case "6":
+      $progress = 50;
+      break;
+    case "7":
+      $progress = 60;
+      break;
+    case "8":
+      $progress = 70;
+      break;
+    case "9":
+      $progress = 80;
+      break;
+    case "10":
+      $progress = 90;
+      break;
+    case "11":
+      $progress = 100;
+      break;
+    default:
+      $progress = 0;
+      $errorMessage = 'User Not Found!';
+      break;
+  }
 ?>
 <style>
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
@@ -100,7 +106,7 @@
 
   * {
     color: white;
-    text-shadow: 1px 1px 0px #3f617f;
+    /* text-shadow: 1px 1px 0px #3f617f; */
     font-weight: 300 !important;
   }
 
@@ -159,7 +165,7 @@
     /* background: linear-gradient( #84DCB0, #43E0DC); */
     -webkit-animation: HeroBG 20s ease infinite;
     animation: HeroBG 20s ease infinite;
-    background-size: 600% 100%;
+    background-size: 300% 100%;
     padding: 5px 0;
   }
   .progress-bar p{
@@ -216,13 +222,32 @@
   .more-info {
     border: 2px solid #5bdec6;
     border-radius: 8px;
-    padding: 5px;
+    padding: 10px;
+    background: #0c365d;
+  }
+  .more-info i{
+    text-shadow: none!important;
   }
   .fa-exclamation-circle {
     color: #ffe000;
   }
   .fa-question-circle {
-    color: #00ffd2;
+    color: #84DCB0;
+  }
+  #user-settings, #user-contact, #user-status, #user-not-found{
+    display: none;
+  }
+  .active{
+    display: block!important;
+  }
+  input {
+    text-shadow: none;
+    color: black;
+  }
+  .bold-name {
+    color: #43E0dc;
+    letter-spacing: 1px;
+    font-weight: 600!important;
   }
 </style>
 <div class="container" id="user-dashboard">
@@ -241,84 +266,79 @@
   <nav id="mobile-nav" class="row d-lg-none">
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-secondary" onclick="ajaxCall('user_home');">
+      <div class="button round-secondary" onclick="showItem('#user-status');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.png" alt="RR home" width="30px" class="margin-auto">
     </div>
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-success" onclick="ajaxCall('user_chat');">
+      <div class="button round-success" onclick="showItem('#user-contact');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.png" alt="RR chat" width="30px" class="margin-auto">
       </div>
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-primary" onclick="ajaxCall('user_settings');">
+      <div class="button round-primary" onclick="showItem('#user-settings');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.png" alt="RR settings" width="30px" class="margin-auto">
       </div>
     </div>
   </nav>
   <div class="row">
     <div class="col-12 col-lg-10">
-      <h4 class="text-center">Hello,<b><?php echo $fullname ?></b></h4>
-      <div id="user-status">
-        <h2>Status</h2>
-        <h3 class="margin-top-20">
-          <b>
-            <?php echo $stage ?>
-          </b>
-        </h3>
-        <div class="progress" id="userStatusBar">
-          <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress ?>%;">
+      <h4 class="text-left">Hello, <b><?php echo $fullname ?></b></h4>
+      <div id="user-status" class="getpage active">
+        <div class="margin-top-20 more-info">
+          <h3><i><b class="bold-name"><?php echo $stage ?></b></i></h3>
+          <div class="progress" id="userStatusBar">
+            <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress ?>%;">
+              <p>
+                <b class="text-darkBlue noshadow">
+                  <?php echo $progress ?>%</b>
+              </p>
+            </div>
+          </div>
+          <div class="margin-top-20">
             <p>
-              <b class="text-darkBlue noshadow">
-                <?php echo $progress ?>%</b>
+              "<?php echo $stageDesc ?>"
             </p>
           </div>
         </div>
-        <div class="different-status">
-          <div class="status"><div>0</div></div>
-          <div class="status"><div>1</div></div>
-          <div class="status"><div>2</div></div>
-          <div class="status"><div>3</div></div>
-          <div class="status"><div>4</div></div>
-          <div class="status"><div>5</div></div>
-          <div class="status"><div>6</div></div>
-          <div class="status"><div>7</div></div>
-          <div class="status"><div>8</div></div>
-          <div class="status"><div>9</div></div>
-          <div class="status"><div>10</div></div>
-        </div>
-        <blockquote class="margin-top-20">
-          <p>
-            "<?php echo $stageDesc ?>"
-          </p>
-        </blockquote>
-        <p class="more-info">
+        <p class="more-info margin-top-20" style="border-color: #84DCB0;">
           <i class="fa fa-question-circle" aria-hidden="true"></i><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at 888-381-5216.</i>
         </p>
-        <p class="more-info margin-top-20">
+        <p class="more-info margin-top-20" style="border-color: #fae000;">
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i><i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to fees@resortrelease.com or Fax 815-321-4668</i>
         </p>
       </div>
-      <div id="main-dashboard"></div>
+      <div id="main-dashboard">
+        <div id="user-not-found" class="getpage">
+          <?php //include('user-not-found.php') ?>
+          <h3><?php echo $errorMessage ?></h3>
+        </div>
+        <div id="user-settings" class="getpage">
+          <?php include('user_settings.php') ?>
+        </div>
+        <div id="user-contact" class="getpage">
+          <?php include('user_contact.php') ?>
+        </div>
+      </div>
     </div>
     <div class="col-lg-2 d-none d-lg-block" style="position: sticky;top: 0;">
       <div class="row text-center">
         <div class="round-shadow"></div>
-        <div class="button round-secondary"  onclick="ajaxCall('user_home');">
+        <div class="button round-secondary"  onclick="showItem('#user-status');">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.png" alt="RR home" width="30px" class="margin-auto">
         </div>
       </div>
       <div class="row text-center">
         <div class="round-shadow"></div>
-        <div class="button round-success" onclick="ajaxCall('user_chat');">
+        <div class="button round-success" onclick="showItem('#user-contact');">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.png" alt="RR chat" width="30px" class="margin-auto">
         </div>
       </div>
       <div class="row text-center">
         <div class="round-shadow"></div>
-        <div class="button round-primary" onclick="ajaxCall('user_settings');">
+        <div class="button round-primary" onclick="showItem('#user-settings');">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.png" alt="RR settings" width="30px" class="margin-auto">
         </div>
       </div>
@@ -349,4 +369,18 @@
       error: function(){}
     });
 	}
+  function showItem(item){
+    jQuery( ".getpage" ).each(function( index ) {
+      jQuery(this).removeClass('active');
+    });
+    jQuery(item).addClass('active');
+  }
 </script>
+<?php 
+  if($errorMessage){
+    echo '<script type="text/javascript">',
+      'showItem("#user-not-found");
+      jQuery("#user-status").removeClass("active")',
+      '</script>';
+  }
+?>

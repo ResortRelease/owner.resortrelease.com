@@ -1,34 +1,50 @@
 <?php 
   require 'mt.php';
-  $userEmail = $_GET['userEmail'];
-  $crmStage = $_GET['crmStage'];
+  $userEmail = $_GET['email'];
+  $crmStage = $_GET['stage'];
   $searchUser = $contactApi->getList($userEmail);
   foreach($searchUser['contacts'] as $user){
     $userId = $user['id'];
   };
-  echo "File Found. What Next?<hr>
-    <br><br>
-    Email = ".$userEmail."
-    CRM Stage = ".$crmStage."
-    <br><br>";
-    echo "Find Contact By Email, output ID<br>
-    User ID= ".$userId."<br><br>";
   switch($crmStage){
     case "Welcome":
-      echo "Welcome Stage";
       $stageId = 1;
       break;
-    case "Documents":
-      echo "Documents Received";
+    case "Estoppel":
       $stageId = 2;
       break;
-    case "Progress":
-      echo "In Progress";
+    case "Inventory":
       $stageId = 3;
+      break;
+    case "ROFR":
+      $stageId = 4;
+      break;
+    case "Deed Prep":
+      $stageId = 5;
+      break;
+    case "Doc Prep":
+      $stageId = 6;
+      break;
+    case "Execution":
+      $stageId = 7;
+      break;
+    case "Execution Received - Deeded":
+      $stageId = 8;
+      break;
+    case "Execution Received - Non- Deeded":
+      $stageId = 9;
+      break;
+    case "Finalization":
+      $stageId = 10;
+      break;
+    case "Closed":
+      $stageId = 11;
       break;
   }
   $response = $stageApi->addContact($stageId, $userId);
   if (!isset($response['success'])) {
     print_r($response);
+  }else{
+    echo $userEmail.' -> Moved to Stage -> '.$stageId;
   }
 ?>
