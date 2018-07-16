@@ -4,6 +4,17 @@
   // }else {
     
   // }
+  $http_origin = $_SERVER['HTTP_ORIGIN'];
+
+  $allowed_domains = array(
+    'https://www.resortrelease.com',
+    'https://www.resortreleasecrm.com'
+  );
+
+  if (in_array($http_origin, $allowed_domains))
+  {  
+      header("Access-Control-Allow-Origin: $http_origin");
+  }
   require 'mt.php';
   if(isset($_POST)){
     $userEmail = $_POST['email'];
