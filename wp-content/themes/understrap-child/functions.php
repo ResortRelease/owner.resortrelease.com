@@ -36,7 +36,7 @@ function register_my_menus() {
 
 add_filter( 'allowed_http_origins', 'add_allowed_origins' );
 function add_allowed_origins( $origins ) {
-    $origins[] = 'https://resortrelease.com';
+    $origins[] = 'https://www.resortrelease.com';
     $origins[] = 'https://www.resortreleasecrm.com';
     return $origins;
 }
