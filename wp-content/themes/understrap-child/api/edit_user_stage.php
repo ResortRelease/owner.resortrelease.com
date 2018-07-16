@@ -26,7 +26,6 @@
   foreach($searchUser['contacts'] as $user){
     $userID = $user['id'];
   };
-  echo "***************************".$userEmail; 
   switch($crmStage){
     case "Welcome":
     case 1:
