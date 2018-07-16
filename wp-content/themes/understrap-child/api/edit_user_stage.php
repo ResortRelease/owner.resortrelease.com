@@ -16,17 +16,17 @@
       header("Access-Control-Allow-Origin: $http_origin");
   }
   require 'mt.php';
-  if(isset($_POST)){
+  $userEmail = $_GET['email'];
+  $crmStage = $_GET['stage'];
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userEmail = $_POST['email'];
     $crmStage = $_POST['stage'];
-  }else{
-    $userEmail = $_GET['email'];
-    $crmStage = $_GET['stage'];
   }
   $searchUser = $contactApi->getList($userEmail);
   foreach($searchUser['contacts'] as $user){
     $userID = $user['id'];
   };
+  echo "***************************".$userEmail; 
   switch($crmStage){
     case "Welcome":
     case 1:
@@ -102,8 +102,9 @@
     $emailEncoded = json_encode($userEmail);
     $stageEncoded = json_encode($stageId);
     $userEmail = (string)$userEmail;
+    
     // Create or update client stage
-    $sql = "INSERT INTO Clients (id, email, stage) VALUES ('$userID', '$userEmail', '$stageId')
+    $sql = "INSERT INTO $table (id, email, stage) VALUES ('$userID', '$userEmail', '$stageId')
             ON DUPLICATE KEY UPDATE email = '$userEmail', stage= '$stageId'";
 
     if ($conn->query($sql) === TRUE) {
