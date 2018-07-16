@@ -1,8 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "wpmort";
-$password = ")3Sp07G7)6";
-$dbname = "wpmort";
+// PHP SQL
+require 'ils.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

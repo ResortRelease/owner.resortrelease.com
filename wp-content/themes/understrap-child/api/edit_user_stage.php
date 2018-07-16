@@ -91,12 +91,7 @@
       echo $userEmail.' -> Moved to Stage -> '.$stageId.'<br><br>';
     }
 
-    // PHP SQL
-    $servername = "localhost";
-    $username = "wpmort";
-    $password = ")3Sp07G7)6";
-    $dbname = "wpmort";
-    
+    require 'ils.php';
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection

@@ -249,11 +249,17 @@
     letter-spacing: 1px;
     font-weight: 600!important;
   }
+  #RR-logo{
+    background: #071b2f;
+    padding: 2px;
+    border-radius: 10px;
+    border: 2px inset red;
+  }
 </style>
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
     <div class="col-4 text-left">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/RR-only-logo-color.png" alt="RR logo" width="50px">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/RR-only-logo-color.png" alt="RR logo" width="50px" id="RR-logo">
     </div>
     <div class="col-8 text-right">
       <p>Status as of:
