@@ -22,14 +22,14 @@ get_header(); ?>
 				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/icons/icon-mortgage.png" alt="Mortgage" alt="">
 			</a>
 			<h2>Mortgage</h2>
-			<p>short description for mortgage</p>
+			<!-- <p>short description for mortgage</p> -->
 	</div>
 		<div id="transfer" class="col-6">
 			<a href="transfer">
 				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/icons/icon-transfer.png" alt="Transfer" alt="">
 			</a>
 			<h2>Transfer</h2>
-			<p>short description for transfer</p>
+			<!-- <p>short description for transfer</p> -->
 		</div>
 	</div>
 </div>

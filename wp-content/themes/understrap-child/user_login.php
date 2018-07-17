@@ -8,14 +8,12 @@ global $wpdb, $user_ID;
 if ($user_ID){
     // They're already logged in, so we bounce them back to dashboard.  
     header( 'Location:' . home_url().'/user-dashboard' );  
-} else
- {  
+} else {  
    
     $errors = array();  
    
     if( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
       {  
-   
         // Check username is present and not already in use  
         $username = $wpdb->escape($_REQUEST['username']);  
         if ( strpos($username, ' ') !== false )
@@ -77,7 +75,6 @@ if ($user_ID){
 /* LOGIN USER */
 if($_POST) 
 {  
-   
     global $wpdb;  
    
     //We shall SQL escape all inputs  
@@ -433,11 +430,14 @@ get_header();
                   <input id="wp-submit" type="submit" name="wp-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
                   <input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>/user-dashboard">
                 </div>
+                <div class="col-6 form-group pull-right">
+                  <i><a href="<?php echo home_url();?>/forgot-password">Forgot Password?</a></i>
+                </div>
               </form>
               <form id="register-form" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" role="form" style="display: none;">
                 <h2 class="text-darkBlue">REGISTER</h2>
                 <div class="form-group">
-                  <input type="text" name="username" id="username" tabindex="1" class="form-control copyemail hide" placeholder="Username" value="">
+                  <input type="text" name="username" id="username" tabindex="1" class="form-control copyemail hide" placeholder="Username">
                 </div>
                 <div class="form-group">
                   <small>
@@ -481,23 +481,24 @@ get_header();
   </div>
 </div>
 <script>
-  jQuery(function ($) {
-    $('#login-form-link').click(function (e) {
-      $("#login-form").delay(100).fadeIn(100);
-      $("#register-form").fadeOut(100);
-      $('#register-form-link').removeClass('active');
-      $(this).addClass('active');
-      e.preventDefault();
-    });
-    $('#register-form-link').click(function (e) {
-      $("#register-form").delay(100).fadeIn(100);
-      $("#login-form").fadeOut(100);
-      $('#login-form-link').removeClass('active');
-      $(this).addClass('active');
-      e.preventDefault();
-    });
-    $('#email').on('input blur', function () {
-      $('.copyemail').val($(this).val());
-    })
+  jQuery('#login-form-link').click(function (e) {
+    jQuery("#login-form").delay(100).fadeIn(100);
+    jQuery("#register-form").fadeOut(100);
+    jQuery('#register-form-link').removeClass('active');
+    jQuery(this).addClass('active');
+    e.preventDefault();
   });
+  jQuery('#register-form-link').click(function (e) {
+    jQuery("#register-form").delay(100).fadeIn(100);
+    jQuery("#login-form").fadeOut(100);
+    jQuery('#login-form-link').removeClass('active');
+    jQuery(this).addClass('active');
+    e.preventDefault();
+  });
+  jQuery('#register-form #email').on('input blur', function () {
+    var uname = jQuery(this).val();
+    console.log(uname);
+    jQuery('#register-form #username').attr('value', uname);
+    jQuery('#register-form #username').val(uname);
+  })
 </script>
