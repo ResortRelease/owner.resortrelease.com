@@ -417,7 +417,7 @@ get_header();
               <form id="login-form" action="<?php echo home_url(); ?>/wp-login.php" method="post" role="form" style="display: block; min-height: 302px">
                 <h2 class="text-darkBlue">LOGIN</h2>
                 <?php if(isset($_GET['action']) && $_GET['action'] == "reset_success") {
-                  echo '<span class="success form-group text-center">You password has been changed. Please Check your email for your new password.</span>';}
+                  echo '<div class="success form-group text-center" style="color: white;font-weight: 400;">You password has been changed. Please Check your email for your new password.</div>';}
                 ?>
                 <div class="form-group">
                   <input type="text" name="log" id="user_login" tabindex="1" class="form-control" placeholder="Email" value="">
