@@ -281,19 +281,19 @@
     <div class="col-4">
       <div class="round-shadow"></div>
       <div class="button round-secondary" onclick="showItem('#user-status');">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.png" alt="RR home" width="30px" class="margin-auto">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.svg" alt="RR home" width="30px" class="margin-auto">
     </div>
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
       <div class="button round-success" onclick="showItem('#user-contact');">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.png" alt="RR chat" width="30px" class="margin-auto">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.svg" alt="RR chat" width="30px" class="margin-auto">
       </div>
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
       <div class="button round-primary" onclick="showItem('#user-settings');">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.png" alt="RR settings" width="30px" class="margin-auto">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
       </div>
     </div>
   </nav>
@@ -341,19 +341,19 @@
       <div class="row text-center">
         <div class="round-shadow"></div>
         <div class="button round-secondary"  onclick="showItem('#user-status');">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.png" alt="RR home" width="30px" class="margin-auto">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.svg" alt="RR home" width="30px" class="margin-auto">
         </div>
       </div>
       <div class="row text-center">
         <div class="round-shadow"></div>
         <div class="button round-success" onclick="showItem('#user-contact');">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.png" alt="RR chat" width="30px" class="margin-auto">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.svg" alt="RR chat" width="30px" class="margin-auto">
         </div>
       </div>
       <div class="row text-center">
         <div class="round-shadow"></div>
         <div class="button round-primary" onclick="showItem('#user-settings');">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.png" alt="RR settings" width="30px" class="margin-auto">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
         </div>
       </div>
     </div>
