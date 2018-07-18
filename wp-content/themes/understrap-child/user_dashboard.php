@@ -267,7 +267,7 @@
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
     <div class="col-4 text-left">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/RR-only-logo-white.png" alt="RR logo" width="50px" id="RR-logo">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/RR-logo-white.svg" alt="RR logo" width="50px" id="RR-logo">
     </div>
     <div class="col-8 text-right">
       <p>Status as of:
