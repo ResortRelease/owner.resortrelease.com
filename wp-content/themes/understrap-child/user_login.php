@@ -73,13 +73,12 @@ if ($user_ID){
     }  
 }  
 /* LOGIN USER */
-if($_POST) 
-{  
+if($_POST) {  
     global $wpdb;  
    
     //We shall SQL escape all inputs  
-    $username = $wpdb->escape($_REQUEST['username']);  
-    $password = $wpdb->escape($_REQUEST['password']);  
+    $username = $wpdb->escape($_REQUEST['log']);  
+    $password = $wpdb->escape($_REQUEST['pwd']);  
     $remember = $wpdb->escape($_REQUEST['rememberme']);  
    
     if($remember) $remember = "true";  
@@ -91,19 +90,17 @@ if($_POST)
     $login_data['remember'] = $remember;  
    
     $user_verify = wp_signon( $login_data, false );   
-   
+    
     if ( is_wp_error($user_verify) )   
     {  
-        //echo "Invalid login details";  
+      echo "<span id='error-msg' class='text-danger margin-top-20'>Invalid login details</span>";  
        // Note, I have created a page called "Error" that is a child of the login page to handle errors. This can be anything, but it seemed a good way to me to handle errors.  
-     } else
-    {    
+     } else {    
        echo "<script type='text/javascript'>window.location.href='". home_url() ."/user-dashboard'</script>";  
        exit();  
      }  
    
-} else 
-{  
+} else {  
    
     // No login details entered - you should probably add some more user feedback here, but this does the bare minimum  
    
@@ -121,7 +118,19 @@ get_header();
   .main-nav {
     display: none;
   }
-
+  #error-msg{
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 3;
+    margin-top: 20px;
+    font-weight: 400;
+    border: 2px solid #dc3644;
+    max-width: fit-content;
+    padding: 4px;
+  }
   body {
     padding-top: 90px;
     background: #F7F7F7;
@@ -247,6 +256,7 @@ get_header();
     font-size: 20px;
     font-weight: 300;
     margin: 30px;
+    margin-top: 45px;
   }
 
   .card-login>.card-heading {
@@ -414,7 +424,7 @@ get_header();
         <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
-              <form id="login-form" action="<?php echo home_url(); ?>/wp-login.php" method="post" role="form" style="display: block; min-height: 302px">
+              <form id="login-form" action="<?php echo home_url(); ?>/login/" method="post" role="form" style="display: block; min-height: 302px">
                 <h2 class="text-darkBlue">LOGIN</h2>
                 <?php if(isset($_GET['action']) && $_GET['action'] == "reset_success") {
                   echo '<div class="success form-group text-center" style="color: white;font-weight: 400;">You password has been changed. Please Check your email for your new password.</div>';}

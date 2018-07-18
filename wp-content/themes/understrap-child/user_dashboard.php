@@ -11,9 +11,9 @@
       header( 'Location:' . home_url().'/login' );  
   }
   require_once('api/mt.php');
-  require_once('header.php');
   $current_user = wp_get_current_user();
   $userEmail = $current_user->user_email;
+  $user_id = $current_user->ID;
   $searchUser = $contactApi->getList($userEmail);
   $signout = wp_logout_url( home_url('/login') );
   foreach($searchUser['contacts'] as $user){
@@ -66,6 +66,13 @@
       $errorMessage = 'User Not Found!';
       break;
   }
+  if($_POST['action'] == "patch"){
+    $newpassword = $_POST['newpassword'];
+    update_user_meta($user_id, 'user_pass', $newpassword);
+    wp_update_user( array ('ID' => $user_id, 'user_pass' => $newpassword) ) ;
+    header( 'Location:' . home_url().'/login' );
+  }
+  require_once('header.php');
 ?>
 <style>
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
