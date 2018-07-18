@@ -1,9 +1,10 @@
 <?php
 // PHP SQL
+// Template Name: Table "Users' Stage List"
 require 'ils.php';
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -30,11 +31,13 @@ th{
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr>
-          <td>". $row['id']."</td>
-          <td>". $row['email']."</td>
-          <td>". $row['stage']."</td>
-        </tr>";
+        if ($row['email'] != ""){
+          echo "<tr>
+            <td>". $row['id']."</td>
+            <td>". $row['email']."</td>
+            <td>". $row['stage']."</td>
+          </tr>";
+        }
     }
 } else {
     echo "0 results";

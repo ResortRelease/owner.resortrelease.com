@@ -216,6 +216,7 @@
     border-radius: 10px; */
   }
   #user-dashboard {
+    padding-top: 32px;
     padding-bottom: 80px;
   }
   #settings-dashboard, #contact-dashboard{
@@ -258,7 +259,7 @@
   }
   #RR-logo{
     background: #071b2f;
-    padding: 2px;
+    padding: 4px;
     border-radius: 10px;
     border: 2px inset red;
   }
@@ -266,7 +267,7 @@
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
     <div class="col-4 text-left">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/RR-only-logo-color.png" alt="RR logo" width="50px" id="RR-logo">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/RR-only-logo-white.png" alt="RR logo" width="50px" id="RR-logo">
     </div>
     <div class="col-8 text-right">
       <p>Status as of:
