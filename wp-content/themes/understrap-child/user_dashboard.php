@@ -297,7 +297,7 @@
       </div>
     </div>
   </nav>
-  <div class="row">
+  <div class="row margin-top-20">
     <div class="col-12 col-lg-10">
       <h4 class="text-left">Hello, <b><?php echo $fullname ?></b></h4>
       <div id="user-status" class="getpage active">
@@ -321,7 +321,7 @@
           <i class="fa fa-question-circle" aria-hidden="true"></i><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at 888-381-5216.</i>
         </p>
         <p class="more-info margin-top-20" style="border-color: #fae000;">
-          <i class="fa fa-exclamation-circle" aria-hidden="true"></i><i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to fees@resortrelease.com or Fax 815-321-4668</i>
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i><i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to <a href="mailto:fees@resortrelease.com" style="text-decoration: underline;">fees@resortrelease.com</a> or Fax <a href="tel:815-321-4668">815-321-4668</a></i>
         </p>
       </div>
       <div id="main-dashboard">

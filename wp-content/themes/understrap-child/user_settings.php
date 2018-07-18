@@ -44,7 +44,7 @@
       <form id="update-password" action="" method="post">
         <div class="form-group">
           <input type="hidden" name="action" value="patch" />
-          <input id="changePW" type="text" class=" form-control margin-top-20" placeholder="New Password" name="newpassword">
+          <input id="changePW" type="password" class=" form-control margin-top-20" placeholder="New Password" name="newpassword">
         </div>
         <div class="form-group">
           <button class="form-control button success" type="submit"  name="submit" value="Change Password">Change Password</button>
