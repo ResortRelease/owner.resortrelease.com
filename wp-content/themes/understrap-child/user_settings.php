@@ -32,7 +32,7 @@
 <div class="more-info margin-top-20" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
   <ul class="margin-top-20">
-    <!-- <li><i class="fa fa-map-pin"></i> Change Address</li> -->
+    <li><i class="fa fa-map-pin"></i> Change Address</li>
     <a href="#changePass"><li><i class="fa fa-key"></i> Change Password</li></a>
     <div class="collapse" id="changePass">
       <i><h4 class="bold-name">Change Password</h4></i>
@@ -47,7 +47,7 @@
         </div>
       </form>
     </div>
-    <!-- <li><i class="fa fa-file-text"></i> See/Upload Pending Documents</li> -->
+    <li><i class="fa fa-file-text"></i> See/Upload Pending Documents</li>
     <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
   </ul>
 </div>

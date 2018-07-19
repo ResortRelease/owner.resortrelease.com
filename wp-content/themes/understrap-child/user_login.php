@@ -141,14 +141,14 @@ get_header();
 
   body {
     width: 100%;
-    /* background: -webkit-linear-gradient(right, #0e76bc, #24d3d3, #0e76bc, #24d3d3);
-    background: linear-gradient(to left, #0e76bc, #24d3d3, #0e76bc, #24d3d3); */
+    background: -webkit-linear-gradient(right, #0e76bc, #24d3d3);
+    background: linear-gradient(to left, #0e76bc, #24d3d3);
     /* Moonlit BG */
-    background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43);
+    /* background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43);
     background: linear-gradient(to left, #2C5364, #203A43, #2C5364, #203A43);
-    background-size: 600% 100%;
+    /* background-size: 600% 100%; */
     -webkit-animation: HeroBG 20s ease infinite;
-            animation: HeroBG 20s ease infinite;
+            animation: HeroBG 20s ease infinite; */
   }
 
   @-webkit-keyframes HeroBG {

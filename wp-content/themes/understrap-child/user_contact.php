@@ -14,6 +14,6 @@
   <i><h3 class="bold-name">Contact Us</h3></i>
   <ul class="margin-top-20">
     <li><a href="tel:888-381-5216"><i class="fa fa-phone"></i> 888-381-5216</a></li>
-    <!-- <li><i class="fa fa-commenting"></i> Chat With Client Services</li> -->
+    <li><i class="fa fa-commenting"></i> Chat With Client Services</li>
   </ul>
 </div>
