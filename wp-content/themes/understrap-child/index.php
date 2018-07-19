@@ -15,7 +15,7 @@ get_header(); ?>
 <div id="splash" class="container">
 	<div class="row">
 		<div class="col-12">
-			<h1>Choose your Current Timeshare Ownership</h1>
+			<h1>Choose Your Current Timeshare Ownership</h1>
 		</div>
 		<div id="mortgage" class="col-6">
 			<a href="mortgage">

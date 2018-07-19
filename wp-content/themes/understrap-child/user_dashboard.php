@@ -103,7 +103,13 @@
 
   body {
     width: 100%;
-    background: linear-gradient(#0e76bc, #0b7d68) !important;
+    /* background: linear-gradient(#0e76bc, #0b7d68) !important; */
+    /* Moonlit BG */
+    background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43)!important;
+    background: linear-gradient(to left, #2C5364, #203A43, #2C5364, #203A43)!important;
+    background-size: 600% 100%!important;
+    -webkit-animation: HeroBG 20s ease infinite!important;
+            animation: HeroBG 20s ease infinite!important;
     /* background: -webkit-linear-gradient(left, #0e76bc, #24d3d3, #0e76bc, #24d3d3);
     background: linear-gradient(to right, #0e76bc, #24d3d3, #0e76bc, #24d3d3); */
     /* background-size: 600% 100%; */

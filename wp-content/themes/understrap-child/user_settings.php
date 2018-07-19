@@ -11,10 +11,6 @@
     padding-right: 10px;
     width: 24px;
   }
-  body {
-    width: 100%;
-    background: linear-gradient(#0e76bc, #0b7d68) !important;
-  }
   a{
     color: white;
   }

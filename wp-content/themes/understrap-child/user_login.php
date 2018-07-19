@@ -141,11 +141,14 @@ get_header();
 
   body {
     width: 100%;
-    background: -webkit-linear-gradient(right, #0e76bc, #24d3d3, #0e76bc, #24d3d3);
-    background: linear-gradient(to left, #0e76bc, #24d3d3, #0e76bc, #24d3d3);
+    /* background: -webkit-linear-gradient(right, #0e76bc, #24d3d3, #0e76bc, #24d3d3);
+    background: linear-gradient(to left, #0e76bc, #24d3d3, #0e76bc, #24d3d3); */
+    /* Moonlit BG */
+    background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43);
+    background: linear-gradient(to left, #2C5364, #203A43, #2C5364, #203A43);
     background-size: 600% 100%;
-    /* -webkit-animation: HeroBG 20s ease infinite;
-            animation: HeroBG 20s ease infinite; */
+    -webkit-animation: HeroBG 20s ease infinite;
+            animation: HeroBG 20s ease infinite;
   }
 
   @-webkit-keyframes HeroBG {
@@ -183,9 +186,9 @@ get_header();
 
   .card-login {
     border: none;
-    -webkit-box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.39);
-    -moz-box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.39);
-    box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.39);
+    -webkit-box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.2);
+    -moz-box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.2);
+    box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.2);
   }
 
   .card-login .checkbox input[type=checkbox] {
@@ -407,7 +410,9 @@ get_header();
     background: #2CC1CA;
 
   }
-
+  .card-body{
+    padding:0;
+  }
   .active div {
     background: white !important;
     color: #B2ADA8 !important;
@@ -419,7 +424,7 @@ get_header();
     <div class="col-md-6 offset-md-3">
       <div class="card card-login">
         <a href="<?php echo home_url(); ?>">
-          <img src="../wp-content/themes/understrap-child/assets/logos/RR-only-logo-color.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;">
+          <img src="../wp-content/themes/understrap-child/assets/logos/RR-logo.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;">
         </a>
         <div class="card-body">
           <div class="row">
@@ -443,7 +448,7 @@ get_header();
                   <input id="wp-submit" type="submit" name="wp-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
                   <input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>/user-dashboard">
                 </div>
-                <div class="col-6 form-group pull-right">
+                <div class="col-12 form-group pull-left">
                   <i><a href="<?php echo home_url();?>/forgot-password">Forgot Password?</a></i>
                 </div>
               </form>
