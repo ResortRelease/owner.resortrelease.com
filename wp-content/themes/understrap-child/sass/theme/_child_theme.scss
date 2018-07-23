@@ -212,6 +212,118 @@ p{
 /**********************************************
 *
 * 
+* MAUTIC
+*
+*
+**********************************************/
+.mauticform-row {
+  position: relative!important;
+  label{
+    pointer-events: none;
+  }
+  margin-top: 10px;
+}
+.mauticform-label{
+  position: absolute!important;
+  left: 10px!important;
+  top: 13px!important;
+  color: #728190!important;
+  font-weight: 600!important;
+  transition: .3s!important;
+  letter-spacing: 1px!important;
+  font-size: 13px!important;
+  &.focus, .has-content{
+    color: #2d75bc!important;
+    top: 0px!important;
+    left: 5px!important;
+    font-size: 10px!important;
+    font-weight: 400!important;
+  }
+}
+.mauticform-input, .mauticform-textarea, .mauticform-selectbox{
+  min-height: 45px!important;
+  border-radius: 5px!important;
+  border: 1px solid #e6e6e6!important;
+  padding-left: 10px!important;
+  padding-top: 20px!important;
+  font-weight: 400!important;
+  width: 100%!important;
+  color: #565656!important;
+}
+label#mauticform_label_allleadsform_heard_us_on{
+  top: -11px!important;
+  background: white;
+  padding: 3px!important;
+  border-radius: 5px;
+  border-top: 1px solid #e6e6e6;
+}
+[name="mauticform[hearduson]"]{
+  height: 45px;
+  padding-top: 20px!important;
+  background: white;
+}
+.mauticform-textarea{padding-top: 40px;}
+.mauticform-input:focus, .mauticform-textarea:focus, .mauticform-selectbox:focus{
+  outline: none!important;
+  border-color: #74b1ec!important; 
+}
+.mauticform-input::placeholder, .mauticform-textarea::placeholder, .mauticform-selectbox::placeholder {
+  color: #cecece!important;
+}
+.mauticform-input:-webkit-autofill, .mauticform-textarea:-webkit-autofill, .mauticform-selectbox:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #e2fff2 inset!important;
+}
+// END MAUTIC FORM STYLE
+// MAUTIC FORM TYPE
+.mautic-form{
+  span.mauticform-errormsg{
+    position: absolute;
+    z-index: 1;
+    top: -6px;
+    right: 0;
+    font-weight: 100;
+    font-style: italic;
+    color: #ff6060;
+    background: white;
+    font-size: 10px;
+  }
+  label{
+    pointer-events: none;
+  }
+  &.nocomment{
+    [name="mauticform[comments]"]{
+     display: none!important; 
+    }
+  }
+  &.small-form{
+    [name="mauticform[hearduson]"], [name="mauticform[comments]"], label#mauticform_label_rrallleadsform_hearduson{
+      display: none!important; 
+    }
+    [name="mauticform[comments]"]{
+      display: none!important; 
+     }
+  }
+  &.horizontal{
+    .mauticform-page-wrapper{
+      display: flex;
+      flex-flow: row wrap;
+      max-width: 840px;
+      margin: 0 auto;
+      .mauticform-row{
+        &:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6){
+          flex: 0 1 50%;   
+          padding: 1px;
+        }
+        &:nth-child(7), &:nth-child(8), &:last-child{
+          flex: 0 1 100%;  
+        }
+      }
+    }
+  }
+}
+/**********************************************
+*
+* 
 * CONTENT
 *
 *

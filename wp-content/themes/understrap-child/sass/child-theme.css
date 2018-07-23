@@ -12745,6 +12745,149 @@ p {
 /**********************************************
 *
 * 
+* MAUTIC
+*
+*
+**********************************************/
+.mauticform-row {
+  position: relative !important;
+  margin-top: 10px;
+}
+
+.mauticform-row label {
+  pointer-events: none;
+}
+
+.mauticform-label {
+  position: absolute !important;
+  left: 10px !important;
+  top: 13px !important;
+  color: #728190 !important;
+  font-weight: 600 !important;
+  -webkit-transition: 0.3s !important;
+  transition: 0.3s !important;
+  letter-spacing: 1px !important;
+  font-size: 13px !important;
+}
+
+.mauticform-label.focus, .mauticform-label .has-content {
+  color: #2d75bc !important;
+  top: 0px !important;
+  left: 5px !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+}
+
+.mauticform-input, .mauticform-textarea, .mauticform-selectbox {
+  min-height: 45px !important;
+  border-radius: 5px !important;
+  border: 1px solid #e6e6e6 !important;
+  padding-left: 10px !important;
+  padding-top: 20px !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+  color: #565656 !important;
+}
+
+label#mauticform_label_allleadsform_heard_us_on {
+  top: -11px !important;
+  background: white;
+  padding: 3px !important;
+  border-radius: 5px;
+  border-top: 1px solid #e6e6e6;
+}
+
+[name="mauticform[hearduson]"] {
+  height: 45px;
+  padding-top: 20px !important;
+  background: white;
+}
+
+.mauticform-textarea {
+  padding-top: 40px;
+}
+
+.mauticform-input:focus, .mauticform-textarea:focus, .mauticform-selectbox:focus {
+  outline: none !important;
+  border-color: #74b1ec !important;
+}
+
+.mauticform-input::-webkit-input-placeholder, .mauticform-textarea::-webkit-input-placeholder, .mauticform-selectbox::-webkit-input-placeholder {
+  color: #cecece !important;
+}
+
+.mauticform-input:-ms-input-placeholder, .mauticform-textarea:-ms-input-placeholder, .mauticform-selectbox:-ms-input-placeholder {
+  color: #cecece !important;
+}
+
+.mauticform-input::-ms-input-placeholder, .mauticform-textarea::-ms-input-placeholder, .mauticform-selectbox::-ms-input-placeholder {
+  color: #cecece !important;
+}
+
+.mauticform-input::placeholder, .mauticform-textarea::placeholder, .mauticform-selectbox::placeholder {
+  color: #cecece !important;
+}
+
+.mauticform-input:-webkit-autofill, .mauticform-textarea:-webkit-autofill, .mauticform-selectbox:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #e2fff2 inset !important;
+}
+
+.mautic-form span.mauticform-errormsg {
+  position: absolute;
+  z-index: 1;
+  top: -6px;
+  right: 0;
+  font-weight: 100;
+  font-style: italic;
+  color: #ff6060;
+  background: white;
+  font-size: 10px;
+}
+
+.mautic-form label {
+  pointer-events: none;
+}
+
+.mautic-form.nocomment [name="mauticform[comments]"] {
+  display: none !important;
+}
+
+.mautic-form.small-form [name="mauticform[hearduson]"], .mautic-form.small-form [name="mauticform[comments]"], .mautic-form.small-form label#mauticform_label_rrallleadsform_hearduson {
+  display: none !important;
+}
+
+.mautic-form.small-form [name="mauticform[comments]"] {
+  display: none !important;
+}
+
+.mautic-form.horizontal .mauticform-page-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.mautic-form.horizontal .mauticform-page-wrapper .mauticform-row:nth-child(1), .mautic-form.horizontal .mauticform-page-wrapper .mauticform-row:nth-child(4), .mautic-form.horizontal .mauticform-page-wrapper .mauticform-row:nth-child(5), .mautic-form.horizontal .mauticform-page-wrapper .mauticform-row:nth-child(6) {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding: 1px;
+}
+
+.mautic-form.horizontal .mauticform-page-wrapper .mauticform-row:nth-child(7), .mautic-form.horizontal .mauticform-page-wrapper .mauticform-row:nth-child(8), .mautic-form.horizontal .mauticform-page-wrapper .mauticform-row:last-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+
+/**********************************************
+*
+* 
 * CONTENT
 *
 *

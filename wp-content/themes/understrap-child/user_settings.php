@@ -28,12 +28,24 @@
   #settings{
     margin-bottom: 400px;
   }
+  #seeUpload {
+    max-width: 314px;
+  }
+  #fileinput{
+    background: white;
+    padding: 5px;
+    color: #10365d;
+    border-radius: 5px
+  }
 </style>
 <div class="more-info margin-top-20" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
   <ul class="margin-top-20">
     <li><i class="fa fa-map-pin"></i> Change Address</li>
-    <a href="#changePass"><li><i class="fa fa-key"></i> Change Password</li></a>
+    <div id="changeAddress">
+      <?php include('forms/change-address.php')?>
+    </div>
+    <li class="settings" data-toggle="#changePass"><i class="fa fa-key"></i> Change Password</li>
     <div class="collapse" id="changePass">
       <i><h4 class="bold-name">Change Password</h4></i>
       <div id="pw-status"></div>
@@ -47,12 +59,25 @@
         </div>
       </form>
     </div>
-    <li><i class="fa fa-file-text"></i> See/Upload Pending Documents</li>
+    <li class="settings" data-toggle="#seeUpload"><i class="fa fa-file-text"></i> See/Upload Pending Documents <span class="badge badge-danger">1</span></li>
+    <div class="collapse" id="seeUpload">
+      <i><h4 class="bold-name">Pending Documents</h4></i>
+      <div id="pw-status"></div>
+      <form id="update-password" action="" method="post">
+        <div class="form-group">
+          <input type="file" id="fileinput" />
+        </div>
+        <div class="form-group">
+          <button class="form-control button success" type="submit"  name="submit" value="Change Password">Upload File</button>
+        </div>
+      </form>
+    </div>
     <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
   </ul>
 </div>
 <script>
-  jQuery('a[href="#changePass"]').click(function(){
-    jQuery('#changePass').toggle('slow');
+  jQuery('li.settings').click(function(){
+    var href = jQuery(this).attr('data-toggle');
+    jQuery(href).toggle('slow');
   });
 </script>

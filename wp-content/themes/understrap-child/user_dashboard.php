@@ -312,14 +312,14 @@
           <div class="progress" id="userStatusBar">
             <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress ?>%;">
               <p>
-                <b class="text-darkBlue noshadow">
-                  <?php echo $progress ?>%</b>
+                <!-- <b class="text-darkBlue noshadow"> -->
+                <span class="badge badge-info badge-pill"><b><?php echo $progress ?>%</b></span>
               </p>
             </div>
           </div>
           <div class="margin-top-20">
             <p>
-              "<?php echo $stageDesc ?>"
+              <b>"<?php echo $stageDesc ?>"</b>
             </p>
           </div>
         </div>
@@ -332,7 +332,6 @@
       </div>
       <div id="main-dashboard">
         <div id="user-not-found" class="getpage">
-          <?php //include('user-not-found.php') ?>
           <h3><?php echo $errorMessage ?></h3>
         </div>
         <div id="user-settings" class="getpage">
