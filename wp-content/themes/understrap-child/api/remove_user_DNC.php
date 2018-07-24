@@ -1,9 +1,4 @@
 <?php 
-  // if($_SERVER['HTTP_REFERER'] !== 'gooddomain.com'){
-  //   die('Unauthorized access');
-  // }else {
-    
-  // }
   $http_origin = $_SERVER['HTTP_ORIGIN'];
 
   $allowed_domains = array(
@@ -27,6 +22,6 @@
   foreach($searchUser['contacts'] as $user){
     $userID = $user['id'];
   };
-  $contactApi->addDnc($userID);
-  echo "User: ".$userEmail." Set to <span style='color:red'>DNC</span>"; 
+  $contactApi->removeDnc($userID, 'email');
+  echo "User: ".$userEmail." Removed From <span style='color:red'>DNC</span>"; 
 ?>

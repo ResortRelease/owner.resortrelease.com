@@ -6,6 +6,7 @@
 .button {
   @include button;
   cursor: pointer;
+  position: relative;
   // small{
   //   position: absolute;
   //   width: 100%;

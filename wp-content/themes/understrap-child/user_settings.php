@@ -41,8 +41,8 @@
 <div class="more-info margin-top-20" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
   <ul class="margin-top-20">
-    <li><i class="fa fa-map-pin"></i> Change Address</li>
-    <div id="changeAddress">
+    <li class="settings" data-toggle="#changeAddress"><i class="fa fa-map-pin"></i> Change Address</li>
+    <div id="changeAddress" class="collapse">
       <?php include('forms/change-address.php')?>
     </div>
     <li class="settings" data-toggle="#changePass"><i class="fa fa-key"></i> Change Password</li>

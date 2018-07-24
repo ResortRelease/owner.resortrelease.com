@@ -26,6 +26,7 @@
     $stageDesc = $user['stage']['description'];
     $stageId = $user['stage']['id'];
   }
+  $notifications = 0;
   //Determine the % of status by stage id.
   switch ($stageId) {
     case "1":
@@ -269,6 +270,11 @@
     border-radius: 10px;
     border: 2px inset red;
   }
+  .badge-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 </style>
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
@@ -299,6 +305,11 @@
     <div class="col-4">
       <div class="round-shadow"></div>
       <div class="button round-primary" onclick="showItem('#user-settings');">
+        <?php
+          if ($notifications >= 1){
+            echo '<span class="badge-icon badge badge-danger badge-pill">1</span>';
+          }
+        ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
       </div>
     </div>
@@ -358,6 +369,11 @@
       <div class="row text-center">
         <div class="round-shadow"></div>
         <div class="button round-primary" onclick="showItem('#user-settings');">
+          <?php
+            if ($notifications >= 1){
+              echo '<span class="badge-icon badge badge-danger badge-pill">1</span>';
+            }
+          ?>
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
         </div>
       </div>

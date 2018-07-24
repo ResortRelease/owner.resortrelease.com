@@ -12284,6 +12284,7 @@ a.skip-link {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
 .primary {
