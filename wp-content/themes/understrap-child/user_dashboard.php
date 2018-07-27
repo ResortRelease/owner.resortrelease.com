@@ -48,18 +48,21 @@
       $progress = 50;
       break;
     case "7":
-      $progress = 60;
+      $progress = 55;
       break;
     case "8":
-      $progress = 70;
+      $progress = 60;
       break;
     case "9":
-      $progress = 80;
+      $progress = 70;
       break;
     case "10":
-      $progress = 90;
+      $progress = 80;
       break;
     case "11":
+      $progress = 90;
+      break;
+    case "12":
       $progress = 100;
       break;
     default:
@@ -290,7 +293,16 @@
   .badge-icon {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -10px;
+  }
+  .badge-icon.badge-danger{
+    font-size: 0.5rem;
+    top: -6px;
+    padding: 2px 4px;
+  }
+  .badge-icon.fa-envelope{
+    text-shadow: 0 0 1px black, 0 0 1px black;
+    font-size: 1.1rem;
   }
   #tawkchat-container {
     display:none!important;
@@ -327,7 +339,7 @@
       <div class="button round-primary" onclick="showItem('#user-settings');">
         <?php
           if ($notifications >= 1){
-            echo '<span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
+            echo '<i class="fa fa-envelope badge-icon"></i><span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
           }
         ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
@@ -356,7 +368,7 @@
           </div>
         </div>
         <p class="more-info margin-top-20" style="border-color: #84DCB0;">
-          <i class="fa fa-question-circle" aria-hidden="true"></i><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at 888-381-5216.</i>
+          <i class="fa fa-question-circle" aria-hidden="true"></i><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at <a href="tel:888-381-5216">888-381-5216</a>.</i>
         </p>
         <p class="more-info margin-top-20" style="border-color: #fae000;">
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i><i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to <a href="mailto:fees@resortrelease.com" style="text-decoration: underline;">fees@resortrelease.com</a> or Fax <a href="tel:815-321-4668">815-321-4668</a></i>
@@ -392,7 +404,7 @@
         <div class="button round-primary" onclick="showItem('#user-settings');">
           <?php
             if ($notifications >= 1){
-              echo '<span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
+              echo '<i class="fa fa-envelope badge-icon"></i><span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
             }
           ?>
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">

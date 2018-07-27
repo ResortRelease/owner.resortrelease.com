@@ -72,15 +72,20 @@
     case "9":
       $stageId = 9;
       break;
-    case "Finalization":
+    case "Recording":
     case 10:
     case "10":
       $stageId = 10;
       break;
-    case "Closed":
+    case "Finalization":
     case 11:
     case "11":
       $stageId = 11;
+      break;
+    case "Closed":
+    case 12:
+    case "12":
+      $stageId = 12;
       break;
   }
     $response = $stageApi->addContact($stageId, $userID);
@@ -115,8 +120,4 @@
     }
     
     $conn->close();
-  // End PHP SQL
-  
-  // option B
-  // strpos($error, 'Duplicate') !== false
 ?>
