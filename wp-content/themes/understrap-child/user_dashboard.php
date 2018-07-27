@@ -73,8 +73,25 @@
     wp_update_user( array ('ID' => $user_id, 'user_pass' => $newpassword) ) ;
     header( 'Location:' . home_url().'/login' );
   }
+  if(isset($_POST['fileUpload'])){
+    echo "<p style='color:red;'>File Uploaded</p>";
+  }
   require_once('header.php');
 ?>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/597a4a055dfc8255d623f4ec/1cj98q3nm';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  var Tawk_API=Tawk_API||{};
+</script>
+<!--End of Tawk.to Script-->
 <style>
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
   #header-new-full-container,
@@ -169,7 +186,7 @@
 
   .progress {
     background: white;
-    height: 30px;
+    height: 45px;
     box-shadow: 0 1px 4px #1b4d7c;
   }
 
@@ -275,6 +292,9 @@
     top: 0;
     right: 0;
   }
+  #tawkchat-container {
+    display:none!important;
+  }
 </style>
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
@@ -307,7 +327,7 @@
       <div class="button round-primary" onclick="showItem('#user-settings');">
         <?php
           if ($notifications >= 1){
-            echo '<span class="badge-icon badge badge-danger badge-pill">1</span>';
+            echo '<span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
           }
         ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
@@ -319,6 +339,7 @@
       <h4 class="text-left">Hello, <b><?php echo $fullname ?></b></h4>
       <div id="user-status" class="getpage active">
         <div class="margin-top-20 more-info">
+          <h4><b>Your Current Status:</b></h4>
           <h3><i><b class="bold-name"><?php echo $stage ?></b></i></h3>
           <div class="progress" id="userStatusBar">
             <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress ?>%;">
@@ -371,7 +392,7 @@
         <div class="button round-primary" onclick="showItem('#user-settings');">
           <?php
             if ($notifications >= 1){
-              echo '<span class="badge-icon badge badge-danger badge-pill">1</span>';
+              echo '<span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
             }
           ?>
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
@@ -390,32 +411,52 @@
     jQuery('#contact-dashboard').toggle('slow');
   }
   function ajaxCall(page){
-		jQuery.ajax({url: "../wp-content/themes/understrap-child/"+page+".php", 
-		type: 'GET',
-		success: function(result){
+    jQuery.ajax({url: "../wp-content/themes/understrap-child/"+page+".php", 
+    type: 'GET',
+    success: function(result){
         if(page == "user_home"){
           jQuery('#user-status').show();
         }else{
           jQuery('#user-status').hide();
         }
-				jQuery("#main-dashboard").html(result);
-				window.scrollTo(0, 0);
-			},
+        jQuery("#main-dashboard").html(result);
+        window.scrollTo(0, 0);
+      },
       error: function(){}
     });
-	}
+  }
   function showItem(item){
     jQuery( ".getpage" ).each(function( index ) {
       jQuery(this).removeClass('active');
     });
     jQuery(item).addClass('active');
   }
+  function toggleChat(){
+    Tawk_API.showWidget();
+    Tawk_API.maximize();
+  }
+  Tawk_API.onLoad = function(){
+    Tawk_API.hideWidget();
+  };
+  Tawk_API.onChatMinimized = function(){
+    Tawk_API.hideWidget();
+  };
 </script>
 <?php 
   if($errorMessage){
     echo '<script type="text/javascript">',
-      'showItem("#user-not-found");
-      jQuery("#user-status").removeClass("active")',
-      '</script>';
+    'showItem("#user-not-found");
+    jQuery("#user-status").removeClass("active")',
+    '</script>';
   }
+  $hash = hash_hmac("sha256",$email,"0f307a52e7f464ba43e063fdbbd3daec3c1c5b23");
+  echo '
+  <script>
+    Tawk_API.visitor = {
+      name : "'.$fullname.'",
+      email : "'.$email.'",
+      hash : "'.$hash.'"
+    };
+  </script>
+  '
 ?>

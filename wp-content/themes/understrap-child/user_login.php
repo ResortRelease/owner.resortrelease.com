@@ -131,6 +131,9 @@ get_header();
     max-width: fit-content;
     padding: 4px;
   }
+  html, body {
+    height: 100%;
+  }
   body {
     padding-top: 90px;
     background: #F7F7F7;
@@ -141,8 +144,8 @@ get_header();
 
   body {
     width: 100%;
-    background: -webkit-linear-gradient(right, #0e76bc, #24d3d3);
-    background: linear-gradient(to left, #0e76bc, #24d3d3);
+    background: -webkit-linear-gradient(-45deg, #0e76bc, #24d3d3);
+    background: linear-gradient(-45deg, #0e76bc, #24d3d3);
     /* Moonlit BG */
     /* background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43);
     background: linear-gradient(to left, #2C5364, #203A43, #2C5364, #203A43);

@@ -41,10 +41,10 @@
 <div class="more-info margin-top-20" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
   <ul class="margin-top-20">
-    <li class="settings" data-toggle="#changeAddress"><i class="fa fa-map-pin"></i> Change Address</li>
+    <!-- <li class="settings" data-toggle="#changeAddress"><i class="fa fa-map-pin"></i> Change Address</li>
     <div id="changeAddress" class="collapse">
-      <?php include('forms/change-address.php')?>
-    </div>
+      <?php// include('forms/change-address.php')?>
+    </div> -->
     <li class="settings" data-toggle="#changePass"><i class="fa fa-key"></i> Change Password</li>
     <div class="collapse" id="changePass">
       <i><h4 class="bold-name">Change Password</h4></i>
@@ -59,19 +59,34 @@
         </div>
       </form>
     </div>
-    <li class="settings" data-toggle="#seeUpload"><i class="fa fa-file-text"></i> See/Upload Pending Documents <span class="badge badge-danger">1</span></li>
-    <div class="collapse" id="seeUpload">
+    <!-- <a href="#?checkPending"><li class="settings" data-toggle="#seeUpload">
+      <i class="fa fa-file-text"></i> See/Upload Pending Documents  -->
+      <?php/*
+        if ($notifications >= 1){
+          echo '<span class="badge badge-danger badge-pill">'.$notifications.'</span>';
+        }
+      */?>
+    <!-- </li></a> -->
+    <!-- <div class="collapse" id="seeUpload">
       <i><h4 class="bold-name">Pending Documents</h4></i>
       <div id="pw-status"></div>
-      <form id="update-password" action="" method="post">
+
+
+      
+      <form id="pending-documents" action="" method="post">
         <div class="form-group">
           <input type="file" id="fileinput" />
+          <input type="hidden" name="fileUpload" value="1">
         </div>
         <div class="form-group">
           <button class="form-control button success" type="submit"  name="submit" value="Change Password">Upload File</button>
         </div>
       </form>
-    </div>
+      <!-- End Upload Form -->
+
+
+
+    <!-- </div> -->
     <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
   </ul>
 </div>
