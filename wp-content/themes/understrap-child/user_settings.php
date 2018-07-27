@@ -61,11 +61,7 @@
     </div>
     <!-- <a href="#?checkPending"><li class="settings" data-toggle="#seeUpload">
       <i class="fa fa-file-text"></i> See/Upload Pending Documents  -->
-      <?php/*
-        if ($notifications >= 1){
-          echo '<span class="badge badge-danger badge-pill">'.$notifications.'</span>';
-        }
-      */?>
+
     <!-- </li></a> -->
     <!-- <div class="collapse" id="seeUpload">
       <i><h4 class="bold-name">Pending Documents</h4></i>
@@ -82,7 +78,7 @@
           <button class="form-control button success" type="submit"  name="submit" value="Change Password">Upload File</button>
         </div>
       </form>
-      <!-- End Upload Form -->
+    End Upload Form -->
 
 
 
