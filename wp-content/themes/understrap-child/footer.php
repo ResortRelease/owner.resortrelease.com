@@ -32,7 +32,7 @@
       <div class="row text-left">
         <div class="col-md-4 margin-top-40">
           Resort Release is not a law firm, and the employees of Resort Release are not attorneys.
-          <br><a href="https://staging.resortrelease.com/terms-and-conditions" rel="noopener" style="color: #82b3d4;"><u> Terms and Privacy</u></a>
+          <br><a href="https://resortrelease.com/terms-and-conditions" rel="noopener" style="color: #82b3d4;"><u> Terms and Privacy</u></a>
         </div>
         <div class="offset-md-4 col-md-4 margin-top-40">
           <h3 id="nav-links">Nav Links</h3>

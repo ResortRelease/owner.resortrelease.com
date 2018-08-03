@@ -144,8 +144,11 @@ get_header();
 
   body {
     width: 100%;
-    background: -webkit-linear-gradient(-45deg, #0e76bc, #24d3d3);
-    background: linear-gradient(-45deg, #0e76bc, #24d3d3);
+    /* background: -webkit-linear-gradient(-45deg, #0e76bc, #24d3d3);
+    background: linear-gradient(-45deg, #0e76bc, #24d3d3); */
+    /* SEA */
+    background: -webkit-linear-gradient(0deg, #08233B, #24d3d3);
+    background: linear-gradient(0deg, #08233B, #24d3d3);
     /* Moonlit BG */
     /* background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43);
     background: linear-gradient(to left, #2C5364, #203A43, #2C5364, #203A43);
@@ -427,7 +430,7 @@ get_header();
     <div class="col-md-6 offset-md-3">
       <div class="card card-login">
         <a href="<?php echo home_url(); ?>">
-          <img src="../wp-content/themes/understrap-child/assets/logos/RR-logo.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;">
+          <img src="../wp-content/themes/understrap-child/assets/logos/icon-round.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;filter: saturate(0.6);">
         </a>
         <div class="card-body">
           <div class="row">
