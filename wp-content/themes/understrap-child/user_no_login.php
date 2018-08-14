@@ -52,7 +52,7 @@ get_header(); ?>
     z-index: -1;
   }
   h1 {
-    font-size: 8vmin;
+    font-size: 7vmin;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     font-family: 'Verdana';
   }
