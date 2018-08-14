@@ -34,7 +34,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerUser']) ) {
       $errors['email'] = "Please enter a valid email";  
   } elseif( email_exists( $email ) ) 
   {  
-      $errors['email'] = "";  
+      $errors['email'] = "Email Already Exists";  
   }  
 
   // Check password is valid  
