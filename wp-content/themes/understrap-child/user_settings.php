@@ -51,6 +51,7 @@
       <div id="pw-status"></div>
       <form id="update-password" action="" method="post">
         <div class="form-group">
+          <input type="hidden" name="change" value="change" />
           <input type="hidden" name="action" value="patch" />
           <input id="changePW" type="password" class=" form-control margin-top-20" placeholder="New Password" name="newpassword">
         </div>

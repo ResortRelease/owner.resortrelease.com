@@ -74,7 +74,7 @@
     $newpassword = $_POST['newpassword'];
     update_user_meta($user_id, 'user_pass', $newpassword);
     wp_update_user( array ('ID' => $user_id, 'user_pass' => $newpassword) ) ;
-    header( 'Location:' . home_url().'/login' );
+    echo "<div class='log-msg'>PASSWORD UPDATED</div>";
   }
   if(isset($_POST['fileUpload'])){
     echo "<p style='color:red;'>File Uploaded</p>";
@@ -107,7 +107,23 @@
   #notification-container {
     display: none !important;
   }
-
+  .log-msg{
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 3;
+    margin-top: 20px;
+    font-weight: 400!important;
+    border: 2px solid #4caf50;
+    border-radius: 8px;
+    max-width: fit-content;
+    padding: 4px;
+    background: white;
+    box-shadow: 1px 16px 45px 2px rgba(0, 0, 0, 0.5);
+    color: #4caf50;
+  }
   html {
     margin-top: 0px !important;
     min-height: 100%;
@@ -458,6 +474,7 @@
       jQuery(this).removeClass('active');
     });
     jQuery(item).addClass('active');
+    window.scrollTo(0, 0);
   }
   function toggleChat(){
     Tawk_API.showWidget();
@@ -469,6 +486,9 @@
   Tawk_API.onChatMinimized = function(){
     Tawk_API.hideWidget();
   };
+  setTimeout(() => {    
+    jQuery('.log-msg').toggle('slow');
+  }, 5000);
 </script>
 <?php 
   if($errorMessage){

@@ -14,7 +14,7 @@ if ($user_ID){
 if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerUser']) ) {
   $errors = array();  
   // Check username is present and not already in use  
-  $username = $wpdb->escape($_REQUEST['username']);  
+  $username = $wpdb->escape($_REQUEST['email']);  
   if ( strpos($username, ' ') !== false )
   {   
       $errors['username'] = "Sorry, no spaces allowed in usernames";  
@@ -432,7 +432,7 @@ get_header();
     <div class="col-md-6 offset-md-3">
       <div class="card card-login">
         <a href="<?php echo home_url(); ?>">
-          <img src="../wp-content/themes/understrap-child/assets/logos/icon-round.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;filter: saturate(0.6);">
+          <img src="../wp-content/themes/understrap-child/assets/logos/icon-round.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;">
         </a>
         <div class="card-body">
           <div class="row">
@@ -469,9 +469,9 @@ get_header();
               </form>
               <form id="register-form" action="<?php echo $_SERVER['REQUEST_URI']; ?>#reg=true" method="post" role="form" style="display: none;">
                 <h2 class="text-darkBlue">REGISTER</h2>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <input type="text" name="username" id="username" tabindex="1" class="form-control copyemail hide" placeholder="Username">
-                </div>
+                </div> -->
                 <div class="form-group">
                   <small>
                     <i class="text-darkBlue" style="font-weight: 300;">Please use the same email you've used previously</i>
