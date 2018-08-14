@@ -28,6 +28,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PMJM9BD');</script>
 <!-- End Google Tag Manager -->
+<script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head            = document.getElementsByTagName('head')[0];
+        var script          = document.createElement('script');
+        script.type         = 'text/javascript';
+        script.src          = 'https://e.resortrelease.com/media/js/mautic-form.js';
+        script.onload       = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'https://e.resortrelease.com';
+        var MauticLang   = {
+            'submittingMessage': "Please wait..."
+        }
+    }
+</script>
 <?php wp_head(); ?>
 </head>
 
@@ -40,19 +58,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <!--  Logos -->
-<div id="accreditation-new-row" class="container-fluid text-center">
-	<div id="header-credits">
-		<div>
-				<a href="https://www.resortrelease.com/about" rel="noopener">
-				<img id="header-years" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/years-in-business.svg" type="image/svg+xml" alt="Resort Release 6 Years" style="width: 70px; height: auto;"/>
-				</a>
-				<a href="http://www.bbb.org/chicago/business-reviews/timeshare-advocates/american-resource-management-group-llc-in-rockford-il-88596110/" target="_blank" rel="noopener">
-						<img id="header-bbb" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/Resort-Release-BBB.jpg" type="image/svg+xml" alt="Resort Release BBB" style="width: 150px; height: auto;"/>
-				</a>
-				<a href="http://web.rockfordchamber.com/Real-Estate,-Management/Resort-Release-3609" target="_blank" rel="noopener">
-						<img id="header-rockford" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/rcc.png" type="image/svg+xml" alt="Resort Release Rockford" style="width: 150px; height: auto;"/>
-				</a>
+<?php if (!is_page('Welcome')): ?>
+	<div id="accreditation-new-row" class="container-fluid text-center">
+		<div id="header-credits">
+			<div>
+					<a href="https://www.resortrelease.com/about" rel="noopener">
+					<img id="header-years" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/years-in-business.svg" type="image/svg+xml" alt="Resort Release 6 Years" style="width: 70px; height: auto;"/>
+					</a>
+					<a href="http://www.bbb.org/chicago/business-reviews/timeshare-advocates/american-resource-management-group-llc-in-rockford-il-88596110/" target="_blank" rel="noopener">
+							<img id="header-bbb" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/Resort-Release-BBB.jpg" type="image/svg+xml" alt="Resort Release BBB" style="width: 150px; height: auto;"/>
+					</a>
+					<a href="http://web.rockfordchamber.com/Real-Estate,-Management/Resort-Release-3609" target="_blank" rel="noopener">
+							<img id="header-rockford" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/rcc.png" type="image/svg+xml" alt="Resort Release Rockford" style="width: 150px; height: auto;"/>
+					</a>
+			</div>
 		</div>
 	</div>
+<?php else: ?>
+<div class="sign-up" style="background: #2d75bc; color: white;padding: 12px;">
+	<div class="container">
+		<div class="text-right"><a href="<?php echo home_url() ?>/login?login=true" style="color: inherit;">User Login</a></div>
+	</div>
 </div>
+<?php endif; ?>
 <?php } ?>
