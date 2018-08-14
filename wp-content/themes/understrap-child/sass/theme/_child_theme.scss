@@ -1,6 +1,7 @@
 .button {
   @include button;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .button {
@@ -16,9 +17,22 @@
   //   margin: 0 auto;
   // }
 }
+#tos {
+  font-size: .6rem;
+  text-align: center;
+  margin: 0 auto;
+  color: #ccc;
+  text-decoration: none;
+  padding-top: 10px;
+}
 
+#tos a {
+  color: #ccc;
+}
 .primary {
   @include button-bg($rr-Yellow);
+  font-size: 1.3rem!important;
+  text-shadow: 0 2px 0 #cb9403;
 }
 .round-primary {
   @include button-bg($rr-Yellow);

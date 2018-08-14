@@ -23,7 +23,7 @@
 <?php endif ;?>
   <div id="footer" class="container-fluid">
     <div class="container text-center">
-      <?php if (!is_home()) :?>
+      <?php if (is_page( array('Mortgage', 'Transfer'))) :?>
       <div class="row" id="footer-buttons">
         <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="prev" data-page="1">Prev</i></div></div>
         <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="next" data-page="2">Next</div></div>    
@@ -39,6 +39,7 @@
           <hr id="divider">
           <br>
           <ul>
+            <a href="<?php echo home_url() ?>/login?login=true" style="color: inherit;"><li>User Login</li></a>
             <a href="https://www.resortrelease.com/" style="color: inherit;"><li>Home</li></a>
             <a href="https://www.resortrelease.com/3-reasons/" style="color: inherit;"><li>Client Survey</li></a>
           </ul>

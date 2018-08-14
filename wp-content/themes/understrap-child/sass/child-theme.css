@@ -12266,6 +12266,7 @@ a.skip-link {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .button {
@@ -12287,10 +12288,25 @@ a.skip-link {
   position: relative;
 }
 
+#tos {
+  font-size: .6rem;
+  text-align: center;
+  margin: 0 auto;
+  color: #ccc;
+  text-decoration: none;
+  padding-top: 10px;
+}
+
+#tos a {
+  color: #ccc;
+}
+
 .primary {
   background: #F3B203;
   -webkit-box-shadow: 0 3px 0 #cb9403 !important;
   box-shadow: 0 3px 0 #cb9403 !important;
+  font-size: 1.3rem !important;
+  text-shadow: 0 2px 0 #cb9403;
 }
 
 .primary:hover {

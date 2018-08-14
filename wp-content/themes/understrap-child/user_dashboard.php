@@ -15,7 +15,7 @@
   $userEmail = $current_user->user_email;
   $user_id = $current_user->ID;
   $searchUser = $contactApi->getList($userEmail);
-  $signout = wp_logout_url( home_url('/login') );
+  $signout = wp_logout_url( home_url('/login?login=true') );
   foreach($searchUser['contacts'] as $user){
     $userArray = $user['fields']['all'];
     $userId = $user['id'];
@@ -67,7 +67,7 @@
       break;
     default:
       $progress = 0;
-      $errorMessage = 'User Not Found!';
+      $errorMessage = "<div class='text-center'>Sign Up For Our Services<br>Contact us for a FREE QUOTE</div>";
       break;
   }
   if($_POST['action'] == "patch"){
@@ -284,12 +284,6 @@
     letter-spacing: 1px;
     font-weight: 600!important;
   }
-  #RR-logo{
-    background: #071b2f;
-    padding: 4px;
-    border-radius: 10px;
-    border: 2px inset red;
-  }
   .badge-icon {
     position: absolute;
     top: 0;
@@ -307,13 +301,38 @@
   #tawkchat-container {
     display:none!important;
   }
+  #user-not-found{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    background: #287895;
+    padding-top: 50px;
+    z-index: 999;
+  }
+  #user-not-found form {
+    max-width: 348px;
+    margin:0 auto;
+  }
+  .settings-all {
+    z-index: 999;
+  }
 </style>
+<div id="user-not-found" class="getpage">
+  <h3><?php echo $errorMessage ?></h3>
+  <div><?php include('forms/dashboard-form.php'); ?></div>
+  <div style="width: 100%" class="text-center">
+    <div class="button success margin-top-20" style="font-size: 1.3rem; padding: 9px 105px;"><b>Call Now!</b></div>
+  </div>
+</div>
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
     <div class="col-4 text-left">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/RR-logo-white.svg" alt="RR logo" width="50px" id="RR-logo">
+      <img src="../wp-content/themes/understrap-child/assets/logos/icon-round.png" alt="RR logo" width="50px" id="RR-logo">
     </div>
-    <div class="col-8 text-right">
+    <div class="col-8 text-right" style="padding-top: 12px;">
       <p>Status as of:
         <b>
           <?php echo date("m/d/Y") ?>
@@ -336,7 +355,7 @@
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-primary" onclick="showItem('#user-settings');">
+      <div class="button round-primary" onclick="showItem('#user-settings');" class="settings-all">
         <?php
           if ($notifications >= 1){
             echo '<i class="fa fa-envelope badge-icon"></i><span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
@@ -375,9 +394,6 @@
         </p>
       </div>
       <div id="main-dashboard">
-        <div id="user-not-found" class="getpage">
-          <h3><?php echo $errorMessage ?></h3>
-        </div>
         <div id="user-settings" class="getpage">
           <?php include('user_settings.php') ?>
         </div>
@@ -401,7 +417,7 @@
       </div>
       <div class="row text-center">
         <div class="round-shadow"></div>
-        <div class="button round-primary" onclick="showItem('#user-settings');">
+        <div class="button round-primary" onclick="showItem('#user-settings');" class="settings-all">
           <?php
             if ($notifications >= 1){
               echo '<i class="fa fa-envelope badge-icon"></i><span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
