@@ -443,7 +443,13 @@ get_header();
                   echo '<div class="success form-group text-center" style="color: white;font-weight: 400;">You password has been changed. Please Check your email for your new password.</div>';}
                 ?>
                 <div class="form-group">
-                  <input type="text" name="log" id="user_login" tabindex="1" class="form-control" placeholder="Email" value="">
+                <?php 
+                  if(!isset($_POST['loginUser'])) {  
+                    echo '<input type="text" name="log" id="user_login" tabindex="1" class="form-control" placeholder="Email" value="">';
+                  } else {
+                    echo '<input type="text" name="log" id="user_login" tabindex="1" class="form-control" placeholder="Email" value="'.$_POST['log'].'">';
+                  }
+                ?>
                 </div>
                 <div class="form-group">
                   <input type="password" name="pwd" id="user_pass" tabindex="2" class="form-control" placeholder="Password">
