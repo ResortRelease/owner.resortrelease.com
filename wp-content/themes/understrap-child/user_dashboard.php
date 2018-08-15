@@ -141,7 +141,9 @@
   body {
     width: 100%;
     background: linear-gradient(#0f4b73, #0b7d68) !important;
-    height: 100vh;
+    height: 100%;
+    min-height: 100%;
+    position: relative; 
   }
   .polygon {
     position: absolute;
@@ -201,7 +203,9 @@
     z-index: 9;
     left: 15px;
   }
-
+  #mobile-nav .button {
+    background: rgb(7, 40, 50);
+  }
   .progress {
     background: rgba(255, 255, 255, 0.2);
     height: 45px;
@@ -494,7 +498,7 @@
     var per = jQuery('.progress-bar').attr('data-animate');
     jQuery('.progress-bar').animate({ width: per+'%' }
     ,function(){
-      jQuery('.progress-bar .badge').toggle('slow');
+      jQuery('.progress-bar .badge').fadeIn('slow');
     }); 
   });
 </script>
