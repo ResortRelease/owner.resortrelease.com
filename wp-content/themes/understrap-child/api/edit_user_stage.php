@@ -1,18 +1,16 @@
 <?php 
   /* CORS */
-    $http_origin = $_SERVER['HTTP_ORIGIN'];
-    $allowed_domains = array(
-      'https://www.resortrelease.com',
-      'https://www.resortreleasecrm.com'
-    );
-
-    if (in_array($http_origin, $allowed_domains))
-    {  
-        header("Access-Control-Allow-Origin: $http_origin");
-    }
+  $http_origin = $_SERVER['HTTP_ORIGIN'];
+  $allowed_domains = array(
+    'https://www.resortrelease.com',
+    'https://www.resortreleasecrm.com'
+  );
+  if (in_array($http_origin, $allowed_domains))
+  {  
+    header("Access-Control-Allow-Origin: $http_origin");
+  }
   /* END CORS */  
   require 'mt.php'; /* Mautic API */ 
-  
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userEmail = $_POST['email'];
     $crmStage = $_POST['stage'];
@@ -22,37 +20,34 @@
     $userEmail = $_GET['email'];
     $crmStage = $_GET['stage'];
   }
+  /* Grab Data */
+  $data = array(
+    'fullname' => $type['fullname'],
+    'email' => $userEmail,
+    'phone' => $type['phone'],
+    'resort' => $type['resort'],
+    'comments' => $type['comments'],
+    'hearduson' => $type['hearduson'],
+    'utmcampaign' => $type['utm_campaign'],
+    'utmsource' => $type['utm_source'],
+    'utmad' => $type['utm_ad'],
+    'utmadgroup' => $type['utm_adgroup'],
+    'utmmedium' => $type['utm_medium'],
+    'utmplacement' => $type['utm_placement'],
+    'utmterm' => $type['utm_term'],
+    'msclkid' => $type['msclkid'],
+    'gclid' => $type['gclid'],
+    'crm_lead_source' => $type['crmleadsource'],
+    'crmleadsubsource' => $type['crmleadsubsource'],
+    'hasapp' => $type['hasapp'],
+    'hasform' => $type['hasform']
+  );
+  /** Search User*/
   $searchUser = $contactApi->getList($userEmail);
   foreach($searchUser['contacts'] as $user){
     $userID = $user['id'];
   };
-  /* If Contact Does Not Exist in Mautic */
-  if (!$userID || $userID == 0) {
-    $data = array(
-      'fullname' => $type['fullname'],
-      'email' => $userEmail,
-      'phone' => $type['phone'],
-      'resort' => $type['resort'],
-      'comments' => $type['comments'],
-      'hearduson' => $type['hearduson'],
-      'utmcampaign' => $type['utm_campaign'],
-      'utmsource' => $type['utm_source'],
-      'utmad' => $type['utm_ad'],
-      'utmadgroup' => $type['utm_adgroup'],
-      'utmmedium' => $type['utm_medium'],
-      'utmplacement' => $type['utm_placement'],
-      'utmterm' => $type['utm_term'],
-      'msclkid' => $type['msclkid'],
-      'gclid' => $type['gclid'],
-      'crm_lead_source' => $type['crmleadsource'],
-      'crmleadsubsource' => $type['crmlead-subsource'],
-      'hasapp' => $type['hasapp'],
-      'hasform' => $type['hasform']
-    );
-    $newContact = $contactApi->create($data);
-    $userID = $newContact['contact']['id'];
-    $response = $stageApi->addContact($stageId, $userID);
-  }
+  /** Check Stage */
   switch($crmStage){
     case "Welcome":
     case 1:
@@ -115,7 +110,15 @@
       $stageId = 12;
       break;
   }
-  $response = $stageApi->addContact($stageId, $userID);
+  /* If Contact Does Not Exist in Mautic ? Create : Edit */
+  if (!$userID || $userID == 0) {
+    $newContact = $contactApi->create($data);
+    $userID = $newContact['contact']['id'];
+    $response = $stageApi->addContact($stageId, $userID);
+  } else {
+    $contact = $contactApi->edit($userID, $data, false);
+    $response = $stageApi->addContact($stageId, $userID);
+  }
   if (!isset($response['success'])) {
     echo 'User Does Not Exist in Mautic.<br>';
   }else{
