@@ -134,7 +134,7 @@ get_header();
     box-shadow: 1px 16px 45px 2px rgba(0, 0, 0, 0.5);
   }
   html, body {
-    height: 100%;
+    height: 100vh;
   }
   body {
     padding-top: 90px;
@@ -146,17 +146,17 @@ get_header();
 
   body {
     width: 100%;
-    /* background: -webkit-linear-gradient(-45deg, #0e76bc, #24d3d3);
-    background: linear-gradient(-45deg, #0e76bc, #24d3d3); */
-    /* SEA */
-    background: -webkit-linear-gradient(0deg, #08233B, #24d3d3);
-    background: linear-gradient(0deg, #08233B, #24d3d3);
-    /* Moonlit BG */
-    /* background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43);
-    background: linear-gradient(to left, #2C5364, #203A43, #2C5364, #203A43);
-    /* background-size: 600% 100%; */
-    -webkit-animation: HeroBG 20s ease infinite;
-            animation: HeroBG 20s ease infinite; */
+    background: linear-gradient(#0f4b73, #0b7d68) !important;
+    height: 100vh;
+  }
+  .polygon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../wp-content/themes/understrap-child/assets/polygon.png');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
   }
 
   @-webkit-keyframes HeroBG {
@@ -194,9 +194,9 @@ get_header();
 
   .card-login {
     border: none;
-    -webkit-box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.2);
-    -moz-box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.2);
-    box-shadow: 0px 0px 49px 14px rgba(188, 190, 194, 0.2);
+    -webkit-box-shadow: 0px 13px 19px 3px rgba(4, 11, 25, 0.3);
+    -moz-box-shadow: 0px 13px 19px 3px rgba(4, 11, 25, 0.3);
+    box-shadow: 0px 13px 19px 3px rgba(4, 11, 25, 0.3);
   }
 
   .card-login .checkbox input[type=checkbox] {
@@ -427,6 +427,7 @@ get_header();
     box-shadow: none;
   }
 </style>
+<div class="polygon"></div>
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">

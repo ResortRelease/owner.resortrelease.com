@@ -140,18 +140,17 @@
 
   body {
     width: 100%;
-    background: linear-gradient(#0e76bc, #0b7d68) !important;
-    /* Moonlit BG */
-    /* background: -webkit-linear-gradient(right, #2C5364, #203A43, #2C5364, #203A43)!important;
-    background: linear-gradient(to left, #2C5364, #203A43, #2C5364, #203A43)!important;
-    background-size: 600% 100%!important;
-    -webkit-animation: HeroBG 20s ease infinite!important;
-            animation: HeroBG 20s ease infinite!important; */
-    /* background: -webkit-linear-gradient(left, #0e76bc, #24d3d3, #0e76bc, #24d3d3);
-    background: linear-gradient(to right, #0e76bc, #24d3d3, #0e76bc, #24d3d3); */
-    /* background-size: 600% 100%; */
-    /* -webkit-animation: HeroBG 20s ease infinite;
-            animation: HeroBG 20s ease infinite; */
+    background: linear-gradient(#0f4b73, #0b7d68) !important;
+    height: 100vh;
+  }
+  .polygon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../wp-content/themes/understrap-child/assets/polygon.png');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
   }
 
   * {
@@ -204,7 +203,7 @@
   }
 
   .progress {
-    background: white;
+    background: rgba(255, 255, 255, 0.2);
     height: 45px;
     box-shadow: 0 1px 4px #1b4d7c;
   }
@@ -271,10 +270,11 @@
     }
   }
   .more-info {
-    border: 2px solid #5bdec6;
+    /* border: 1px solid #5bdec6; */
     border-radius: 8px;
     padding: 10px;
-    background: #0c365d;
+    background: rgba(1, 10, 19, 0.6);
+    box-shadow: 0 0 1px #5bdec6;
   }
   .more-info i{
     text-shadow: none!important;
@@ -336,6 +336,7 @@
     z-index: 999;
   }
 </style>
+<div class="polygon"></div>
 <div id="user-not-found" class="getpage">
   <h3><?php echo $errorMessage ?></h3>
   <div><?php include('forms/dashboard-form.php'); ?></div>
@@ -359,13 +360,13 @@
   <nav id="mobile-nav" class="row d-lg-none">
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-secondary" onclick="showItem('#user-status');">
+      <div class="button round-primary" onclick="showItem('#user-status');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.svg" alt="RR home" width="30px" class="margin-auto">
     </div>
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-success" onclick="showItem('#user-contact');">
+      <div class="button round-primary" onclick="showItem('#user-contact');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.svg" alt="RR chat" width="30px" class="margin-auto">
       </div>
     </div>
@@ -389,10 +390,10 @@
           <h4><b>Your Current Status:</b></h4>
           <h3><i><b class="bold-name"><?php echo $stage ?></b></i></h3>
           <div class="progress" id="userStatusBar">
-            <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progress ?>%;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;" data-animate="<?php echo $progress ?>">
               <p>
                 <!-- <b class="text-darkBlue noshadow"> -->
-                <span class="badge badge-info badge-pill"><b><?php echo $progress ?>%</b></span>
+                <span class="badge badge-info badge-pill" style="display: none;"><b><?php echo $progress ?>%</b></span>
               </p>
             </div>
           </div>
@@ -402,10 +403,10 @@
             </p>
           </div>
         </div>
-        <p class="more-info margin-top-20" style="border-color: #84DCB0;">
+        <p class="more-info margin-top-20">
           <i class="fa fa-question-circle" aria-hidden="true"></i><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at <a href="tel:888-381-5216">888-381-5216</a>.</i>
         </p>
-        <p class="more-info margin-top-20" style="border-color: #fae000;">
+        <p class="more-info margin-top-20" style="box-shadow: 0 0 1px #fae000;">
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i><i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to <a href="mailto:fees@resortrelease.com" style="text-decoration: underline;">fees@resortrelease.com</a> or Fax <a href="tel:815-321-4668">815-321-4668</a></i>
         </p>
       </div>
@@ -418,16 +419,16 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-2 d-none d-lg-block" style="position: sticky;top: 0;">
+    <div class="col-lg-2 d-none d-lg-block" style="position: sticky;top: 0;padding-top: 47px;">
       <div class="row text-center">
         <div class="round-shadow"></div>
-        <div class="button round-secondary"  onclick="showItem('#user-status');">
+        <div class="button round-primary"  onclick="showItem('#user-status');">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.svg" alt="RR home" width="30px" class="margin-auto">
         </div>
       </div>
       <div class="row text-center">
         <div class="round-shadow"></div>
-        <div class="button round-success" onclick="showItem('#user-contact');">
+        <div class="button round-primary" onclick="showItem('#user-contact');">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.svg" alt="RR chat" width="30px" class="margin-auto">
         </div>
       </div>
@@ -489,6 +490,13 @@
   setTimeout(() => {    
     jQuery('.log-msg').toggle('slow');
   }, 5000);
+  jQuery(window).load(function(){
+    var per = jQuery('.progress-bar').attr('data-animate');
+    jQuery('.progress-bar').animate({ width: per+'%' }
+    ,function(){
+      jQuery('.progress-bar .badge').toggle('slow');
+    }); 
+  });
 </script>
 <?php 
   if($errorMessage){

@@ -37,6 +37,14 @@
     color: #10365d;
     border-radius: 5px
   }
+  form#update-password {
+    max-width: 250px;
+  }
+  form#update-password button{
+    font-weight: 600!important;
+      font-size: 1.1rem;
+      text-shadow: 0 2px 0 #75ab39;
+  }
 </style>
 <div class="more-info margin-top-20" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
