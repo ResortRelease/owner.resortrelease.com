@@ -10,7 +10,7 @@
  *
  * @package understrap
  */
-
+header( 'Location:' . home_url().'/login' );
 get_header(); ?>
 <div id="splash" class="container">
 	<div class="row">
