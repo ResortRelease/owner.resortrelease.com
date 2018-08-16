@@ -127,8 +127,8 @@
   html {
     margin-top: 0px !important;
     min-height: 100%;
+    position: relative;
   }
-
   body {
     padding-top: 10px;
     background: #F7F7F7;
@@ -136,14 +136,9 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     min-height: 100%;
-  }
-
-  body {
     width: 100%;
     background: linear-gradient(#0f4b73, #0b7d68) !important;
-    height: 100vh;
     min-height: 100%;
-    position: relative;
   }
   .polygon {
     position: absolute;
