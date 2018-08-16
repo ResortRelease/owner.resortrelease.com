@@ -143,7 +143,7 @@
     background: linear-gradient(#0f4b73, #0b7d68) !important;
     height: 100vh;
     min-height: 100%;
-    position: relative; 
+    position: relative;
   }
   .polygon {
     position: absolute;
@@ -388,7 +388,7 @@
   </nav>
   <div class="row margin-top-20">
     <div class="col-12 col-lg-10">
-      <h4 class="text-left">Hello, <b><?php echo $fullname ?></b></h4>
+      <h4 class="text-left text-capitalize">Hello, <b><?php echo $fullname ?></b></h4>
       <div id="user-status" class="getpage active">
         <div class="margin-top-20 more-info">
           <h4><b>Your Current Status:</b></h4>
