@@ -124,27 +124,26 @@
   }else{
     echo $userEmail.' -> Moved to Stage -> '.$stageId.'<br>';
   }
-  /* Create connection
-     require 'ils.php';
-     $conn = new mysqli($servername, $username, $password, $dbname);
-      Check connection
-     if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-     }     
-     Encode $example array into a JSON string.
-     $emailEncoded = json_encode($userEmail);
-     $stageEncoded = json_encode($stageId);
-     $userEmail = (string)$userEmail;
-    
-      Create or update client stage
-     $sql = "INSERT INTO $table (id, email, stage) VALUES ('$userID', '$userEmail', '$stageId')
-             ON DUPLICATE KEY UPDATE email = '$userEmail', stage= '$stageId'";
+  /*Create connection*/
+    require 'ils.php';
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    /*Check connection*/
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }     
+    /*Encode $example array into a JSON string.*/
+    $emailEncoded = json_encode($userEmail);
+    $stageEncoded = json_encode($stageId);
+    $userEmail = (string)$userEmail;
+  
+    /*Create or update client stage */
+    $sql = "INSERT INTO $table (id, email, stage) VALUES ('$userID', '$userEmail', '$stageId')
+            ON DUPLICATE KEY UPDATE email = '$userEmail', stage= '$stageId'";
 
-     if ($conn->query($sql) === TRUE) {
-       echo "Created or Updated successfully";
-     } else {
-       echo "Error: " . $sql . "<br>" . $conn->error;
-     }
-    
-  $conn->close(); */
+    if ($conn->query($sql) === TRUE) {
+      echo "Created or Updated successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+  $conn->close();
 ?>

@@ -141,7 +141,7 @@
   body {
     width: 100%;
     background: linear-gradient(#0f4b73, #0b7d68) !important;
-    height: 100%;
+    height: 100vh;
     min-height: 100%;
     position: relative; 
   }
