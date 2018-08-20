@@ -300,6 +300,7 @@
   a.question {
     color: #3dc3b3!important;
     display: block;
+    margin-top: 15px;
   }
   a.exclamation {
     color: #dcca4a!important;
