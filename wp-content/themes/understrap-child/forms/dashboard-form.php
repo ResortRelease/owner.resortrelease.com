@@ -4,7 +4,7 @@ $current_user = wp_get_current_user();
 $email = $current_user->user_email;
 ?>
 <style>
-  body{
+  #user-not-found{
     padding-bottom: 300px;
   }
 </style>

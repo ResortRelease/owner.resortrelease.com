@@ -27,6 +27,7 @@
   }
   #settings{
     margin-bottom: 400px;
+    margin-top: 0;
   }
   #seeUpload {
     max-width: 314px;
@@ -46,14 +47,15 @@
       text-shadow: 0 2px 0 #75ab39;
   }
 </style>
-<div class="more-info margin-top-20" id="settings">
+<div class="more-info" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
   <ul class="margin-top-20">
     <!-- <li class="settings" data-toggle="#changeAddress"><i class="fa fa-map-pin"></i> Change Address</li>
     <div id="changeAddress" class="collapse">
       <?php// include('forms/change-address.php')?>
     </div> -->
-    <li class="settings" data-toggle="#changePass"><i class="fa fa-key"></i> Change Password</li>
+    <div class="line"></div>
+    <li class="settings" data-toggle="#changePass"><i class="fa fa-key bold-name"></i> Change Password</li>
     <div class="collapse" id="changePass">
       <i><h4 class="bold-name">Change Password</h4></i>
       <div id="pw-status"></div>
@@ -92,7 +94,8 @@
 
 
     <!-- </div> -->
-    <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out"></i> Log Out</a></li>
+    <div class="line"></div>
+    <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out bold-name"></i> Log Out</a></li>
   </ul>
 </div>
 <script>

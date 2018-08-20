@@ -98,12 +98,12 @@
 <style>
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
   #header-new-full-container,
-  #accreditation-new-row,
+  #accreditation-new-row,#user-settings, #user-contact, 
+  #user-status, #user-not-found,#settings-dashboard, #contact-dashboard,
   .container.main.mobile,
   .hide, .main-nav {
     display: none;
   }
-
   #notification-container {
     display: none !important;
   }
@@ -130,83 +130,52 @@
     position: relative;
   }
   body {
-    padding-top: 10px;
-    background: #F7F7F7;
+    background: #F6F6F6;
     color: #666666;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     min-height: 100%;
     width: 100%;
-    background: linear-gradient(#0f4b73, #0b7d68) !important;
     min-height: 100%;
+    padding-bottom: 40px;
   }
-  .polygon {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('../wp-content/themes/understrap-child/assets/polygon.png');
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-  }
-
-  * {
-    color: white;
+  *:not(.fa) {
+    color: #656565;
     /* text-shadow: 1px 1px 0px #3f617f; */
     font-weight: 300 !important;
+    font-family: "Avenir", "Verdana", sans-serif!important;
   }
-
   * b {
-    font-weight: 400 !important;
+    font-weight: 800 !important;
   }
   p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .progress {
     margin-bottom: 10px;
   }
-
-  @-webkit-keyframes HeroBG {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 100% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-
-  @keyframes HeroBG {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 100% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-
   #mobile-nav {
     text-align: center;
     width: 100%;
+    padding: 8px;
     position: fixed;
     bottom: 0px;
     z-index: 9;
     left: 15px;
+    background: white;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
   }
   #mobile-nav .button {
     background: rgb(7, 40, 50);
+    
   }
   .progress {
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
     height: 45px;
-    box-shadow: 0 1px 4px #1b4d7c;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: -24px;
   }
-
   .progress-bar {
     background: -webkit-linear-gradient(left, #84DCB0, #43E0DC, #84DCB0, #43E0DC);
     background: linear-gradient(to right, #84DCB0, #43E0DC, #84DCB0, #43E0DC);
@@ -219,73 +188,24 @@
   .progress-bar p{
     margin-top: 0;
     margin-bottom: 0;
-  }
-  .noshadow {
-    text-shadow: none !important;
-  }
-
-  .different-status {
-    display: flex;
-    flex-flow: row nowrap;
-    margin-left: 10px;
-  }
-
-  .status {
-    flex: 0 1 10%;
-    text-align: center;
-  }
-
-  .status div {
-    background: #1b4e7d;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    float: right;
-    padding-top: 1px;
-  }
-
-  blockquote {
-    padding: 2px 0px 12px 10px;
-    margin: 0 0px 20px 0px;
-    font-size: 17.5px;
-    border-left: 2px solid #5bdec5;
-  }
-  #user-status {
-    /* border: 2px solid white;
-    padding: 10px;
-    border-radius: 10px; */
-  }
-  #user-dashboard {
-    padding-top: 32px;
-    padding-bottom: 80px;
-  }
-  #settings-dashboard, #contact-dashboard{
-    display:none;
-  }
-  @media screen and (max-width: 768px) {
-    .xs-no-padding{
-      padding: 0!important;
-    }
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 500!important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   }
   .more-info {
-    /* border: 1px solid #5bdec6; */
-    border-radius: 8px;
-    padding: 10px;
-    background: rgba(1, 10, 19, 0.6);
-    box-shadow: 0 0 1px #5bdec6;
+    margin: 40px 0;
   }
   .more-info i{
-    text-shadow: none!important;
+    margin-right: 22px;
+    position: relative;
+    top: 5px;
   }
   .fa-exclamation-circle {
     color: #ffe000;
   }
   .fa-question-circle {
     color: #84DCB0;
-  }
-  #user-settings, #user-contact, #user-status, #user-not-found{
-    display: none;
   }
   .active{
     display: block!important;
@@ -294,10 +214,16 @@
     text-shadow: none;
     color: black;
   }
+  .stage-name {
+    margin-bottom: 40px;
+  }
   .bold-name {
-    color: #43E0dc;
+    color: #3dc3b3;
     letter-spacing: 1px;
-    font-weight: 600!important;
+    font-weight: 800!important;
+    font-size: 2rem;
+    text-shadow: 0 1px 1px #113d53;
+    font-style: italic;
   }
   .badge-icon {
     position: absolute;
@@ -323,7 +249,7 @@
     top: 0;
     left: 0;
     padding: 5px;
-    background: #287895;
+    background: #F6F6F6;
     padding-top: 50px;
     z-index: 999;
   }
@@ -334,79 +260,146 @@
   .settings-all {
     z-index: 999;
   }
+  .separator {
+    text-align: center;
+  }
+  .separator * {
+    display: inline-block;
+    padding: 0 15px;
+  }
+  .separator .line {
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);    
+    border-bottom: 1px solid white;
+    width: 30%;
+  }
+  .separator .icon {
+    position: relative;
+    top: 3px;
+    pointer-events: none;
+  }
+  #header-dashboard {
+    background: #003D53;
+    padding: 40px 12px;
+    position: relative;
+    overflow:hidden;
+    padding-bottom: 60px;
+  }
+  #header-dashboard * {
+    color: white;
+    text-shadow: 2px 2px 3px #113d53;
+  }
+  .bg-logo{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  a.question {
+    color: #3dc3b3!important;
+    display: block;
+  }
+  a.exclamation {
+    color: #dcca4a!important;
+  }
+  .small-date {
+    position: absolute;
+    top: -30px;
+    right: 0;
+  }
 </style>
-<div class="polygon"></div>
 <div id="user-not-found" class="getpage">
   <h3><?php echo $errorMessage ?></h3>
   <div><?php include('forms/dashboard-form.php'); ?></div>
   <div style="width: 100%" class="text-center">
-    <div class="button success margin-top-20" style="font-size: 1.3rem; padding: 9px 105px;"><b>Call Now!</b></div>
+    <a href="tel:888-758-0993"><div class="button success margin-top-20" style="font-size: 1.3rem; padding: 9px 105px;"><b>Call Now! <br> (888)758-0993</b></div></a>
   </div>
 </div>
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
-    <div class="col-4 text-left">
-      <img src="../wp-content/themes/understrap-child/assets/logos/icon-round.png" alt="RR logo" width="50px" id="RR-logo">
-    </div>
-    <div class="col-8 text-right" style="padding-top: 12px;">
-      <p>Status as of:
+    <div class="bg-logo text-center"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/rr-logo-blue.svg" alt=""></div>
+    <div class="col-12 text-right">
+      <small class="small-date">Status as of:
         <b>
           <?php echo date("m/d/Y") ?>
         </b>
-      </p>
+      </small>
+    </div>
+    <div class="col-12 text-center margin-top-20">
+      <h4 class="text-capitalize ">Hello, <b><?php echo $fullname ?></b></h4>
+      <h4><b>Your Current Status:</b></h4>
     </div>
   </header>
+  <div class="progress" id="userStatusBar">
+    <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;" data-animate="<?php echo $progress ?>">
+      <p class="badge" style="display:none;">
+        <?php echo $progress ?>%
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
   <nav id="mobile-nav" class="row d-lg-none">
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-primary" onclick="showItem('#user-status');">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home.svg" alt="RR home" width="30px" class="margin-auto">
+      <div class="btn" onclick="showItem('#user-status');">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home-dark.svg" alt="RR home" width="30px" class="margin-auto">
     </div>
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-primary" onclick="showItem('#user-contact');">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat.svg" alt="RR chat" width="30px" class="margin-auto">
+      <div class="btn" onclick="showItem('#user-contact');">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat-dark.svg" alt="RR chat" width="30px" class="margin-auto">
       </div>
     </div>
     <div class="col-4">
       <div class="round-shadow"></div>
-      <div class="button round-primary" onclick="showItem('#user-settings');" class="settings-all">
+      <div class="btn" onclick="showItem('#user-settings');" class="settings-all">
         <?php
           if ($notifications >= 1){
             echo '<i class="fa fa-envelope badge-icon"></i><span class="badge-icon badge badge-danger badge-pill">'.$notifications.'</span>';
           }
         ?>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings.svg" alt="RR settings" width="30px" class="margin-auto">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/settings-dark.svg" alt="RR settings" width="30px" class="margin-auto">
       </div>
     </div>
   </nav>
   <div class="row margin-top-20">
-    <div class="col-12 col-lg-10">
-      <h4 class="text-left text-capitalize">Hello, <b><?php echo $fullname ?></b></h4>
+    <div class="col-12 col-lg-11">
       <div id="user-status" class="getpage active">
-        <div class="margin-top-20 more-info">
-          <h4><b>Your Current Status:</b></h4>
-          <h3><i><b class="bold-name"><?php echo $stage ?></b></i></h3>
-          <div class="progress" id="userStatusBar">
-            <div class="progress-bar" role="progressbar" aria-valuenow="'.$progress.'" aria-valuemin="0" aria-valuemax="100" style="width:0%;" data-animate="<?php echo $progress ?>">
-              <p>
-                <!-- <b class="text-darkBlue noshadow"> -->
-                <span class="badge badge-info badge-pill" style="display: none;"><b><?php echo $progress ?>%</b></span>
-              </p>
-            </div>
+        <div class="more-info" style="margin-top: 0;">
+          <div class="stage-name text-center">
+            <h3><b class="bold-name"><?php echo $stage ?></b></h3>
           </div>
-          <div class="margin-top-20">
+          <div class="separator">
+            <div class="line"></div>
+            <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/RR-separator.svg" alt="RR separator"></div>
+            <div class="line"></div>
+          </div>
+          <div class="more-info">
             <p>
               <b>"<?php echo $stageDesc ?>"</b>
             </p>
           </div>
         </div>
-        <p class="more-info margin-top-20">
-          <i class="fa fa-question-circle" aria-hidden="true"></i><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at <a href="tel:888-381-5216">888-381-5216</a>.</i>
+        <div class="separator">
+          <div class="line"></div>
+          <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/question-svg.svg" alt="RR separator"></div>
+          <div class="line"></div>
+        </div>
+        <p class="more-info">
+          <i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at:</i>
+          <a href="tel:888-381-5216" class="question text-center">888-381-5216</a>
         </p>
-        <p class="more-info margin-top-20" style="box-shadow: 0 0 1px #fae000;">
-          <i class="fa fa-exclamation-circle" aria-hidden="true"></i><i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to <a href="mailto:fees@resortrelease.com" style="text-decoration: underline;">fees@resortrelease.com</a> or Fax <a href="tel:815-321-4668">815-321-4668</a></i>
+        <div class="separator">
+          <div class="line"></div>
+          <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/exclamation-svg.svg" alt="RR separator"></div>
+          <div class="line"></div>
+        </div>
+        <p class="more-info">
+          <i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to <a href="mailto:fees@resortrelease.com"  class="exclamation" style="text-decoration: underline;">fees@resortrelease.com</a> or Fax <a href="tel:815-321-4668" class="exclamation" >815-321-4668</a></i>
         </p>
       </div>
       <div id="main-dashboard">
@@ -418,7 +411,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-2 d-none d-lg-block" style="position: sticky;top: 0;padding-top: 47px;">
+    <div class="col-lg-1 d-none d-lg-block" style="position: sticky;top: 0;padding-top: 47px;">
       <div class="row text-center">
         <div class="round-shadow"></div>
         <div class="button round-primary"  onclick="showItem('#user-status');">

@@ -231,9 +231,9 @@ get_header(); ?>
     <h1 class="text-center"><b>Get Started Today</b></h1>
     <h3 class="text-center">Free Consultation</h3>
     <div class="margin-top-20 text-center">
-      <div class="button primary" style="padding: 12px; font-size: 1.6rem;">
-        Call Now
-      </div>
+      <a href="tel:888-758-0993" ><div class="button primary" style="padding: 12px; font-size: 1.6rem;">
+        Call Now! 888-758-0993
+      </div></a>
     </div>
     <div class="margin-top-20 text-center">
       <span><i>Or</i></span>

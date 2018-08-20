@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <?php else: ?>
 <div class="sign-up" style="background: #0e76bc; color: white;padding: 12px;">
 	<div class="container">
-		<div class="text-right"><a href="<?php echo home_url() ?>/login?login=true" style="color: inherit;">User Login</a></div>
+		<div class="text-right"><a href="<?php echo home_url() ?>/login?login=true" style="color: inherit;" class="button success">User Login</a></div>
 	</div>
 </div>
 <?php endif; ?>
