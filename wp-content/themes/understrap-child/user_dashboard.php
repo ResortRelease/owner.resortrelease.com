@@ -67,7 +67,7 @@
       break;
     default:
       $progress = 0;
-      $errorMessage = "<div class='text-center'>Sign Up For Our Services<br>Contact us for a FREE QUOTE</div>";
+      $errorMessage = "<div class='text-center'>Hello, Looks like you haven't signed up for our services yet.<br>Call us for a <i>FREE</i> quote</div>";
       break;
   }
   if($_POST['action'] == "patch"){
@@ -131,22 +131,21 @@
   }
   body {
     background: #F6F6F6;
-    color: #666666;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
     min-height: 100%;
     width: 100%;
     min-height: 100%;
     padding-bottom: 40px;
-  }
-  *:not(.fa) {
     color: #656565;
     /* text-shadow: 1px 1px 0px #3f617f; */
-    font-weight: 300 !important;
-    font-family: "Avenir", "Verdana", sans-serif!important;
+    font-weight: 400 !important;
+    font-family: "Raleway", "Avenir", "Verdana", sans-serif;
+    line-height: 1.6;
   }
   * b {
-    font-weight: 800 !important;
+    font-weight: 900!important;
+  }
+  *:not(.fa) {
+    
   }
   p {
     font-size: 1.1rem;
@@ -190,7 +189,7 @@
     margin-bottom: 0;
     color: white;
     font-size: 1.6rem;
-    font-weight: 500!important;
+    font-weight: 900!important;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   }
   .more-info {
@@ -220,7 +219,7 @@
   .bold-name {
     color: #3dc3b3;
     letter-spacing: 1px;
-    font-weight: 800!important;
+    font-weight: 900!important;
     font-size: 2rem;
     text-shadow: 0 1px 1px #113d53;
     font-style: italic;
@@ -312,11 +311,13 @@
   }
 </style>
 <div id="user-not-found" class="getpage">
+
   <h3><?php echo $errorMessage ?></h3>
-  <div><?php include('forms/dashboard-form.php'); ?></div>
   <div style="width: 100%" class="text-center">
-    <a href="tel:888-758-0993"><div class="button success margin-top-20" style="font-size: 1.3rem; padding: 9px 105px;"><b>Call Now! <br> (888)758-0993</b></div></a>
+    <a href="tel:888-758-0993"><div class="button success margin-top-20" style="font-size: 1.3rem; padding: 9px 105px; color:white!important;"><b style="color:white!important;font-weight: 600!important">Call Now! <br> (888)758-0993</b></div></a>
   </div>
+  <div class="margin-top-20 text-center">OR</div>
+  <div><?php include('forms/dashboard-form.php'); ?></div>
 </div>
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
@@ -330,7 +331,7 @@
     </div>
     <div class="col-12 text-center margin-top-20">
       <h4 class="text-capitalize ">Hello, <b><?php echo $fullname ?></b></h4>
-      <h4><b>Your Current Status:</b></h4>
+      <h4>Your Current Status:</h4>
     </div>
   </header>
   <div class="progress" id="userStatusBar">
@@ -381,7 +382,7 @@
           </div>
           <div class="more-info">
             <p>
-              <b>"<?php echo $stageDesc ?>"</b>
+              "<?php echo $stageDesc ?>"
             </p>
           </div>
         </div>

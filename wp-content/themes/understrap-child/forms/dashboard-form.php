@@ -72,7 +72,7 @@ $email = $current_user->user_email;
                 </div>
 
                 <div id="mauticform_rrallleadsformdash_submit" class="mauticform-row mauticform-button-wrapper mauticform-field-25">
-                    <button type="submit" name="mauticform[submit]" id="mauticform_input_rrallleadsformdash_submit" name="mauticform[submit]" value="" class="mauticform-button button primary" style="width: 100%" value="1">Submit</button>
+                    <button type="submit" name="mauticform[submit]" id="mauticform_input_rrallleadsformdash_submit" name="mauticform[submit]" value="" class="mauticform-button button primary" style="width: 100%;font-weight: 600!important;padding: 12px" value="1">Request a Quote</button>
                 </div>
                 <div id="mauticform_rrallleadsformdash_facebook_login" style="display: none;" class="mauticform-row mauticform-div-wrapper mauticform-field-25 text-center social-login">
                     <a href="#" onclick="openOAuthWindow('https://e.resortrelease.com/plugins/integrations/authuser/Facebook')">
