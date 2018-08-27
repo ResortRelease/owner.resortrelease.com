@@ -156,7 +156,7 @@
   #mobile-nav {
     text-align: center;
     width: 100%;
-    padding: 8px;
+    /* padding: 8px; */
     position: fixed;
     bottom: 0px;
     z-index: 9;
@@ -296,6 +296,9 @@
     opacity: 0.6;
     pointer-events: none;
   }
+  a {
+    color: inherit!important;
+  }
   a.question {
     color: #3dc3b3!important;
     display: block;
@@ -308,6 +311,19 @@
     position: absolute;
     top: -30px;
     right: 0;
+  }
+  .selected {
+    border-top: 2px solid red;
+    margin-top: -2px;
+  }
+  .selected.red{
+    border-color: #ba3838;
+  }
+  .selected.yellow{
+    border-color: #dcca4a;
+  }
+  .selected.green{
+    border-color: #3dc3b3;
   }
 </style>
 <div id="user-not-found" class="getpage">
@@ -344,19 +360,19 @@
 </div>
 <div class="container">
   <nav id="mobile-nav" class="row d-lg-none">
-    <div class="col-4">
+    <div class="col-4 home tab green">
       <div class="round-shadow"></div>
       <div class="btn" onclick="showItem('#user-status');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home-dark.svg" alt="RR home" width="30px" class="margin-auto">
     </div>
     </div>
-    <div class="col-4">
+    <div class="col-4 contact tab yellow">
       <div class="round-shadow"></div>
       <div class="btn" onclick="showItem('#user-contact');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat-dark.svg" alt="RR chat" width="30px" class="margin-auto">
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-4 settings tab red">
       <div class="round-shadow"></div>
       <div class="btn" onclick="showItem('#user-settings');" class="settings-all">
         <?php
@@ -464,12 +480,31 @@
       error: function(){}
     });
   }
+  function getSelected(item){
+    jQuery('.tab').removeClass('selected');
+    switch (item) {
+      case "#user-status":
+        jQuery('#mobile-nav .home').addClass('selected');
+        break;
+      case "#user-settings":
+        jQuery('#mobile-nav .settings').addClass('selected');
+        break;
+      case "#user-contact":
+        jQuery('#mobile-nav .contact').addClass('selected');
+        break;
+      default:
+        jQuery('#mobile-nav .home').addClass('selected');
+        break;
+    }
+  };
+  getSelected();
   function showItem(item){
     jQuery( ".getpage" ).each(function( index ) {
       jQuery(this).removeClass('active');
     });
     jQuery(item).addClass('active');
     window.scrollTo(0, 0);
+    getSelected(item);
   }
   function toggleChat(){
     Tawk_API.showWidget();
