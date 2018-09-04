@@ -139,7 +139,7 @@
     /* text-shadow: 1px 1px 0px #3f617f; */
     font-weight: 400 !important;
     font-family: "Raleway", "Avenir", "Verdana", sans-serif;
-    line-height: 1.6;
+    line-height: 1.5em!important;
   }
   * b {
     font-weight: 900!important;
@@ -316,14 +316,14 @@
     border-top: 2px solid red;
     margin-top: -2px;
   }
-  .selected.red{
-    border-color: #ba3838;
+  .selected.first{
+    border-color: rgba(61, 195, 179, 0.40);
   }
-  .selected.yellow{
-    border-color: #dcca4a;
+  .selected.second{
+    border-color: rgba(220, 202, 74, 0.40);
   }
-  .selected.green{
-    border-color: #3dc3b3;
+  .selected.third{
+    border-color: rgba(186, 56, 56, 0.40);
   }
 </style>
 <div id="user-not-found" class="getpage">
@@ -360,19 +360,19 @@
 </div>
 <div class="container">
   <nav id="mobile-nav" class="row d-lg-none">
-    <div class="col-4 home tab green">
+    <div class="col-4 home tab first">
       <div class="round-shadow"></div>
       <div class="btn" onclick="showItem('#user-status');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/home-dark.svg" alt="RR home" width="30px" class="margin-auto">
     </div>
     </div>
-    <div class="col-4 contact tab yellow">
+    <div class="col-4 contact tab second">
       <div class="round-shadow"></div>
       <div class="btn" onclick="showItem('#user-contact');">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/chat-dark.svg" alt="RR chat" width="30px" class="margin-auto">
       </div>
     </div>
-    <div class="col-4 settings tab red">
+    <div class="col-4 settings tab third">
       <div class="round-shadow"></div>
       <div class="btn" onclick="showItem('#user-settings');" class="settings-all">
         <?php

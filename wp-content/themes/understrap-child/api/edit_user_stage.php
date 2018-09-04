@@ -120,7 +120,7 @@
     $response = $stageApi->addContact($stageId, $userID);
   }
   if (!isset($response['success'])) {
-    echo 'User Does Not Exist in Mautic.<br>';
+    echo 'Unknown Stage Name.<br>';
   }else{
     echo $userEmail.' -> Moved to Stage -> '.$stageId.'<br>';
   }

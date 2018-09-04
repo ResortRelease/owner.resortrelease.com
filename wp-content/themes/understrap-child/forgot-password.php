@@ -112,8 +112,8 @@ if (!$user_ID){
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <div class="card card-login">
-            <a href="<?php echo home_url(); ?>">
-              <img src="../wp-content/themes/understrap-child/assets/logos/RR-only-logo-color.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;">
+            <a href="'. home_url() .'/login=?login=true">
+              <img src="../wp-content/themes/understrap-child/assets/logos/icon-round.png" alt="RR logo" width="120px" style="position: absolute;right: 0;left: 0; margin: 0 auto;top: -62px;">
             </a>
             <div class="card-body">
               <div class="row">

@@ -4,9 +4,9 @@ Template Name: Login User
 */
 global $wpdb, $user_ID;
 /* If User Doesn't Come From Links - Register For A Callback */
-if(!$_GET['login'] == true){
-  header( 'Location:' . home_url().'/welcome' );
-}
+// if(!$_GET['login'] == true){
+//   header( 'Location:' . home_url().'/welcome' );
+// }
 if ($user_ID){
   // They're already logged in, so we bounce them back to dashboard.  
   header( 'Location:' . home_url().'/user-dashboard' );  
