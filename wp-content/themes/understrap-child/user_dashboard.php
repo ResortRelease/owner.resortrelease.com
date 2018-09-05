@@ -325,6 +325,29 @@
   .selected.third{
     border-color: rgba(186, 56, 56, 0.40);
   }
+  .wrapper {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  [class|="confetti"] {
+    position: absolute;
+  }
+
+  .red {
+    background-color: #E94A3F;
+  }
+
+  .yellow {
+    background-color: #FAA040;
+  }
+
+  .blue {
+    background-color: #5FC9F5;
+  }
 </style>
 <div id="user-not-found" class="getpage">
 
@@ -337,6 +360,7 @@
 </div>
 <div class="container" id="user-dashboard">
   <header class="row" id="header-dashboard">
+  <div class="wrapper"></div>
     <div class="bg-logo text-center"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/rr-logo-blue.svg" alt=""></div>
     <div class="col-12 text-right">
       <small class="small-date">Status as of:
@@ -526,6 +550,56 @@
       jQuery('.progress-bar .badge').fadeIn('slow');
     }); 
   });
+  function isClosed() {
+    for (var i = 0; i < 50; i++) {
+      create(i);
+    }
+  }
+
+  function create(i) {
+    var width = Math.random() * 8;
+    var height = width * 0.4;
+    var colourIdx = Math.ceil(Math.random() * 3);
+    var colour = "red";
+    switch(colourIdx) {
+      case 1:
+        colour = "yellow";
+        break;
+      case 2:
+        colour = "blue";
+        break;
+      default:
+        colour = "red";
+    }
+    jQuery('<div class="confetti-'+i+' '+colour+'"></div>').css({
+      "width" : width+"px",
+      "height" : height+"px",
+      "top" : -Math.random()*20+"%",
+      "left" : Math.random()*100+"%",
+      "opacity" : Math.random()+0.5,
+      "transform" : "rotate("+Math.random()*360+"deg)"
+    }).appendTo('.wrapper');  
+    
+    drop(i);
+  }
+
+  function drop(x) {
+    jQuery('.confetti-'+x).animate({
+      top: "100%",
+      left: "+="+Math.random()*15+"%"
+    }, Math.random()*3000 + 3000, function() {
+      reset(x);
+    });
+  }
+
+  function reset(x) {
+    jQuery('.confetti-'+x).animate({
+      "top" : -Math.random()*20+"%",
+      "left" : "-="+Math.random()*15+"%"
+    }, 0, function() {
+      drop(x);             
+    });
+  }
 </script>
 <?php 
   if($errorMessage){
@@ -533,6 +607,9 @@
     'showItem("#user-not-found");
     jQuery("#user-status").removeClass("active")',
     '</script>';
+  }
+  if($stageId == 12){
+    echo '<script>isClosed();</script>';
   }
   $hash = hash_hmac("sha256",$email,"0f307a52e7f464ba43e063fdbbd3daec3c1c5b23");
   echo '
