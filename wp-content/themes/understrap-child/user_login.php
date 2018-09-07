@@ -107,6 +107,39 @@ if(isset($_POST['loginUser'])) {
        exit();  
      }  
 }
+//Customizes the page to redirect users to after having connected with Social Login
+//Use the email address as user_login
+// function oa_social_login_set_email_as_user_login ($user_fields)
+// {
+//   if ( ! empty ($user_fields['user_email']))
+//   {
+//     if ( ! username_exists ($user_fields['user_email']))
+//     {
+//       $user_fields['user_login'] = $user_fields['user_email'];
+//     }
+//   }
+//   return $user_fields;
+// }
+// //This filter is applied to new users
+// add_filter('oa_social_login_filter_new_user_fields', 'oa_social_login_set_email_as_user_login');
+
+// function oa_social_login_set_redirect_url ($url, $user_data)
+// {
+//     // $user_data is an object that represents the current user
+//     // The format is similar to the data returned by $user_data = get_userdata ($userid);
+//     // https://codex.wordpress.org/Function_Reference/get_userdata
+     
+//     // Redirects users to http(s)://www.your-wordpress-blog.com/members/%user_login%
+//     return  get_site_url(null, '/user-dashboard/' . $user_data->user_login); 
+// }
+ 
+// // Applies the redirection filter to users that register using Social Login
+// add_filter('oa_social_login_filter_registration_redirect_url', 'oa_social_login_set_redirect_url', 10, 2);
+ 
+// // Applies the redirection filter to users that login using Social Login
+// add_filter('oa_social_login_filter_login_redirect_url', 'oa_social_login_set_redirect_url', 10, 2);
+
+
 get_header();
 ?>
 <style>
@@ -439,6 +472,12 @@ get_header();
             <div class="col-lg-12">
               <form id="login-form" action="<?php echo home_url(); ?>/login/?login=true" method="post" role="form" style="display: block; min-height: 302px">
                 <h2 class="text-darkBlue">LOGIN</h2>
+                <div class="form-group">
+                  <?php // do_action('oa_social_login'); ?>
+                  <a href="https://owner.resortrelease.com/wp-login.php?loginSocial=facebook" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="facebook" data-popupwidth="475" data-popupheight="175">
+                    Click here to login or register
+                  </a>
+                </div>
                 <?php if(isset($_GET['action']) && $_GET['action'] == "reset_success") {
                   echo '<div class="success form-group text-center" style="color: white;font-weight: 400;">You password has been changed. Please Check your email for your new password.</div>';}
                 ?>

@@ -551,7 +551,7 @@
     }); 
   });
   function isClosed() {
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 120; i++) {
       create(i);
     }
   }
