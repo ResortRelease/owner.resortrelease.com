@@ -474,9 +474,10 @@ get_header();
                 <h2 class="text-darkBlue">LOGIN</h2>
                 <div class="form-group">
                   <?php // do_action('oa_social_login'); ?>
-                  <a href="https://owner.resortrelease.com/wp-login.php?loginSocial=facebook" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="facebook" data-popupwidth="475" data-popupheight="175">
+                  <?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
+                  <!-- <a href="https://owner.resortrelease.com/wp-login.php?loginSocial=facebook" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="facebook" data-popupwidth="475" data-popupheight="175">
                     Click here to login or register
-                  </a>
+                  </a> -->
                 </div>
                 <?php if(isset($_GET['action']) && $_GET['action'] == "reset_success") {
                   echo '<div class="success form-group text-center" style="color: white;font-weight: 400;">You password has been changed. Please Check your email for your new password.</div>';}
