@@ -31,35 +31,46 @@
   switch ($stageId) {
     case "1":
         $progress = 25;
+        $ico = 'fa fa-search';
         break;
     case "2":
         $progress = 30;
+        $ico = 'fa fa-file-alt';
         break;
     case "3":
         $progress = 35;
+        $ico = 'fa fa-archive';
         break;
     case "4":
+      $ico = 'fa fa-hand-point-right';
       $progress = 40;
       break;
     case "5":
+      $ico = 'fa fa-home';
       $progress = 45;
       break;
     case "6":
+      $ico = 'fa fa-file-alt';
       $progress = 50;
       break;
     case "7":
+      $ico = 'fa fa-check';
       $progress = 55;
       break;
     case "8":
+      $ico = 'fa fa-send';
       $progress = 60;
       break;
     case "9":
+      $ico = 'fa fa-send';
       $progress = 70;
       break;
     case "10":
+      $ico = 'fa fa-microphone';
       $progress = 80;
       break;
     case "11":
+      $ico = 'fa fa-hourglass';
       $progress = 90;
       break;
     case "12":
@@ -130,7 +141,8 @@
     position: relative;
   }
   body {
-    background: #F6F6F6;
+    /* background: #F6F6F6; */
+    background: #FFFFFF;
     min-height: 100%;
     width: 100%;
     min-height: 100%;
@@ -138,7 +150,7 @@
     color: #656565;
     /* text-shadow: 1px 1px 0px #3f617f; */
     font-weight: 400 !important;
-    font-family: "Raleway", "Avenir", "Verdana", sans-serif;
+    font-family: "Helvetica", "Avenir", "Verdana", sans-serif;
     line-height: 1.5em!important;
   }
   * b {
@@ -162,7 +174,7 @@
     z-index: 9;
     left: 15px;
     background: white;
-    box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 -3px 33px rgba(7, 39, 68, 0.3);
   }
   #mobile-nav .button {
     background: rgb(7, 40, 50);
@@ -171,18 +183,23 @@
   .progress {
     background: white;
     height: 45px;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 30px 6px rgba(7, 39, 68, 0.3);
     position: relative;
     top: -24px;
+    border-radius: 50px;
+    border: 3px solid white;
   }
   .progress-bar {
-    background: -webkit-linear-gradient(left, #84DCB0, #43E0DC, #84DCB0, #43E0DC);
-    background: linear-gradient(to right, #84DCB0, #43E0DC, #84DCB0, #43E0DC);
+    /* background: -webkit-linear-gradient(left, #84DCB0, #43E0DC, #84DCB0, #43E0DC);
+    background: linear-gradient(to right, #84DCB0, #43E0DC, #84DCB0, #43E0DC); */
+    background: -webkit-linear-gradient(#00d000, #009a00);
+    background: linear-gradient(#00d000, #009a00);
     /* background: linear-gradient( #84DCB0, #43E0DC); */
-    -webkit-animation: HeroBG 20s ease infinite;
+    /* -webkit-animation: HeroBG 20s ease infinite;
     animation: HeroBG 20s ease infinite;
-    background-size: 300% 100%;
+    background-size: 300% 100%; */
     padding: 5px 0;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.5);
   }
   .progress-bar p{
     margin-top: 0;
@@ -195,10 +212,57 @@
   .more-info {
     margin: 40px 0;
   }
+  .chatbox {
+    background: #00517C;
+    color: white;
+    padding: 12px;
+    border-radius: 22px;
+    position:relative;
+  }
+  .chatbox p {
+    font-size: 0.9rem;
+    padding-left:20px;
+  }
+  .chatbox a {
+    color: white;
+  }
+  .chatboxIcon {
+    color: #0078B8;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 8rem;
+  }
+  .arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 37px solid #1b527c;
+    position: absolute;
+    bottom: -18px;
+    left: 0px;
+    transform: rotate(32deg);
+    z-index: -1;
+  }
+  .arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 37px solid #1b527c;
+    position: absolute;
+    bottom: -18px;
+    left: 0px;
+    transform: rotate(32deg);
+    z-index: -1;
+  }
   .more-info i{
-    margin-right: 22px;
     position: relative;
-    top: 5px;
+    top: 4px;
+    padding: 0!important;
+    margin: 0 auto;
+    width: auto!important;
   }
   .fa-exclamation-circle {
     color: #ffe000;
@@ -217,11 +281,23 @@
     margin-bottom: 40px;
   }
   .bold-name {
-    color: #3dc3b3;
+    color: red;
+    letter-spacing: -1px;
+    font-weight: 900!important;
+    font-size: 2rem;
+    font-family: "Avenir";
+    text-transform: uppercase;
+  }
+  h3.bold-name {
+    color: #2d76bc;
+    font-size: 1.4rem;
+  }
+  .bold-icon {
+    color: #0078B8;
     letter-spacing: 1px;
     font-weight: 900!important;
     font-size: 2rem;
-    text-shadow: 0 1px 1px #113d53;
+    text-shadow: 0 1px 1px rgba(17, 61, 83, 0.4);
     font-style: italic;
   }
   .badge-icon {
@@ -300,9 +376,11 @@
     color: inherit!important;
   }
   a.question {
-    color: #3dc3b3!important;
+    /* color: #3dc3b3!important; */
     display: block;
     margin-top: 15px;
+    text-align: right;
+    font-size: 1.3rem;
   }
   a.exclamation {
     color: #dcca4a!important;
@@ -347,6 +425,29 @@
 
   .blue {
     background-color: #5FC9F5;
+  }
+  .round-icon {
+    background: #0078B8;
+    color: white;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    font-size: 2.8rem;
+    padding-top: 12px;
+    /* box-shadow: 0 3px 30px 6px rgba(7, 39, 68, 0.3); */
+  }
+  .info-bar {
+    background: #FFC480;
+    padding: 10px;
+  }
+  .info-bar a {
+    color: #00517C!important;
+  }
+  .info-bar p {
+    font-size: 0.9rem;
   }
 </style>
 <div id="user-not-found" class="getpage">
@@ -412,37 +513,72 @@
     <div class="col-12 col-lg-11">
       <div id="user-status" class="getpage active">
         <div class="more-info" style="margin-top: 0;">
-          <div class="stage-name text-center">
-            <h3><b class="bold-name"><?php echo $stage ?></b></h3>
+          <div class="stage-name text-center animated fadeInUp">
+            <h3><b class="bold-name text-uppercase"><?php echo $stage ?></b></h3>
           </div>
-          <div class="separator">
+          <div class="round-icon animated fadeInUp" style="animation-delay: .5s;">
+            <?php if($stageId != 12){
+              echo '<div class="elIcon"><i class="'.$ico.'"></i></div>';
+            } else {
+              echo '<img src="'.get_stylesheet_directory_uri().'/assets/icons/bird.png" alt="Timeshare Freedom Bird" style="margin-top:-12px;">';
+            };?>
+          </div>
+          <!-- <div class="separator">
             <div class="line"></div>
             <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/RR-separator.svg" alt="RR separator"></div>
             <div class="line"></div>
-          </div>
-          <div class="more-info">
+          </div> -->
+          <div class="more-info animated fadeInUp" style="animation-delay: .9s;">
             <p>
               "<?php echo $stageDesc ?>"
             </p>
           </div>
         </div>
-        <div class="separator">
+        <!-- <div class="separator">
           <div class="line"></div>
           <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/question-svg.svg" alt="RR separator"></div>
           <div class="line"></div>
+        </div> -->
+        <?php if($stageId != 12): ?>
+        <div class="more-info chatbox animated fadeInUp" style="animation-delay: 1.3s;">
+          <div class="chatboxIcon"><i class="fa fa-question"></i></div>
+          <p><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at:</i></p>
+          <a href="tel:888-381-5216" class="question">888-381-5216</a>
+          <div class="arrow-down">
+          </div>
         </div>
-        <p class="more-info">
-          <i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at:</i>
-          <a href="tel:888-381-5216" class="question text-center">888-381-5216</a>
-        </p>
-        <div class="separator">
+        <?php else: ?>
+        <div class="more-info animated fadeInUp" style="animation-delay: 1.3s;">
+          <h3 class="text-uppercase text-center bold-name"><b>Would You <span style="display: inline-block;">Recomend Us?</span></b></h3>
+          <div class="row margin-top-20">
+            <div class="col-6 text-center">
+              <a href="https://www.facebook.com/pg/resortrelease/reviews/" rel="nofollow"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/like.png" alt="Like us"></a>
+            </div>
+            <div class="col-6 text-center">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/dislike.png" alt="Dislike us" style="margin-top: 50px; width: 100px;">
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+        <!-- <div class="separator">
           <div class="line"></div>
           <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/exclamation-svg.svg" alt="RR separator"></div>
           <div class="line"></div>
+        </div> -->
+        <div class="row">
+        <div class="more-info info-bar animated fadeIn" style="animation-delay: 2s;">
+          <div class="row margin-auto">
+            <div class="col-2" style="padding:0;">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/information.png" class="img-fluid" alt="" style="position: relative;top: 5%;">
+            </div>
+            <div class="col-10">
+              <p style="color:#3c3c3c">
+                <b><i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to <a href="mailto:fees@resortrelease.com"  class="exclamation" style="text-decoration: underline;">fees@resortrelease.com</a> or <span style="display: inline-block;">Fax <a href="tel:815-321-4668" class="exclamation" >815-321-4668</a></span></i></b>
+              </p>  
+            </div>
+          </div>
         </div>
-        <p class="more-info">
-          <i> As part of our services we request a copy of your most recent maintenance bill or proof of payment if its already been processed. Please send  bills or proof of payment to <a href="mailto:fees@resortrelease.com"  class="exclamation" style="text-decoration: underline;">fees@resortrelease.com</a> or Fax <a href="tel:815-321-4668" class="exclamation" >815-321-4668</a></i>
-        </p>
+      </div>
       </div>
       <div id="main-dashboard">
         <div id="user-settings" class="getpage">

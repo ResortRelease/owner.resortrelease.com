@@ -16,13 +16,13 @@
     border-bottom: 0px solid white;
   }
 </style>
-<div class="more-info" id="contact-settings" style="margin-top: 0;">
+<div class="more-info animated fadeInUp" id="contact-settings" style="margin-top: 0;">
   <i><h3 class="bold-name">Contact Us</h3></i>
   <ul class="margin-top-20">
     <div class="line"></div>
-    <li><a href="tel:888-381-5216"><i class="fa fa-phone bold-name"></i> 888-381-5216</a></li>
+    <li><a href="tel:888-381-5216"><i class="fa fa-phone bold-icon"></i> 888-381-5216</a></li>
     <div class="line"></div>
-    <li onclick="toggleChat();"><i class="fa fa-commenting bold-name"></i> Chat With Us</li>
+    <li onclick="toggleChat();"><i class="fa fa-commenting bold-icon"></i> Chat With Us</li>
   </ul>
 </div>
 <script>

@@ -47,7 +47,7 @@
       text-shadow: 0 2px 0 #75ab39;
   }
 </style>
-<div class="more-info" id="settings">
+<div class="more-info animated fadeInUp" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
   <ul class="margin-top-20">
     <!-- <li class="settings" data-toggle="#changeAddress"><i class="fa fa-map-pin"></i> Change Address</li>
@@ -55,7 +55,7 @@
       <?php// include('forms/change-address.php')?>
     </div> -->
     <div class="line"></div>
-    <li class="settings" data-toggle="#changePass"><i class="fa fa-key bold-name"></i> Change Password</li>
+    <li class="settings" data-toggle="#changePass"><i class="fa fa-key bold-icon"></i> Change Password</li>
     <div class="collapse" id="changePass">
       <i><h4 class="bold-name">Change Password</h4></i>
       <div id="pw-status"></div>
@@ -95,7 +95,7 @@
 
     <!-- </div> -->
     <div class="line"></div>
-    <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out bold-name"></i> Log Out</a></li>
+    <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out bold-icon"></i> Log Out</a></li>
   </ul>
 </div>
 <script>
