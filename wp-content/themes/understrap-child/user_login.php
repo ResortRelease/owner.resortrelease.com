@@ -179,7 +179,7 @@ get_header();
 
   body {
     width: 100%;
-    background: linear-gradient(#0f4b73, #0b7d68) !important;
+    background: linear-gradient(#0078B8, #008258) !important;
     height: 100vh;
   }
   .polygon {

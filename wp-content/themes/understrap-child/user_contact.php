@@ -28,6 +28,6 @@
 <script>
   window.addEventListener('hashchange', function() {
     // Hash for chat has changed. Remove Tawk.to
-    Tawk_API.hideWidget();
+    //Tawk_API.hideWidget();
   });
 </script>
