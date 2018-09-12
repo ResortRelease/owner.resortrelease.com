@@ -747,14 +747,18 @@ var Tawk_API=Tawk_API||{};
   if($stageId == 12){
     echo '<script>isClosed();</script>';
   }
-  $hash = hash_hmac("sha256",$email,"0f307a52e7f464ba43e063fdbbd3daec3c1c5b23");
+  $hash = hash_hmac("sha256",$email,"ce5c877c2048f8a3d8dad0ab75a0df9c97457e9f");
   echo '
   <script>
-    Tawk_API.visitor = {
-      name : "'.$fullname.'",
-      email : "'.$email.'",
-      hash : "'.$hash.'"
-    };
+    Tawk_API.onLoad = function(){
+      Tawk_API.setAttributes({
+        name : "'.$fullname.'",
+        email : "'.$email.'",
+        stage : "'.$stage.'",
+        phone : "'.$phone.'",
+        hash : "'.$hash.'"
+      }, function(error){});
+    }
   </script>
   '
 ?>
