@@ -230,8 +230,10 @@ var Tawk_API=Tawk_API||{};
     color: #0078B8;
     position: absolute;
     left: 0;
-    top: -5px;
-    font-size: 8rem;
+    top: -4px;
+    font-size: 5rem;
+    height: 100%;
+    overflow: hidden;
   }
   .arrow-down {
     width: 0; 
