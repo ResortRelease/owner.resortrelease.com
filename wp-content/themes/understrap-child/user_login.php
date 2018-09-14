@@ -509,12 +509,17 @@ get_header();
                   <input type="text" name="username" id="username" tabindex="1" class="form-control copyemail hide" placeholder="Username">
                 </div> -->
                 <div class="form-group">
+                  <?php echo do_shortcode('[nextend_social_login provider="facebook"]'); ?>
+                </div>
+                <div class="form-group">
                   <small>
-                    <i class="text-darkBlue" style="font-weight: 300;">Please use the same email you've used previously</i>
+                    <i class="text-darkBlue" style="font-weight: 300;">Please use the same email you've used previously:</i>
                   </small>
                   <?php 
                     if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-                      echo '<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="'.$_REQUEST['email'].'">';
+                      echo '<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" style="color: #2c78b6;" value="'.$_REQUEST['email'].'">';
+                    } elseif( $_SERVER['REQUEST_METHOD'] == 'GET'){
+                      echo '<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" style="color: #2c78b6;" value="'.$_REQUEST['email'].'">';
                     } else {
                       echo '<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">';
                     }
