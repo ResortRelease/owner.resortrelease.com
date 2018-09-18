@@ -599,6 +599,7 @@ get_header();
   }, 5000);
   jQuery(window).ready(function () {
     checkForValue();
+    setTimeout(checkForValue(), 100);
   });
   function checkForValue(){
     jQuery('.mauticform-input, .mauticform-textarea, .mauticform-selectbox').each(function () {
