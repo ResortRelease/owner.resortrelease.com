@@ -600,10 +600,12 @@ get_header();
   jQuery(window).ready(function () {
     checkForValue();
     setTimeout(checkForValue(), 100);
+    jQuery('input').on('animationstart', onAnimationStart);    
   });
   jQuery( document ).ready(function() {
     checkForValue();
     setTimeout(checkForValue(), 100);
+    jQuery('input').on('animationstart', onAnimationStart);
   });
   function checkForValue(){
     jQuery('.mauticform-input, .mauticform-textarea, .mauticform-selectbox').each(function () {
