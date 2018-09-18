@@ -642,9 +642,9 @@ get_header();
   const onAutoFillStart = (el) => el.classList.add(AUTOFILLED)
   const onAutoFillCancel = (el) => el.classList.remove(AUTOFILLED)
   const onAnimationStart = ({ target, animationName }) => {
-      console.log('LOG');
       switch (animationName) {
           case 'onAutoFillStart':
+              jQuery('label[for="'+ jQuery(target).attr('id') +'"]').addClass('focus');
               return onAutoFillStart(target)
           case 'onAutoFillCancel':
               return onAutoFillCancel(target)
