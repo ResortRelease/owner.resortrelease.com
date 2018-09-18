@@ -615,6 +615,7 @@ get_header();
             jQuery(this).prev().removeClass('focus');
         }
     })
+    console.log('done');
   }
   jQuery('input.mauticform-input, .mauticform-textarea, .mauticform-selectbox').on('focus', function () {
       jQuery(this).prev().addClass('focus');
@@ -637,4 +638,17 @@ get_header();
       };
   });
   setTimeout(checkForValue(), .50);
+  const AUTOFILLED = 'has-content'
+  const onAutoFillStart = (el) => el.classList.add(AUTOFILLED)
+  const onAutoFillCancel = (el) => el.classList.remove(AUTOFILLED)
+  const onAnimationStart = ({ target, animationName }) => {
+      console.log('LOG');
+      switch (animationName) {
+          case 'onAutoFillStart':
+              return onAutoFillStart(target)
+          case 'onAutoFillCancel':
+              return onAutoFillCancel(target)
+      }
+  }
+  document.querySelector('input').addEventListener('animationstart', onAnimationStart, false)
 </script>
