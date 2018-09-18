@@ -631,5 +631,5 @@ get_header();
           jQuery('[name="mauticform[other]"]').prev().hide();
       };
   });
-  checkForValue();
+  setTimeout(checkForValue(), .50);
 </script>
