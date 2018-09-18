@@ -652,7 +652,8 @@ get_header();
               return onAutoFillCancel(target)
       }
   }
-  jQuery('input').each(function(){
-    jQuery(this).on('animationstart', onAnimationStart);
-  })
+  jQuery('input').on('animationstart', onAnimationStart);
+  // jQuery('input').each(function(){
+  //   jQuery(this).on('animationstart', onAnimationStart);
+  // })
 </script>
