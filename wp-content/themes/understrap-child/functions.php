@@ -15,7 +15,7 @@ function theme_enqueue_styles() {
 
 	// Get the theme data
 	$the_theme = wp_get_theme();
-    wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/sass/child-theme.min.css', array(), '1.0.3' );
+    wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/sass/child-theme.min.css', array(), '1.0.4' );
     wp_enqueue_style( 'font_awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), null, all );
     // wp_enqueue_script( 'bundle-scripts', get_stylesheet_directory_uri() . '/js/bundle-child.min.js', array(), $the_theme->get( 'Version' ), true);
     wp_enqueue_script( 'jquery');

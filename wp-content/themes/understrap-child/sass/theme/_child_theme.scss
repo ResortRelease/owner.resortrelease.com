@@ -240,30 +240,35 @@ p{
 }
 .mauticform-label{
   position: absolute!important;
-  left: 10px!important;
+  left: 30px!important;
   top: 13px!important;
   color: #728190!important;
-  font-weight: 600!important;
   transition: .3s!important;
   letter-spacing: 1px!important;
-  font-size: 13px!important;
+  font-size: 16px!important;
+  font-weight: 400!important;
+  z-index: 9;
   &.focus, .has-content{
     color: #2d75bc!important;
     top: 0px!important;
-    left: 5px!important;
+    left: 33px!important;
     font-size: 10px!important;
     font-weight: 400!important;
   }
 }
 .mauticform-input, .mauticform-textarea, .mauticform-selectbox{
-  min-height: 45px!important;
-  border-radius: 5px!important;
-  border: 1px solid #e6e6e6!important;
-  padding-left: 10px!important;
-  padding-top: 20px!important;
-  font-weight: 400!important;
-  width: 100%!important;
-  color: #565656!important;
+  min-height: 45px !important;
+  border-radius: 5px !important;
+  border: 1px solid #e6e6e6 !important;
+  padding-left: 10px !important;
+  padding-top: 20px !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+  color: #565656 !important;
+  position: relative!important;
+  background: none!important;
+  border: transparent!important;
+  border-bottom: 1px solid #e7e7e7!important;
 }
 label#mauticform_label_allleadsform_heard_us_on{
   top: -11px!important;

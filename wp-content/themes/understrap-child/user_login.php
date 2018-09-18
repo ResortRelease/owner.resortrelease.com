@@ -478,17 +478,18 @@ get_header();
                 <?php if(isset($_GET['action']) && $_GET['action'] == "reset_success") {
                   echo '<div class="success form-group text-center" style="color: white;font-weight: 400;">You password has been changed. Please Check your email for your new password.</div>';}
                 ?>
-                <div class="form-group">
+                <div class="form-group mauticform-row">
                 <?php 
                   if(!isset($_POST['loginUser'])) {  
-                    echo '<input type="text" name="log" id="user_login" tabindex="1" class="form-control" placeholder="Email" value="">';
+                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="">';
                   } else {
-                    echo '<input type="text" name="log" id="user_login" tabindex="1" class="form-control" placeholder="Email" value="'.$_POST['log'].'">';
+                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="'.$_POST['log'].'">';
                   }
                 ?>
                 </div>
-                <div class="form-group">
-                  <input type="password" name="pwd" id="user_pass" tabindex="2" class="form-control" placeholder="Password">
+                <div class="form-group mauticform-row">
+                  <label for="user_pass" class="mauticform-label">Password</label>
+                  <input type="password" name="pwd" id="user_pass" tabindex="2" class="form-control mauticform-input" placeholder="">
                 </div>
                 <div class="col-6 form-group pull-left checkbox">
                   <input id="rememberme" type="checkbox" name="rememberme" value="forever">
@@ -515,21 +516,26 @@ get_header();
                   <small>
                     <i class="text-darkBlue" style="font-weight: 300;">Please use the same email you've used previously:</i>
                   </small>
+                </div>
+                <div class="form-group mauticform-row">
                   <?php 
                     if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-                      echo '<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" style="color: #2c78b6;" value="'.$_REQUEST['email'].'">';
+                      echo '<label for="email" class="mauticform-label">Email Address</label>
+                      <input type="email" name="email" id="email" tabindex="1" class="form-control mauticform-input" style="color: #2c78b6;" value="'.$_REQUEST['email'].'">';
                     } elseif( $_SERVER['REQUEST_METHOD'] == 'GET'){
-                      echo '<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" style="color: #2c78b6;" value="'.$_REQUEST['email'].'">';
+                      echo '<label for="email" class="mauticform-label">Email Address</label><input type="email" name="email" id="email" tabindex="1" class="form-control mauticform-input" style="color: #2c78b6;" value="'.$_REQUEST['email'].'">';
                     } else {
-                      echo '<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">';
+                      echo '<label for="email" class="mauticform-label">Email Address</label><input type="email" name="email" id="email" tabindex="1" class="form-control mauticform-input" value="">';
                     }
                   ?>
                 </div>
-                <div class="form-group">
-                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                <div class="form-group mauticform-row">
+                  <label for="password" class="mauticform-label">Password</label>
+                  <input type="password" name="password" id="password" tabindex="2" class="form-control mauticform-input" placeholder="">
                 </div>
-                <div class="form-group">
-                  <input type="password" name="password_confirmation" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                <div class="form-group  mauticform-row">
+                  <label for="confirm-password" class="mauticform-label">Confirm Password</label>
+                  <input type="password" name="password_confirmation" id="confirm-password" tabindex="2" class="form-control mauticform-input" placeholder="">
                 </div>
                 <div class="form-group">
                   <div class="row">
@@ -591,4 +597,35 @@ get_header();
   setTimeout(() => {    
     jQuery('.error-msg').toggle('slow');
   }, 5000);
+  jQuery(window).ready(function () {
+        jQuery('.mauticform-input, .mauticform-textarea, .mauticform-selectbox').each(function () {
+            if (jQuery(this).val() != "") {
+                jQuery(this).addClass("has-content");
+                jQuery(this).prev().addClass('focus');
+            } else {
+                jQuery(this).removeClass("has-content");
+                jQuery(this).prev().removeClass('focus');
+            }
+        })
+    });
+    jQuery('input.mauticform-input, .mauticform-textarea, .mauticform-selectbox').on('focus', function () {
+        jQuery(this).prev().addClass('focus');
+    });
+    jQuery("input.mauticform-input, .mauticform-textarea, .mauticform-selectbox").focusout(function () {
+        if (jQuery(this).val() != "") {
+            jQuery(this).addClass("has-content");
+        } else {
+            jQuery(this).removeClass("has-content");
+            jQuery(this).prev().removeClass('focus');
+        }
+    });
+    jQuery('[name="mauticform[hearduson]"]').on('change', function () {
+        if (jQuery(this).val() == "Unsure / Other") {
+            jQuery('[name="mauticform[other]"]').show();
+            jQuery('[name="mauticform[other]"]').prev().show();
+        } else {
+            jQuery('[name="mauticform[other]"]').hide();
+            jQuery('[name="mauticform[other]"]').prev().hide();
+        };
+    });
 </script>
