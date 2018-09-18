@@ -598,34 +598,38 @@ get_header();
     jQuery('.error-msg').toggle('slow');
   }, 5000);
   jQuery(window).ready(function () {
-        jQuery('.mauticform-input, .mauticform-textarea, .mauticform-selectbox').each(function () {
-            if (jQuery(this).val() != "") {
-                jQuery(this).addClass("has-content");
-                jQuery(this).prev().addClass('focus');
-            } else {
-                jQuery(this).removeClass("has-content");
-                jQuery(this).prev().removeClass('focus');
-            }
-        })
-    });
-    jQuery('input.mauticform-input, .mauticform-textarea, .mauticform-selectbox').on('focus', function () {
-        jQuery(this).prev().addClass('focus');
-    });
-    jQuery("input.mauticform-input, .mauticform-textarea, .mauticform-selectbox").focusout(function () {
+    checkForValue();
+  });
+  function checkForValue(){
+    jQuery('.mauticform-input, .mauticform-textarea, .mauticform-selectbox').each(function () {
         if (jQuery(this).val() != "") {
             jQuery(this).addClass("has-content");
+            jQuery(this).prev().addClass('focus');
         } else {
             jQuery(this).removeClass("has-content");
             jQuery(this).prev().removeClass('focus');
         }
-    });
-    jQuery('[name="mauticform[hearduson]"]').on('change', function () {
-        if (jQuery(this).val() == "Unsure / Other") {
-            jQuery('[name="mauticform[other]"]').show();
-            jQuery('[name="mauticform[other]"]').prev().show();
-        } else {
-            jQuery('[name="mauticform[other]"]').hide();
-            jQuery('[name="mauticform[other]"]').prev().hide();
-        };
-    });
+    })
+  }
+  jQuery('input.mauticform-input, .mauticform-textarea, .mauticform-selectbox').on('focus', function () {
+      jQuery(this).prev().addClass('focus');
+  });
+  jQuery("input.mauticform-input, .mauticform-textarea, .mauticform-selectbox").focusout(function () {
+      if (jQuery(this).val() != "") {
+          jQuery(this).addClass("has-content");
+      } else {
+          jQuery(this).removeClass("has-content");
+          jQuery(this).prev().removeClass('focus');
+      }
+  });
+  jQuery('[name="mauticform[hearduson]"]').on('change', function () {
+      if (jQuery(this).val() == "Unsure / Other") {
+          jQuery('[name="mauticform[other]"]').show();
+          jQuery('[name="mauticform[other]"]').prev().show();
+      } else {
+          jQuery('[name="mauticform[other]"]').hide();
+          jQuery('[name="mauticform[other]"]').prev().hide();
+      };
+  });
+  checkForValue();
 </script>
