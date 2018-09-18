@@ -12825,7 +12825,7 @@ input:not(:-webkit-autofill) {
 .mauticform-label {
   position: absolute !important;
   left: 30px !important;
-  top: 13px !important;
+  top: 6px !important;
   color: #728190 !important;
   -webkit-transition: 0.3s !important;
   transition: 0.3s !important;
