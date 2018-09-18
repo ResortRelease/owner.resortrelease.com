@@ -642,6 +642,8 @@ get_header();
   const onAutoFillStart = (el) => el.classList.add(AUTOFILLED)
   const onAutoFillCancel = (el) => el.classList.remove(AUTOFILLED)
   const onAnimationStart = ({ target, animationName }) => {
+      console.log('dope');
+      
       switch (animationName) {
           case 'onAutoFillStart':
               jQuery('label[for="'+ jQuery(target).attr('id') +'"]').addClass('focus');
@@ -650,5 +652,7 @@ get_header();
               return onAutoFillCancel(target)
       }
   }
-  document.querySelector('input').addEventListener('animationstart', onAnimationStart, false)
+  jQuery('input').each(function(){
+    jQuery(this).on('animationstart', onAnimationStart);
+  })
 </script>
