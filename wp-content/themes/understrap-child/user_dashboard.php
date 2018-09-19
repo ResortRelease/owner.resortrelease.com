@@ -159,6 +159,9 @@ var Tawk_API=Tawk_API||{};
   *:not(.fa) {
     
   }
+  h1, h2, h3, p, span {
+    line-height: 1.5em!important;
+  }
   p {
     font-size: 1.1rem;
   }
@@ -213,7 +216,8 @@ var Tawk_API=Tawk_API||{};
     margin: 40px 0;
   }
   .chatbox {
-    background: #00517C;
+    /* background: #00517C; */
+    background: #113d53;
     color: white;
     padding: 12px;
     border-radius: 22px;
@@ -227,7 +231,8 @@ var Tawk_API=Tawk_API||{};
     color: white;
   }
   .chatboxIcon {
-    color: #0078B8;
+    /* color: #0078B8; */
+    color: #195172;
     position: absolute;
     left: 0;
     top: -4px;
@@ -240,7 +245,7 @@ var Tawk_API=Tawk_API||{};
     height: 0; 
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 37px solid #1b527c;
+    border-top: 37px solid #113d53;
     position: absolute;
     bottom: -18px;
     left: 0px;
@@ -442,7 +447,8 @@ var Tawk_API=Tawk_API||{};
     /* box-shadow: 0 3px 30px 6px rgba(7, 39, 68, 0.3); */
   }
   .info-bar {
-    background: #FFC480;
+    /* background: #FFC480; */
+    background: #fbf2be;
     padding: 10px;
   }
   .info-bar a {
@@ -525,21 +531,23 @@ var Tawk_API=Tawk_API||{};
               echo '<img src="'.get_stylesheet_directory_uri().'/assets/icons/bird.png" alt="Timeshare Freedom Bird" style="margin-top:-12px;">';
             };?>
           </div>
-          <!-- <div class="separator">
-            <div class="line"></div>
-            <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/RR-separator.svg" alt="RR separator"></div>
-            <div class="line"></div>
-          </div> -->
           <div class="more-info animated fadeInUp" style="animation-delay: .9s;">
             <p>
               "<?php echo $stageDesc ?>"
             </p>
           </div>
         </div>
-        <!-- <div class="separator">
-          <div class="line"></div>
-          <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/question-svg.svg" alt="RR separator"></div>
-          <div class="line"></div>
+        <!-- <div class="more-info" style="background: #eeeeee;margin-left: -15px;margin-right: -15px;padding: 15px;">
+          <div class="row">
+            <div class="col-6">
+              <div class="video">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dashboard/video-placeholder.jpg" alt="Welcome video">              
+              </div>
+            </div>
+            <div class="col-6">
+              <span>What is blue and smells like red paint? The answer will shock you!</span>
+            </div>
+          </div>
         </div> -->
         <?php if($stageId != 12): ?>
         <div class="more-info chatbox animated fadeInUp" style="animation-delay: 1.3s;">
@@ -562,6 +570,7 @@ var Tawk_API=Tawk_API||{};
           </div>
         </div>
         <?php endif; ?>
+        <?php include('testimonial-slider.php') ?>
         <!-- <div class="separator">
           <div class="line"></div>
           <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/exclamation-svg.svg" alt="RR separator"></div>

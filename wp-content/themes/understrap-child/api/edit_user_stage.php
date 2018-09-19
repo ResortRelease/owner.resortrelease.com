@@ -114,6 +114,7 @@
   if (!$userID || $userID == 0) {
     $newContact = $contactApi->create($data);
     $userID = $newContact['contact']['id'];
+    echo $userID;
     $response = $stageApi->addContact($stageId, $userID);
   } else {
     $contact = $contactApi->edit($userID, $data, false);
