@@ -48,63 +48,64 @@
     $userID = $user['id'];
   };
   /** Check Stage */
+  $crmStage = strtolower($crmStage);
   switch($crmStage){
-    case "Welcome":
+    case "welcome":
     case 1:
     case "1":
       $stageId = 1;
       break;
-    case "Estoppel":
+    case "estoppel":
     case 2:
     case "2":
       $stageId = 2;
       break;
-    case "Inventory":
+    case "inventory":
     case 3:
     case "3":
       $stageId = 3;
       break;
-    case "ROFR":
+    case "rofr":
     case 4:
     case "4":
       $stageId = 4;
       break;
-    case "DeedPrep":
+    case "deedprep":
     case 5:
     case "5":
       $stageId = 5;
       break;
-    case "DocPrep":
+    case "docprep":
     case 6:
     case "6":
       $stageId = 6;
       break;
-    case "Execution":
+    case "execution":
     case 7:
     case "7":
       $stageId = 7;
       break;
-    case "ExecutionReceived-Deeded":
+    case "executionreceived-deeded":
     case 8:
     case "8":
       $stageId = 8;
       break;
-    case "ExecutionReceived-Non-Deeded":
+    case "executionreceived-non-deeded":
     case 9:
     case "9":
       $stageId = 9;
       break;
-    case "Recording":
+    case "recording":
     case 10:
     case "10":
       $stageId = 10;
       break;
-    case "Finalization":
+    case "finalization":
     case 11:
     case "11":
       $stageId = 11;
       break;
-    case "Closed":
+    case "closed":
     case 12:
     case "12":
       $stageId = 12;
