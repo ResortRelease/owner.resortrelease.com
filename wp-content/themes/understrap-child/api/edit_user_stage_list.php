@@ -23,7 +23,7 @@ th{
 <table>
         <thead>
           <tr>
-            <th>ID</th><th>EMAIL</th><th>STAGE</th>
+            <th>ID</th><th>EMAIL</th><th>STAGE</th><th>DATE</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +36,7 @@ if ($result->num_rows > 0) {
             <td>". $row['id']."</td>
             <td>". $row['email']."</td>
             <td>". $row['stage']."</td>
+            <td>". $row['dateposted']."</td>
           </tr>";
         }
     }

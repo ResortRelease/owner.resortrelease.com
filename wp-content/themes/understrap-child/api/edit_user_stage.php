@@ -137,9 +137,9 @@
     $emailEncoded = json_encode($userEmail);
     $stageEncoded = json_encode($stageId);
     $userEmail = (string)$userEmail;
-  
+    $date = date('Y-m-d H:i:s');
     /*Create or update client stage */
-    $sql = "INSERT INTO $table (id, email, stage) VALUES ('$userID', '$userEmail', '$stageId')
+    $sql = "INSERT INTO $table (id, email, stage, dateposted) VALUES ('$userID', '$userEmail', '$stageId', '$date')
             ON DUPLICATE KEY UPDATE email = '$userEmail', stage= '$stageId'";
 
     if ($conn->query($sql) === TRUE) {
