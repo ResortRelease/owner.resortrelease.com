@@ -81,6 +81,7 @@
       $errorMessage = "<div class='text-center'>Hello, Looks like you haven't signed up for our services yet.<br>Call us for a <i>FREE</i> quote</div>";
       break;
   }
+  $hash = hash_hmac("sha256",$email,"ce5c877c2048f8a3d8dad0ab75a0df9c97457e9f");
   if($_POST['action'] == "patch"){
     $newpassword = $_POST['newpassword'];
     update_user_meta($user_id, 'user_pass', $newpassword);
@@ -104,6 +105,14 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 var Tawk_API=Tawk_API||{};
+Tawk_API.visitor = {
+  name : "<?php $fullname ?>",
+  email : "<?php $email ?>",
+  stage : "<?php $stage ?>",
+  phone : "<?php $phone ?>",
+  hash : "<?php $hash ?>"
+}
+var Tawk_LoadStart=new Date();
 </script>
 <!--End of Tawk.to Script-->
 <style>
@@ -234,7 +243,7 @@ var Tawk_API=Tawk_API||{};
     /* color: #0078B8; */
     color: #195172;
     position: absolute;
-    left: 0;
+    left: 5px;
     top: -4px;
     font-size: 5rem;
     height: 100%;
@@ -758,18 +767,4 @@ var Tawk_API=Tawk_API||{};
   if($stageId == 12){
     echo '<script>isClosed();</script>';
   }
-  $hash = hash_hmac("sha256",$email,"ce5c877c2048f8a3d8dad0ab75a0df9c97457e9f");
-  echo '
-  <script>
-    Tawk_API.onLoad = function(){
-      Tawk_API.setAttributes({
-        name : "'.$fullname.'",
-        email : "'.$email.'",
-        stage : "'.$stage.'",
-        phone : "'.$phone.'",
-        hash : "'.$hash.'"
-      }, function(error){});
-    }
-  </script>
-  '
 ?>
