@@ -530,17 +530,17 @@ var Tawk_LoadStart=new Date();
     <div class="col-12 col-lg-11">
       <div id="user-status" class="getpage active">
         <div class="more-info" style="margin-top: 0;">
-          <div class="stage-name text-center animated fadeInUp">
+          <div class="stage-name text-center animate fadeInUp">
             <h3><b class="bold-name text-uppercase"><?php echo $stage ?></b></h3>
           </div>
-          <div class="round-icon animated fadeInUp" style="animation-delay: .5s;">
+          <div class="round-icon animate fadeInUp" style="animation-delay: .5s;">
             <?php if($stageId != 12){
               echo '<div class="elIcon"><i class="'.$ico.'"></i></div>';
             } else {
               echo '<img src="'.get_stylesheet_directory_uri().'/assets/icons/bird.png" alt="Timeshare Freedom Bird" style="margin-top:-12px;">';
             };?>
           </div>
-          <div class="more-info animated fadeInUp" style="animation-delay: .9s;">
+          <div class="more-info animate fadeInUp" style="animation-delay: .9s;">
             <p>
               "<?php echo $stageDesc ?>"
             </p>
@@ -559,15 +559,16 @@ var Tawk_LoadStart=new Date();
           </div>
         </div> -->
         <?php if($stageId != 12): ?>
-        <div class="more-info chatbox animated fadeInUp" style="animation-delay: 1.3s;">
+        <div class="more-info chatbox animate fadeInUp" style="animation-delay: 1.3s;">
           <div class="chatboxIcon"><i class="fa fa-question"></i></div>
           <p><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at:</i></p>
           <a href="tel:888-381-5216" class="question">888-381-5216</a>
           <div class="arrow-down">
           </div>
         </div>
+        <?php include('testimonial-slider.php') ?>
         <?php else: ?>
-        <div class="more-info animated fadeInUp" style="animation-delay: 1.3s;">
+        <div class="more-info animate fadeInUp" style="animation-delay: 1.3s;">
           <h3 class="text-uppercase text-center bold-name"><b>Would You <span style="display: inline-block;">Recommend Us?</span></b></h3>
           <div class="row margin-top-20">
             <div class="col-6 text-center">
@@ -579,14 +580,13 @@ var Tawk_LoadStart=new Date();
           </div>
         </div>
         <?php endif; ?>
-        <?php include('testimonial-slider.php') ?>
         <!-- <div class="separator">
           <div class="line"></div>
           <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/exclamation-svg.svg" alt="RR separator"></div>
           <div class="line"></div>
         </div> -->
         <div class="row">
-        <div class="more-info info-bar animated fadeIn" style="animation-delay: 2s;">
+        <div class="more-info info-bar animate fadeIn" style="animation-delay: 2s;">
           <div class="row margin-auto">
             <div class="col-2" style="padding:0;">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/information.png" class="img-fluid" alt="" style="position: relative;top: 5%;">
