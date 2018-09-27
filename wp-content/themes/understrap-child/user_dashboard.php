@@ -106,11 +106,11 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 var Tawk_API=Tawk_API||{};
 Tawk_API.visitor = {
-  name : "<?php $fullname ?>",
-  email : "<?php $email ?>",
-  stage : "<?php $stage ?>",
-  phone : "<?php $phone ?>",
-  hash : "<?php $hash ?>"
+  name : "<?php echo $fullname ?>",
+  email : "<?php echo $email ?>",
+  stage : "<?php echo $stage ?>",
+  phone : "<?php echo $phone ?>",
+  hash : "<?php echo $hash ?>"
 }
 var Tawk_LoadStart=new Date();
 </script>
@@ -568,13 +568,13 @@ var Tawk_LoadStart=new Date();
         </div>
         <?php else: ?>
         <div class="more-info animated fadeInUp" style="animation-delay: 1.3s;">
-          <h3 class="text-uppercase text-center bold-name"><b>Would You <span style="display: inline-block;">Recomend Us?</span></b></h3>
+          <h3 class="text-uppercase text-center bold-name"><b>Would You <span style="display: inline-block;">Recommend Us?</span></b></h3>
           <div class="row margin-top-20">
             <div class="col-6 text-center">
-              <a href="https://www.facebook.com/pg/resortrelease/reviews/" rel="nofollow"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/like.png" alt="Like us"></a>
+              <a data-toggle="modal" data-target=".bs-example-modal-sm" style="cursor:pointer;"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/like.png" alt="Like us"></a>
             </div>
             <div class="col-6 text-center">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/dislike.png" alt="Dislike us" style="margin-top: 50px; width: 100px;">
+              <a href="https://www.resortrelease.com/bad-review/" target="_blank" rel="noopener noreferrer" style="cursor:pointer;"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/dislike.png" alt="Dislike us" style="margin-top: 50px; width: 100px;"></a>
             </div>
           </div>
         </div>
@@ -636,7 +636,21 @@ var Tawk_LoadStart=new Date();
     </div>
   </div>
 </div>
+<!-- Small modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content" style="padding: 30px 12px;">
+      Leave a review in:
+      <div class="row margin-top-20">
+        <div class="col-4 text-center"><a href="https://goo.gl/DJDvcp" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/g-plus.jpg" alt="" style="max-width: 50px;"></a></div>
+        <div class="col-4 text-center"><a href="https://www.facebook.com/pg/resortrelease/reviews/" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/fb.jpg" alt="" style="max-width: 50px;"></a></div>
+        <div class="col-4 text-center"><a href="https://www.bbb.org/chicago/business-reviews/timeshare-advocates/resort-release-in-rockford-il-88596110/reviews-and-complaints/?review=true" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/bbb.jpg" alt="" style="max-width: 50px;"></a></div>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
+  // jQuery('#myModal').modal('toggle')
   function showSettings(){
     jQuery('#main-dashboard').toggle('slow');
     jQuery('#settings-dashboard').toggle('slow');
