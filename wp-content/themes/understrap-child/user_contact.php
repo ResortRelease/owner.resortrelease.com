@@ -16,7 +16,7 @@
     border-bottom: 0px solid white;
   }
 </style>
-<div class="more-info animated fadeInUp" id="contact-settings" style="margin-top: 0;">
+<div class="more-info" id="contact-settings" style="margin-top: 0;">
   <i><h3 class="bold-name">Contact Us</h3></i>
   <ul class="margin-top-20">
     <div class="line"></div>
@@ -25,9 +25,3 @@
     <li onclick="toggleChat();"><i class="fa fa-commenting bold-icon"></i> Chat With Us</li>
   </ul>
 </div>
-<script>
-  window.addEventListener('hashchange', function() {
-    // Hash for chat has changed. Remove Tawk.to
-    //Tawk_API.hideWidget();
-  });
-</script>

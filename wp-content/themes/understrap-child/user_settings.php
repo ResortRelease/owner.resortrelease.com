@@ -47,7 +47,7 @@
       text-shadow: 0 2px 0 #75ab39;
   }
 </style>
-<div class="more-info animated fadeInUp" id="settings">
+<div class="more-info" id="settings">
   <i><h3 class="bold-name">Settings</h3></i>
   <ul class="margin-top-20">
     <!-- <li class="settings" data-toggle="#changeAddress"><i class="fa fa-map-pin"></i> Change Address</li>
