@@ -10,14 +10,16 @@
         <h3>Common Timeshare Scams:</h3>
         <ol>
           <li><b>Exit Team And Attorney Scam</b></li>
-          <li><b>Donate to “charity” timeshare scam</b></li>
-          <li><b>“Buyer In The Wing” resale scam</b></li>
-          <li><b>Convention Center resale scam</b></li>
+          <li><b>Attorney Castle Law Group</b></li>
+          <li><b>“Buyer In The Wing” resale Scam</b></li>
+          <li><b>Donate to “charity” timeshare Scam</b></li>
+          <li><b>Timeshare Default Scam</b></li>
         </ol>
       </div>
     </div>
 <!-- SMTN and Ebay -->
-<div class="row margin-top-40 text-left">
+    <!-- 1 -->
+    <div class="row margin-top-40 text-left">
       <div class="col-12">
         <div class="row">
           <div class="col-md-1">
@@ -34,6 +36,7 @@
         </div>
       </div>
     </div>
+    <!-- 2 -->
     <div class="row margin-top-40 text-left">
       <div class="col-12">
         <div class="row">
@@ -43,14 +46,15 @@
             </div>
           </div>
           <div class="col-md-10 text-center">
-            <h2>Timeshare Attorney Scam</h2>
+            <h2><a href="https://www.orlandosentinel.com/business/os-timeshare-scam-disbarred-20180927-story.html">Attorney Castle Law Group<a/></h2>
             <div class="scroll-div img-fluid margin-top-40">
-              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/williamsburg-article.png" alt="Williamsburg Article">
+              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/castle-law-group.jpg" alt="Castle Law Group">
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- 3 -->
     <div class="row margin-top-40 text-left">
       <div class="col-12">
         <div class="row">
@@ -60,14 +64,15 @@
             </div>
           </div>
           <div class="col-md-10 text-center">
-            <h2>Timeshare Donation Scam</h2>
+            <h2>“Buyer In The Wing” resale Scam</h2>
             <div class="scroll-div img-fluid margin-top-40">
-              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/Department-of-Justice-21.png" alt="Department Of Justice">
+              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/Forbes-Resale-Scam.png" alt="Forbes - Timeshare Resale Scam">
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- 4 -->
     <div class="row margin-top-40 text-left">
       <div class="col-12">
         <div class="row">
@@ -77,9 +82,27 @@
             </div>
           </div>
           <div class="col-md-10 text-center">
-            <h2>Buyer in The Wing Scam</h2>
+            <h2>Donate to “charity” timeshare Scam</h2>
             <div class="scroll-div img-fluid margin-top-40">
-              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/Forbes-Resale-Scam.png" alt="Endless Vacation Prices">
+              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/Department-of-Justice-21.png" alt="Department Of Justice">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 5 -->
+    <div class="row margin-top-40 text-left">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="p-number">
+              4
+            </div>
+          </div>
+          <div class="col-md-10 text-center">
+            <h2>Timeshare Default Scam</h2>
+            <div class="scroll-div img-fluid margin-top-40">
+              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/williamsburg-article.png" alt="Timeshare Default Scam">
             </div>
           </div>
         </div>
