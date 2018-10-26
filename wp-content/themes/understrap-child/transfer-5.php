@@ -14,6 +14,7 @@
           <li><b>“Buyer In The Wing” resale Scam</b></li>
           <li><b>Donate to “charity” timeshare Scam</b></li>
           <li><b>Timeshare Default Scam</b></li>
+          <li><b>American Consumer Credit Scam Law Suit</b></li>
         </ol>
       </div>
     </div>
@@ -96,13 +97,31 @@
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              4
+              5
             </div>
           </div>
           <div class="col-md-10 text-center">
             <h2>Timeshare Default Scam</h2>
             <div class="scroll-div img-fluid margin-top-40">
               <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/williamsburg-article.png" alt="Timeshare Default Scam">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 6 -->
+    <div class="row margin-top-40 text-left">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="p-number">
+              6
+            </div>
+          </div>
+          <div class="col-md-10 text-center">
+            <h2>American Consumer Credit Lawsuit</h2>
+            <div class="scroll-div img-fluid margin-top-40">
+              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/AconsumerCredit.jpg" alt="AconsumerCredit Scam lawsuit">
             </div>
           </div>
         </div>
