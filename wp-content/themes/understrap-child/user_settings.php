@@ -55,7 +55,7 @@
       <?php// include('forms/change-address.php')?>
     </div> -->
     <div class="line"></div>
-    <li class="settings" data-toggle="#changePass"><i class="fa fa-key bold-icon"></i> Change Password</li>
+    <li class="settings" data-toggle="#changePass"><div class="icon-box"><i class="fa fa-key bold-icon"></i></div> Change Password</li>
     <div class="collapse" id="changePass">
       <i><h4 class="bold-name">Change Password</h4></i>
       <div id="pw-status"></div>
@@ -95,7 +95,7 @@
 
     <!-- </div> -->
     <div class="line"></div>
-    <li><a href="<?php echo $signout; ?>"><i class="fa fa-sign-out bold-icon"></i> Log Out</a></li>
+    <li><a href="<?php echo $signout; ?>"><div class="icon-box"><i class="fa fa-sign-out bold-icon"></i></div> Log Out</a></li>
   </ul>
 </div>
 <script>

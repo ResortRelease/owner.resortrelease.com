@@ -1,3 +1,21 @@
+div{
+  font-family: "Quicksand"!important;
+}
+p {
+  font-family: "Quicksand"!important;
+  line-height: 1.5em!important;
+}
+p {
+  font-size: 18px!important;
+}
+h1, h2, h3, h4, h5, ul{
+  font-family: "Enriqueta"!important;
+  line-height: 1.5em!important;
+}
+span, small {
+  font-family: inherit;
+  line-height: inherit;
+}
 .button {
   @include button;
   cursor: pointer;
@@ -1241,13 +1259,22 @@ input[type=checkbox]:checked + .check-box,
       height: 70px!important;
     }
   }
+  .testimonial-box {
+    min-height: 305px!important;
+  }
 }
 @media (max-width: 468px) {
   .chart-header {
     min-height: 70px !important;
   }
+  .main-container{
+    padding: 0;
+  }
+  #mobile-nav {
+    position:fixed!important;
+    bottom: -2px!important;
+  }
 }
-
 @media (max-width: 768px) {
   .p-link{
     font-size:1.5rem!important;
@@ -1277,9 +1304,6 @@ input[type=checkbox]:checked + .check-box,
     display: none;
   }
 }
-
-
-
 // animate.css -http://daneden.me/animate
 // Version - 3.5.0
 // Licensed under the MIT license - http://opensource.org/licenses/MIT
