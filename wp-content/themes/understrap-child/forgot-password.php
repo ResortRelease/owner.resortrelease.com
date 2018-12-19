@@ -85,10 +85,11 @@ if(isset($_GET['key']) && $_GET['action'] == "reset_pwd") {
     wp_set_password( $new_password, $user_data->ID );
     //mailing the reset details to the user
     $message = __('Your new password for the account at:') . "\r\n\r\n";
-    $message .= get_bloginfo('name') . "\r\n\r\n";
+    $message .= __('Resort Release') . "\r\n\r\n";
     $message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
     $message .= sprintf(__('Password: %s'), $new_password) . "\r\n\r\n";
     $message .= __('You can now login with your new password at: ') . get_option('siteurl')."/login" . "\r\n\r\n";
+    $message .= __('Once logged in. You can change your password in the "Settings" Tab ') . "\r\n\r\n";
    
     if ( $message && !wp_mail($user_email, 'Password Reset Request', $message) ) {
       echo "<div class='error'>Email failed to sent for some unknown reason</div>";

@@ -48,3 +48,13 @@ wp_redirect( home_url() );
 exit;
 }
 }
+// Change FROM: WORD PRESS in emails
+add_filter( 'wp_mail_from', 'wpse_new_mail_from' );     
+function wpse_new_mail_from( $old ) {
+    return 'noreply@resortrelease.com'; // Edit it with your email address
+}
+
+add_filter('wp_mail_from_name', 'wpse_new_mail_from_name');
+function wpse_new_mail_from_name( $old ) {
+    return 'Resort Release'; // Edit it with your/company name
+}
