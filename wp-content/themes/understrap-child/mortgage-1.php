@@ -5,14 +5,14 @@
     <hr>
     <div class="row margin-top-20">
       <!-- Bill of Rights -->    
-      <div class="col-md-6 img-magnifier-container d-none d-sm-block">
+      <!-- <div class="col-md-6 img-magnifier-container d-none d-sm-block">
         <img id="bill-of-rights" src="../wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
       </div>
       <div class="col-12 d-block d-sm-none">
         <img src="../wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
-      </div>
+      </div> -->
       <!-- Mildred Video -->
-      <div class="col-md-6 ">
+      <div class="col-md-6 offset-md-3">
         <div class="video-container">
           <div class="video-container-border">
             <img id="video-img" src="../wp-content/themes/understrap-child/assets/slides/1/mqdefault.jpg" alt="Timeshare - Mildred" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -21,9 +21,9 @@
           <div class="subheader">
             <h3>Timeshare Investigation - Mildred</h3>
           </div>
-          <dib class="badges">
+          <div class="badges">
             <img src="../wp-content/themes/understrap-child/assets/slides/1/3_badges.png" alt="" class="img-fluid">
-          </dib>
+          </div>
         </div>
       </div>
     </div>
