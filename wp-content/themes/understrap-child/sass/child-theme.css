@@ -13373,7 +13373,7 @@ input[type=checkbox]:checked + .check-box::before,
 }
 
 #mortgage-calc #mc .out-header {
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-shadow: -2px 2px 0 #231F20;
 }
 

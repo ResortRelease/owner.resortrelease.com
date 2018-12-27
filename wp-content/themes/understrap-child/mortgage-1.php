@@ -5,12 +5,12 @@
     <hr>
     <div class="row margin-top-20">
       <!-- Bill of Rights -->    
-      <!-- <div class="col-md-6 img-magnifier-container d-none d-sm-block">
+      <div class="col-md-6 img-magnifier-container d-none d-sm-block" style="display:none!important;">
         <img id="bill-of-rights" src="../wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
       </div>
-      <div class="col-12 d-block d-sm-none">
+      <div class="col-12 d-block d-sm-none" style="display:none!important;">
         <img src="../wp-content/themes/understrap-child/assets/slides/1/bill-of-rights.jpg" alt="Bill Of Rights">
-      </div> -->
+      </div>
       <!-- Mildred Video -->
       <div class="col-md-6 offset-md-3">
         <div class="video-container">
