@@ -1,7 +1,7 @@
 <section>
   <div class="container text-center">
     <h1 class="h-number">1</h1>
-    <h1>Timeshare Consumer Rights</h1>
+    <h1>Our Qualification Process</h1>
     <hr>
     <div class="row margin-top-20">
       <!-- Bill of Rights -->    
