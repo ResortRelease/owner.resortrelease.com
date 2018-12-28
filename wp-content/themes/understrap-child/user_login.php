@@ -481,14 +481,14 @@ get_header();
                 <div class="form-group mauticform-row">
                 <?php 
                   if(!isset($_POST['loginUser'])) {  
-                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="">';
+                    echo '<label for="user_login" class="mauticform-label focus">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="">';
                   } else {
-                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="'.$_POST['log'].'">';
+                    echo '<label for="user_login" class="mauticform-label focus">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="'.$_POST['log'].'">';
                   }
                 ?>
                 </div>
                 <div class="form-group mauticform-row">
-                  <label for="user_pass" class="mauticform-label">Password</label>
+                  <label for="user_pass" class="mauticform-label focus">Password</label>
                   <input type="password" name="pwd" id="user_pass" tabindex="2" class="form-control mauticform-input" placeholder="">
                 </div>
                 <div class="col-6 form-group pull-left checkbox">
@@ -644,7 +644,6 @@ get_header();
   const onAutoFillStart = (el) => el.classList.add(AUTOFILLED)
   const onAutoFillCancel = (el) => el.classList.remove(AUTOFILLED)
   const onAnimationStart = ({ target, animationName }) => {
-      console.log('dope');
       
       switch (animationName) {
           case 'onAutoFillStart':
