@@ -459,6 +459,9 @@ get_header();
     color: #B2ADA8 !important;
     box-shadow: none;
   }
+  .mauticform-label {
+    top:-10px!important;
+  }
 </style>
 <div class="container">
   <div class="row">
@@ -616,11 +619,5 @@ get_header();
       jQuery(this).removeClass("has-content");
       jQuery(this).prev().removeClass('focus');
     }
-  });
-  jQuery( document ).ready(function() {
-    jQuery('input').each(function () {
-      jQuery(this).addClass('has-value');
-      jQuery(this).prev().addClass('focus');
-    });
   });
 </script>
