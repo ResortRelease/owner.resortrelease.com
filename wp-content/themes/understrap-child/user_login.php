@@ -479,16 +479,16 @@ get_header();
                   echo '<div class="success form-group text-center" style="color: white;font-weight: 400;">You password has been changed. Please Check your email for your new password.</div>';}
                 ?>
                 <div class="form-group mauticform-row">
-                <?php 
+                  <?php 
                   if(!isset($_POST['loginUser'])) {  
-                    echo '<label for="user_login" class="mauticform-label focus">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="">';
+                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="">';
                   } else {
-                    echo '<label for="user_login" class="mauticform-label focus">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="'.$_POST['log'].'">';
+                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="'.$_POST['log'].'">';
                   }
                 ?>
                 </div>
                 <div class="form-group mauticform-row">
-                  <label for="user_pass" class="mauticform-label focus">Password</label>
+                  <label for="user_pass" class="mauticform-label">Password</label>
                   <input type="password" name="pwd" id="user_pass" tabindex="2" class="form-control mauticform-input" placeholder="">
                 </div>
                 <div class="col-6 form-group pull-left checkbox">
@@ -569,7 +569,7 @@ get_header();
 </div>
 <script>
   var url = window.location.href;
-  if(url.indexOf('reg=true') > -1){
+  if (url.indexOf('reg=true') > -1) {
     jQuery("#register-form").delay(100).fadeIn(100);
     jQuery("#login-form").fadeOut(100);
     jQuery('#login-form-link').removeClass('active');
@@ -594,67 +594,33 @@ get_header();
     jQuery('#register-form #username').attr('value', uname);
     jQuery('#register-form #username').val(uname);
   })
-  setTimeout(() => {    
+  setTimeout(() => {
     jQuery('.error-msg').toggle('slow');
   }, 5000);
-  jQuery(window).ready(function () {
-    checkForValue();
-    setTimeout(checkForValue(), 100);
-    jQuery('input').on('animationstart', onAnimationStart);    
-  });
-  jQuery( document ).ready(function() {
-    checkForValue();
-    setTimeout(checkForValue(), 100);
-    jQuery('input').on('animationstart', onAnimationStart);
-  });
-  function checkForValue(){
-    jQuery('.mauticform-input, .mauticform-textarea, .mauticform-selectbox').each(function () {
-        if (jQuery(this).val() != "") {
-            jQuery(this).addClass("has-content");
-            jQuery(this).prev().addClass('focus');
-        } else {
-            jQuery(this).removeClass("has-content");
-            jQuery(this).prev().removeClass('focus');
-        }
-    })
-    console.log('done');
-  }
-  jQuery('input.mauticform-input, .mauticform-textarea, .mauticform-selectbox').on('focus', function () {
+  jQuery('.mauticform-input, .mauticform-textarea, .mauticform-selectbox').each(function () {
+    if (jQuery(this).val() != "") {
+      jQuery(this).addClass("has-content");
       jQuery(this).prev().addClass('focus');
+    } else {
+      jQuery(this).removeClass("has-content");
+      jQuery(this).prev().removeClass('focus');
+    }
+  });
+  jQuery('input.mauticform-input, .mauticform-textarea, .mauticform-selectbox').on('focus', function () {
+    jQuery(this).prev().addClass('focus');
   });
   jQuery("input.mauticform-input, .mauticform-textarea, .mauticform-selectbox").focusout(function () {
-      if (jQuery(this).val() != "") {
-          jQuery(this).addClass("has-content");
-      } else {
-          jQuery(this).removeClass("has-content");
-          jQuery(this).prev().removeClass('focus');
-      }
+    if (jQuery(this).val() != "") {
+      jQuery(this).addClass("has-content");
+    } else {
+      jQuery(this).removeClass("has-content");
+      jQuery(this).prev().removeClass('focus');
+    }
   });
-  jQuery('[name="mauticform[hearduson]"]').on('change', function () {
-      if (jQuery(this).val() == "Unsure / Other") {
-          jQuery('[name="mauticform[other]"]').show();
-          jQuery('[name="mauticform[other]"]').prev().show();
-      } else {
-          jQuery('[name="mauticform[other]"]').hide();
-          jQuery('[name="mauticform[other]"]').prev().hide();
-      };
+  jQuery( document ).ready(function() {
+    jQuery('input').each(function () {
+      jQuery(this).addClass('has-value');
+      jQuery(this).prev().addClass('focus');
+    });
   });
-  setTimeout(checkForValue(), .50);
-  const AUTOFILLED = 'has-content'
-  const onAutoFillStart = (el) => el.classList.add(AUTOFILLED)
-  const onAutoFillCancel = (el) => el.classList.remove(AUTOFILLED)
-  const onAnimationStart = ({ target, animationName }) => {
-      
-      switch (animationName) {
-          case 'onAutoFillStart':
-              jQuery('label[for="'+ jQuery(target).attr('id') +'"]').addClass('focus');
-              return onAutoFillStart(target)
-          case 'onAutoFillCancel':
-              return onAutoFillCancel(target)
-      }
-  }
-  jQuery('input').on('animationstart', onAnimationStart);
-  // jQuery('input').each(function(){
-  //   jQuery(this).on('animationstart', onAnimationStart);
-  // })
 </script>
