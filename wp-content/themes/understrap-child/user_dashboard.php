@@ -76,9 +76,15 @@
     case "12":
       $progress = 100;
       break;
+    case "13":
+      $ico = 'fa fa-hourglass';
+      $progress = 10;
+      $stage = 'In Progress';
+      $stageDesc = 'We are currently processing your account. We would have an update as soon as this is completed.';
+      break;
     default:
       $progress = 0;
-      $errorMessage = "<div class='text-center'>Hello, Looks like you haven't signed up for our services yet.<br>Call us for a <i>FREE</i> quote</div>";
+      header( 'Location:' . 'https://www.resortrelease.com' );
       break;
   }
   $hash = hash_hmac("sha256",$email,"ce5c877c2048f8a3d8dad0ab75a0df9c97457e9f");
@@ -107,7 +113,7 @@
   } else {
     $open = false;
   }
-  require_once('header.php');
+  require_once('header-app.php');
 ?>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -482,8 +488,7 @@
   }
 
   .selected {
-    border-top: 2px solid red;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid;
     margin-top: -2px;
     background: #fbfbfb;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.09);
@@ -643,8 +648,7 @@
             </div>
             <div class="more-info animate fadeInUp" style="animation-delay: .9s;">
               <p>
-                "
-                <?php echo $stageDesc ?>"
+                "<?php echo $stageDesc ?>"
               </p>
             </div>
           </div>
