@@ -12,12 +12,12 @@
   }
   require_once('api/mt.php');
   echo "<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MV5MQFQ');</script>
-<!-- End Google Tag Manager -->";
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV5MQFQ');</script>
+  <!-- End Google Tag Manager -->";
   $current_user = wp_get_current_user();
   $userEmail = $current_user->user_email;
   $user_id = $current_user->ID;
@@ -299,7 +299,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* background: #00517C; */
     background: #113d53;
     color: white;
-    padding: 12px;
+    padding: 12px 5%;
     border-radius: 22px;
     position: relative;
   }
@@ -521,7 +521,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   .selected.second {
-    border-color: rgba(220, 202, 74, 0.40);
+    border-color: rgba(220, 202, 74, 0.70);
   }
 
   .selected.third {
@@ -581,6 +581,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .tab {
     cursor: pointer;
+  }
+  @media (max-width:468px) {
+    .selected {
+      border-bottom: none!important;
+      border-top: 2px solid;
+    }
   }
 </style>
 <div class="container main-container" style="padding:0;">
@@ -709,14 +715,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <?php endif; ?>
           <!-- <div class="separator">
-          <div class="line"></div>
-          <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/exclamation-svg.svg" alt="RR separator"></div>
-          <div class="line"></div>
-        </div> -->
+            <div class="line"></div>
+            <div class="icon"><img src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/icons/exclamation-svg.svg" alt="RR separator"></div>
+            <div class="line"></div>
+          </div> -->
           <div class="row">
             <div class="more-info info-bar animate fadeIn" style="animation-delay: 2s;">
               <div class="row margin-auto">
-                <div class="col-2" style="padding:0;">
+                <div class="col-2 text-center" style="padding:0;">
                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/information.png" class="img-fluid" alt="" style="position: relative;top: 5%;">
                 </div>
                 <div class="col-10">
