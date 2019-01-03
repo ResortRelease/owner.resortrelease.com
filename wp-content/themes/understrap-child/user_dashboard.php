@@ -80,7 +80,7 @@
       $ico = 'fa fa-hourglass';
       $progress = 10;
       $stage = 'In Progress';
-      $stageDesc = 'We are currently processing your account. We will have an update as soon as this is completed.';
+      $stageDesc = 'Welcome to Resort Release. We are currently processing your account. An update will be provided as soon as your Case Manager has been assigned.';
       break;
     default:
       $progress = 0;
