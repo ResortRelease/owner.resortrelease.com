@@ -76,6 +76,12 @@
     case "12":
       $progress = 100;
       break;
+    case "13":
+      $ico = 'fa fa-hourglass';
+      $progress = 10;
+      $stage = 'In Progress';
+      $stageDesc = 'Welcome to Resort Release. We are currently processing your account. An update will be provided as soon as your Case Manager has been assigned.';
+      break;
     default:
       $progress = 0;
       header( 'Location:' . 'https://www.resortrelease.com' );
