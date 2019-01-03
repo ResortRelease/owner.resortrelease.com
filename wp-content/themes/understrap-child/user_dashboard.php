@@ -80,7 +80,7 @@
       $ico = 'fa fa-hourglass';
       $progress = 10;
       $stage = 'In Progress';
-      $stageDesc = 'We are currently processing your account. We would have an update as soon as this is completed.';
+      $stageDesc = 'We are currently processing your account. We will have an update as soon as this is completed.';
       break;
     default:
       $progress = 0;
