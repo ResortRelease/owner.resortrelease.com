@@ -25,9 +25,9 @@
   <i><h3 class="bold-name">Contact Us</h3></i>
   <ul class="margin-top-20">
     <div class="line"></div>
-    <li><a href="tel:888-381-5216"><div class="icon-box"><i class="fa fa-phone bold-icon"></i></div> 888-381-5216</a></li>
+    <li><a href="tel:888-381-5216" onclick="gaCTC();"><div class="icon-box"><i class="fa fa-phone bold-icon"></i></div> 888-381-5216</a></li>
     <div class="line"></div>
-    <li onclick="toggleChat();"><div class="icon-box"><i class="fa fa-commenting bold-icon"></i></div> Chat With Us</li>
+    <li onclick="toggleChat(); gaChat();"><div class="icon-box"><i class="fa fa-commenting bold-icon"></i></div> Chat With Us</li>
   </ul>
   <?php 
     if($open == 1) {
@@ -37,3 +37,11 @@
     }
   ?>
 </div>
+<script>
+function gaCTC(){
+  dataLayer.push({'event': 'clickToCall'});
+}
+function gaChat(){
+  dataLayer.push({'event': 'clickToChat'});
+}
+</script>

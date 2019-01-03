@@ -11,6 +11,13 @@
       header( 'Location:' . home_url().'/login' );  
   }
   require_once('api/mt.php');
+  echo "<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MV5MQFQ');</script>
+<!-- End Google Tag Manager -->";
   $current_user = wp_get_current_user();
   $userEmail = $current_user->user_email;
   $user_id = $current_user->ID;
@@ -93,6 +100,13 @@
     update_user_meta($user_id, 'user_pass', $newpassword);
     wp_update_user( array ('ID' => $user_id, 'user_pass' => $newpassword) ) ;
     echo "<div class='log-msg'>PASSWORD UPDATED</div>";
+    echo "
+    <script>
+      window.dataLayer.push({
+        'passwordResetType': 'Change'
+      });
+      dataLayer.push({'event': 'passwordReset'});
+    </script>";
   }
   if(isset($_POST['fileUpload'])){
     echo "<p style='color:red;'>File Uploaded</p>";
@@ -114,6 +128,13 @@
     $open = false;
   }
   require_once('header-app.php');
+  echo "<script>
+    dataLayer.push({
+      'userName': '" . $fullname . "',
+      'userEmail': '" . $email . "',
+      'userStage': '" . $stage . "'
+    });
+  </script>";
 ?>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -165,6 +186,7 @@
     right: 0;
     left: 0;
     margin: 0 auto;
+    top:100px;
     text-align: center;
     z-index: 3;
     margin-top: 20px;
@@ -722,11 +744,11 @@
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content" style="padding: 30px 12px;">
-      Leave a review in:
+      <p><b>Leave a review in:</b></p>
       <div class="row margin-top-20">
-        <div class="col-4 text-center"><a href="https://goo.gl/DJDvcp" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/g-plus.jpg" alt="" style="max-width: 50px;"></a></div>
-        <div class="col-4 text-center"><a href="https://www.facebook.com/pg/resortrelease/reviews/" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/fb.jpg" alt="" style="max-width: 50px;"></a></div>
-        <div class="col-4 text-center"><a href="https://www.bbb.org/chicago/business-reviews/timeshare-advocates/resort-release-in-rockford-il-88596110/reviews-and-complaints/?review=true" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/bbb.jpg" alt="" style="max-width: 50px;"></a></div>
+        <div class="col-4 text-center"><a onclick="gaReview('Google Plus')" href="https://goo.gl/DJDvcp" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/g-plus.jpg" alt="" style="max-width: 50px;"></a></div>
+        <div class="col-4 text-center"><a onclick="gaReview('Facebook')" href="https://www.facebook.com/pg/resortrelease/reviews/" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/fb.jpg" alt="" style="max-width: 50px;"></a></div>
+        <div class="col-4 text-center"><a onclick="gaReview('BBB')" href="https://www.bbb.org/chicago/business-reviews/timeshare-advocates/resort-release-in-rockford-il-88596110/reviews-and-complaints/?review=true" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/bbb.jpg" alt="" style="max-width: 50px;"></a></div>
       </div>
     </div>
   </div>
@@ -859,6 +881,12 @@
     }, 0, function () {
       drop(x);
     });
+  }
+  function gaReview(label) {
+    window.dataLayer.push({
+      'reviewProfile': label
+    });
+    dataLayer.push({'event': 'leaveReview'});
   }
 </script>
 <?php 

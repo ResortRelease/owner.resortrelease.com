@@ -7,6 +7,13 @@ global $wpdb, $user_ID;
 // if(!$_GET['login'] == true){
 //   header( 'Location:' . home_url().'/welcome' );
 // }
+echo "<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MV5MQFQ');</script>
+<!-- End Google Tag Manager -->";
 if ($user_ID){
   // They're already logged in, so we bounce them back to dashboard.  
   header( 'Location:' . home_url().'/user-dashboard' );  
@@ -67,7 +74,8 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerUser']) ) {
       $user_verify = wp_signon( $login_data, false );
       if ( is_wp_error($user_verify) ){  
         echo "<span id='error-msg' class='text-danger margin-top-20 error-msg'>Invalid login details</span>";  
-      } else {    
+      } else {
+        echo "<script>dataLayer.push({'event': 'successfulRegister'});</script>";
         echo "<script type='text/javascript'>window.location.href='". home_url() ."/user-dashboard'</script>";  
         exit();  
       }  
@@ -81,31 +89,33 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerUser']) ) {
 }
 /* LOGIN USER */
 if(isset($_POST['loginUser'])) {  
-    global $wpdb;  
-   
-    //We shall SQL escape all inputs  
-    $username = $wpdb->escape($_REQUEST['log']);  
-    $password = $wpdb->escape($_REQUEST['pwd']);  
-    $remember = $wpdb->escape($_REQUEST['rememberme']);  
-   
-    if($remember) $remember = "true";  
-    else $remember = "false";  
-   
-    $login_data = array();  
-    $login_data['user_login'] = $username;  
-    $login_data['user_password'] = $password;  
-    $login_data['remember'] = $remember;  
-   
-    $user_verify = wp_signon( $login_data, false );   
-    
-    if ( is_wp_error($user_verify) )   
-    {  
-      echo "<span id='error-msg' class='text-danger margin-top-20 error-msg'>Invalid login details</span>";  
-       // Note, I have created a page called "Error" that is a child of the login page to handle errors. This can be anything, but it seemed a good way to me to handle errors.  
-     } else {    
-       echo "<script type='text/javascript'>window.location.href='". home_url() ."/user-dashboard'</script>";  
-       exit();  
-     }  
+  global $wpdb;  
+  
+  //We shall SQL escape all inputs  
+  $username = $wpdb->escape($_REQUEST['log']);  
+  $password = $wpdb->escape($_REQUEST['pwd']);  
+  $remember = $wpdb->escape($_REQUEST['rememberme']);  
+  
+  if($remember) $remember = "true";  
+  else $remember = "false";  
+  
+  $login_data = array();  
+  $login_data['user_login'] = $username;  
+  $login_data['user_password'] = $password;  
+  $login_data['remember'] = $remember;  
+  
+  $user_verify = wp_signon( $login_data, false );   
+  
+  if ( is_wp_error($user_verify) )   
+  {  
+    echo "<span id='error-msg' class='text-danger margin-top-20 error-msg'>Invalid login details</span>";
+    echo "<script>dataLayer.push({'event': 'failedLogin'});</script>";  
+      // Note, I have created a page called "Error" that is a child of the login page to handle errors. This can be anything, but it seemed a good way to me to handle errors.  
+    } else {
+      echo "<script>dataLayer.push({'event': 'successfulLogin'});</script>";
+      echo "<script type='text/javascript'>window.location.href='". home_url() ."/user-dashboard';</script>"; 
+      exit();  
+    }  
 }
 //Customizes the page to redirect users to after having connected with Social Login
 //Use the email address as user_login
@@ -140,7 +150,7 @@ if(isset($_POST['loginUser'])) {
 // add_filter('oa_social_login_filter_login_redirect_url', 'oa_social_login_set_redirect_url', 10, 2);
 
 
-get_header();
+get_header('app');
 ?>
 <style>
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
@@ -483,12 +493,12 @@ get_header();
                 ?>
                 <div class="form-group mauticform-row">
                   <?php 
-                  if(!isset($_POST['loginUser'])) {  
-                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="">';
-                  } else {
-                    echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="'.$_POST['log'].'">';
-                  }
-                ?>
+                    if(!isset($_POST['loginUser'])) {  
+                      echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="">';
+                    } else {
+                      echo '<label for="user_login" class="mauticform-label">Email</label><input type="text" name="log" id="user_login" tabindex="1" class="form-control mauticform-input" placeholder="" value="'.$_POST['log'].'">';
+                    }
+                  ?>
                 </div>
                 <div class="form-group mauticform-row">
                   <label for="user_pass" class="mauticform-label">Password</label>
