@@ -246,8 +246,7 @@
     text-align: center;
     width: 100%;
     /* padding: 8px; */
-    position: sticky;
-    z-index: 9;
+    z-index: 9999999;
     left: 0px;
     right: 0;
     margin: 0 auto;
@@ -582,7 +581,15 @@
   .tab {
     cursor: pointer;
   }
-  @media (max-width:468px) {
+  .toTop {
+    position: sticky;
+    top: 0;
+  }
+  .toBottom {
+    position:fixed;
+    bottom:0;
+  }
+  @media (max-width:767px) {
     .selected {
       border-bottom: none!important;
       border-top: 2px solid;
@@ -634,13 +641,6 @@
     <header class="row" id="header-dashboard">
       <div class="wrapper"></div>
       <div class="bg-logo text-center"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/rr-logo-blue.svg" alt=""></div>
-      <div class="col-12 text-right">
-        <small class="small-date">Status as of:
-          <b>
-            <?php echo date("m/d/Y") ?>
-          </b>
-        </small>
-      </div>
       <div class="col-12 text-center margin-top-20">
         <h4 class="text-capitalize ">Hello, <b>
             <?php echo $fullname ?></b></h4>
@@ -674,6 +674,13 @@
             </div>
             <div class="more-info animate fadeInUp" style="animation-delay: .9s;">
               <p>"<?php echo $stageDesc ?>"</p>
+            </div>
+            <div class="col-12 text-right">
+              <small class="small-date">Status as of:
+                <b>
+                  <?php echo date("m/d/Y") ?>
+                </b>
+              </small>
             </div>
           </div>
           <!-- <div class="more-info" style="background: #eeeeee;margin-left: -15px;margin-right: -15px;padding: 15px;">
@@ -716,7 +723,7 @@
             <div class="line"></div>
           </div> -->
           <div class="row">
-            <div class="more-info info-bar animate fadeIn" style="animation-delay: 2s;">
+            <div class="more-info info-bar boxed animate fadeIn" style="animation-delay: 2s;">
               <div class="row margin-auto">
                 <div class="col-2 text-center" style="padding:0;">
                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/information.png" class="img-fluid" alt="" style="position: relative;top: 5%;">
@@ -756,6 +763,9 @@
   </div>
 </div>
 <script>
+  jQuery(window).resize(function() {
+    stickyHeader();
+  });
   // jQuery('#myModal').modal('toggle')
   function showSettings() {
     jQuery('#main-dashboard').toggle('slow');
@@ -766,7 +776,14 @@
     jQuery('#main-dashboard').toggle('slow');
     jQuery('#contact-dashboard').toggle('slow');
   }
-
+  function stickyHeader() {
+    if (jQuery(window).width() > 767) {
+      jQuery("nav").addClass('toTop').removeClass('toBottom');
+    }else {
+      jQuery("nav").addClass('toBottom').removeClass('toTop');
+    }
+  }
+  stickyHeader();
   function ajaxCall(page) {
     jQuery.ajax({
       url: "../wp-content/themes/understrap-child/" + page + ".php",

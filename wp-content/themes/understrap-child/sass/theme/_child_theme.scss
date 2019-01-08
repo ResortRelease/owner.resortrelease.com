@@ -52,6 +52,20 @@ span, small {
   font-size: 1.3rem!important;
   text-shadow: 0 2px 0 #cb9403;
 }
+.boxed{
+  padding: 12px 5%;
+  background: $bg-White;
+  border-radius: 8px!important;
+  box-shadow: 0 2px 5px rgba($bg-Dark, 0.3);
+  position: relative;
+  z-index: 9999!important;
+  transition: .5s;
+  h1{color: #004E77}
+  &:hover{
+    box-shadow: 0 0 1px rgba($bg-Dark, 0.5);
+    transition: .5s;
+  }
+}
 .round-primary {
   @include button-bg(rgba(1, 10, 19, 0.6));
   border-radius: 8px;
@@ -1268,10 +1282,6 @@ input[type=checkbox]:checked + .check-box,
   }
   .main-container{
     padding: 0;
-  }
-  #mobile-nav {
-    position:fixed!important;
-    bottom: -2px!important;
   }
 }
 @media (max-width: 768px) {

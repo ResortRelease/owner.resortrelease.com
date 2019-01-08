@@ -1,6 +1,6 @@
 <style>
   .testimonial-box{
-    background: #eeeeee;
+    background: #f8fcff;
     border-radius: 5px;
     padding: 12px 5%;
     position: relative;
@@ -8,7 +8,7 @@
     margin-top: 100px;
     border: 1px solid rgba(44, 120, 183, 0.30);
     margin-left: -10px;
-    min-height: 158px;
+    min-height: 138px;
     height: auto;
     max-height: 305px;
     display: inline-grid;
@@ -41,10 +41,18 @@
   }
   .t-name {
     font-weight: 600;
+    position: absolute;
+    top: -50px;
+    right: 86px;
+  }
+  .t-comment {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 </style>
 <div class="more-info animated slideIn" style="animation-delay: 1.3s;">
-  <div class="testimonial-box">
+  <div class="testimonial-box boxed">
     <div class="right text-right"><i class="fa fa-chevron-right"></i></div>
     <div class="t-stars text-right"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
     <div class="t-picture text-right"><img data-dir="<?php echo get_stylesheet_directory_uri(); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dashboard/Pam.png" alt="Client Image"></div>

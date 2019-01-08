@@ -12352,6 +12352,29 @@ span, small {
           transform: translateY(2px) !important;
 }
 
+.boxed {
+  padding: 12px 5%;
+  background: #ffffff;
+  border-radius: 8px !important;
+  -webkit-box-shadow: 0 2px 5px rgba(1, 1, 1, 0.3);
+          box-shadow: 0 2px 5px rgba(1, 1, 1, 0.3);
+  position: relative;
+  z-index: 9999 !important;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.boxed h1 {
+  color: #004E77;
+}
+
+.boxed:hover {
+  -webkit-box-shadow: 0 0 1px rgba(1, 1, 1, 0.5);
+          box-shadow: 0 0 1px rgba(1, 1, 1, 0.5);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
 .round-primary {
   background: rgba(1, 10, 19, 0.6);
   -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.6) !important;
@@ -13998,10 +14021,6 @@ input[type=checkbox]:checked + .check-box::before,
   }
   .main-container {
     padding: 0;
-  }
-  #mobile-nav {
-    position: fixed !important;
-    bottom: -2px !important;
   }
 }
 
