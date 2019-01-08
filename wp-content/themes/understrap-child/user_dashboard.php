@@ -659,12 +659,10 @@
     <div class="row margin-top-20">
       <div class="col-12 col-lg-12">
         <div id="user-status" class="getpage active">
-          <div class="more-info" style="margin-top: 0;">
+          <div class="more-info boxed" style="margin-top: 0;">
             <div class="stage-name text-center animate fadeInUp">
               <h3>
-                <b class="bold-name text-uppercase">
-                  <?php echo $stage ?>
-                </b>
+                <b class="bold-name text-uppercase"><?php echo $stage ?></b>
               </h3>
             </div>
             <div class="round-icon animate fadeInUp" style="animation-delay: .5s;">
@@ -675,9 +673,7 @@
             };?>
             </div>
             <div class="more-info animate fadeInUp" style="animation-delay: .9s;">
-              <p>
-                "<?php echo $stageDesc ?>"
-              </p>
+              <p>"<?php echo $stageDesc ?>"</p>
             </div>
           </div>
           <!-- <div class="more-info" style="background: #eeeeee;margin-left: -15px;margin-right: -15px;padding: 15px;">
