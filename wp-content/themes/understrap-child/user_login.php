@@ -3,9 +3,6 @@
 Template Name: Login User
 */
 global $wpdb, $user_ID;
-echo '<div class="loading" style="width:150px; margin:0 auto;position:absolute;top:30%;left:0;right:0;z-index:99999">
-    <img src="../wp-content/themes/understrap-child/assets/loading.svg" alt="" style="max-width:100%;">
-  </div>';
 /* If User Doesn't Come From Links - Register For A Callback */
 // if(!$_GET['login'] == true){
 //   header( 'Location:' . home_url().'/welcome' );

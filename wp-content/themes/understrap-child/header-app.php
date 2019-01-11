@@ -9,6 +9,10 @@
 
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
+<?php echo '<div class="loading" style="width:100%;height:100%;position:relative;background:white;">
+    <img src="../wp-content/themes/understrap-child/assets/loading.svg" alt="" style="width:150px; margin:0 auto;position:absolute;top:30%;left:0;right:0;z-index:99999">
+	</div>';
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -59,33 +63,3 @@ $container = get_theme_mod( 'understrap_container_type' );
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!--  Main Nav -->
-<?php if (!is_page( array( 'login', 'user dashboard') )) {?>
-<div class="container-fluid bg-blue text-center main-nav">
-	<a href="https://www.resortrelease.com" rel="noopener"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/RR-logo.svg" alt="Resort Release Logo" class="logo margin-auto"></a>
-</div>
-
-<!--  Logos -->
-<?php if (!is_page('Welcome')): ?>
-	<div id="accreditation-new-row" class="container-fluid text-center">
-		<div id="header-credits">
-			<div>
-					<a href="https://www.resortrelease.com/about" rel="noopener">
-					<img id="header-years" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/years-in-business.svg" type="image/svg+xml" alt="Resort Release 6 Years" style="width: 70px; height: auto;"/>
-					</a>
-					<a href="http://www.bbb.org/chicago/business-reviews/timeshare-advocates/american-resource-management-group-llc-in-rockford-il-88596110/" target="_blank" rel="noopener">
-							<img id="header-bbb" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/Resort-Release-BBB.jpg" type="image/svg+xml" alt="Resort Release BBB" style="width: 150px; height: auto;"/>
-					</a>
-					<a href="http://web.rockfordchamber.com/Real-Estate,-Management/Resort-Release-3609" target="_blank" rel="noopener">
-							<img id="header-rockford" class="header-accreditation img-fluid" src="<?php bloginfo('stylesheet_directory'); ?>/assets/logos/badges/rcc.png" type="image/svg+xml" alt="Resort Release Rockford" style="width: 150px; height: auto;"/>
-					</a>
-			</div>
-		</div>
-	</div>
-<?php else: ?>
-<div class="sign-up" style="background: #0e76bc; color: white;padding: 12px;">
-	<div class="container">
-		<div class="text-right"><a href="<?php echo home_url() ?>/login?login=true" style="color: inherit;" class="button success">User Login</a></div>
-	</div>
-</div>
-<?php endif; ?>
-<?php } ?>

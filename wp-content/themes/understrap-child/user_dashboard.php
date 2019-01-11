@@ -3,9 +3,6 @@
   Template Name: User Dashboard
   */
   
-  echo '<div class="loading" style="width:150px; margin:0 auto;position:absolute;top:30%;left:0;right:0;z-index:99999">
-    <img src="../wp-content/themes/understrap-child/assets/loading.svg" alt="" style="max-width:100%;">
-  </div>';
   global $wpdb, $user_ID;  
     //Check whether the user is already logged in  
     /* REGISTER NEW USER */
