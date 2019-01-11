@@ -3,6 +3,9 @@
   Template Name: User Dashboard
   */
   
+  echo '<div class="loading" style="width:150px; margin:0 auto;position:absolute;top:30%;left:0;right:0;z-index:99999">
+    <img src="../wp-content/themes/understrap-child/assets/loading.svg" alt="" style="max-width:100%;">
+  </div>';
   global $wpdb, $user_ID;  
     //Check whether the user is already logged in  
     /* REGISTER NEW USER */
@@ -299,7 +302,7 @@
     background: #113d53;
     color: white;
     padding: 12px 5%;
-    border-radius: 22px;
+    border-radius: 8px;
     position: relative;
   }
 
@@ -683,20 +686,8 @@
               </small>
             </div>
           </div>
-          <!-- <div class="more-info" style="background: #eeeeee;margin-left: -15px;margin-right: -15px;padding: 15px;">
-          <div class="row">
-            <div class="col-6">
-              <div class="video">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dashboard/video-placeholder.jpg" alt="Welcome video">              
-              </div>
-            </div>
-            <div class="col-6">
-              <span>What is blue and smells like red paint? The answer will shock you!</span>
-            </div>
-          </div>
-        </div> -->
           <?php if($stageId != 12): ?>
-          <div class="more-info chatbox animate fadeInUp" style="animation-delay: 1.3s;">
+          <div class="more-info chatbox boxed animate fadeInUp" style="animation-delay: 1.3s;">
             <div class="chatboxIcon"><i class="fa fa-question"></i></div>
             <p><i> If you do have any questions regarding the process or how to execute the documents, please feel free to click below and start a chat or contact us at:</i></p>
             <a href="tel:888-381-5216" class="question">888-381-5216</a>
@@ -722,7 +713,7 @@
             <div class="icon"><img src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/icons/exclamation-svg.svg" alt="RR separator"></div>
             <div class="line"></div>
           </div> -->
-          <div class="row">
+          <div class="">
             <div class="more-info info-bar boxed animate fadeIn" style="animation-delay: 2s;">
               <div class="row margin-auto">
                 <div class="col-2 text-center" style="padding:0;">
@@ -762,153 +753,8 @@
     </div>
   </div>
 </div>
-<script>
-  jQuery(window).resize(function() {
-    stickyHeader();
-  });
-  // jQuery('#myModal').modal('toggle')
-  function showSettings() {
-    jQuery('#main-dashboard').toggle('slow');
-    jQuery('#settings-dashboard').toggle('slow');
-  }
-
-  function showContactUs() {
-    jQuery('#main-dashboard').toggle('slow');
-    jQuery('#contact-dashboard').toggle('slow');
-  }
-  function stickyHeader() {
-    if (jQuery(window).width() > 767) {
-      jQuery("nav").addClass('toTop').removeClass('toBottom');
-    }else {
-      jQuery("nav").addClass('toBottom').removeClass('toTop');
-    }
-  }
-  stickyHeader();
-  function ajaxCall(page) {
-    jQuery.ajax({
-      url: "../wp-content/themes/understrap-child/" + page + ".php",
-      type: 'GET',
-      success: function (result) {
-        if (page == "user_home") {
-          jQuery('#user-status').show();
-        } else {
-          jQuery('#user-status').hide();
-        }
-        jQuery("#main-dashboard").html(result);
-        window.scrollTo(0, 0);
-      },
-      error: function () {}
-    });
-  }
-
-  function getSelected(item) {
-    jQuery('.tab').removeClass('selected');
-    switch (item) {
-      case "#user-status":
-        jQuery('#mobile-nav .home').addClass('selected');
-        break;
-      case "#user-settings":
-        jQuery('#mobile-nav .settings').addClass('selected');
-        break;
-      case "#user-contact":
-        jQuery('#mobile-nav .contact').addClass('selected');
-        break;
-      default:
-        jQuery('#mobile-nav .home').addClass('selected');
-        break;
-    }
-  };
-  getSelected();
-
-  function showItem(item) {
-    jQuery(".getpage").each(function (index) {
-      jQuery(this).removeClass('active');
-    });
-    jQuery(item).addClass('active');
-    window.scrollTo(0, 0);
-    getSelected(item);
-  }
-
-  function toggleChat() {
-    Tawk_API.showWidget();
-    Tawk_API.maximize();
-  }
-  Tawk_API.onLoad = function () {
-    Tawk_API.hideWidget();
-  };
-  Tawk_API.onChatMinimized = function () {
-    Tawk_API.hideWidget();
-  };
-  setTimeout(() => {
-    jQuery('.log-msg').toggle('slow');
-  }, 5000);
-  jQuery(window).load(function () {
-    var per = jQuery('.progress-bar').attr('data-animate');
-    jQuery('.progress-bar').animate({
-      width: per + '%'
-    }, function () {
-      jQuery('.progress-bar .badge').fadeIn('slow');
-    });
-  });
-
-  function isClosed() {
-    for (var i = 0; i < 120; i++) {
-      create(i);
-    }
-  }
-
-  function create(i) {
-    var width = Math.random() * 8;
-    var height = width * 0.4;
-    var colourIdx = Math.ceil(Math.random() * 3);
-    var colour = "red";
-    switch (colourIdx) {
-      case 1:
-        colour = "yellow";
-        break;
-      case 2:
-        colour = "blue";
-        break;
-      default:
-        colour = "red";
-    }
-    jQuery('<div class="confetti-' + i + ' ' + colour + '"></div>').css({
-      "width": width + "px",
-      "height": height + "px",
-      "top": -Math.random() * 20 + "%",
-      "left": Math.random() * 100 + "%",
-      "opacity": Math.random() + 0.5,
-      "transform": "rotate(" + Math.random() * 360 + "deg)"
-    }).appendTo('.wrapper');
-
-    drop(i);
-  }
-
-  function drop(x) {
-    jQuery('.confetti-' + x).animate({
-      top: "100%",
-      left: "+=" + Math.random() * 15 + "%"
-    }, Math.random() * 3000 + 3000, function () {
-      reset(x);
-    });
-  }
-
-  function reset(x) {
-    jQuery('.confetti-' + x).animate({
-      "top": -Math.random() * 20 + "%",
-      "left": "-=" + Math.random() * 15 + "%"
-    }, 0, function () {
-      drop(x);
-    });
-  }
-  function gaReview(label) {
-    window.dataLayer.push({
-      'reviewProfile': label
-    });
-    dataLayer.push({'event': 'leaveReview'});
-  }
-</script>
 <?php 
+  include('user_scripts.php');
   if($errorMessage){
     echo '<script type="text/javascript">',
     'showItem("#user-not-found");

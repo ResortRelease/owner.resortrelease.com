@@ -5,13 +5,13 @@
     padding: 12px 5%;
     position: relative;
     padding-top: 10px;
-    margin-top: 100px;
     border: 1px solid rgba(44, 120, 183, 0.30);
-    margin-left: -10px;
     min-height: 138px;
     height: auto;
     max-height: 305px;
     display: inline-grid;
+    margin:0 auto;
+    margin-top: 50px;
   }
   .t-stars, .t-picture, .left, .right {
     position: absolute;
