@@ -39,7 +39,7 @@
           <hr id="divider">
           <br>
           <ul>
-            <a href="<?php echo home_url() ?>/login?login=true" style="color: inherit;"><li>User Login</li></a>
+            <!-- <a href="<?php// echo home_url() ?>/login?login=true" style="color: inherit;"><li>User Login</li></a> -->
             <a href="https://www.resortrelease.com/" style="color: inherit;"><li>Home</li></a>
             <a href="https://www.resortrelease.com/3-reasons/" style="color: inherit;"><li>Client Survey</li></a>
           </ul>
