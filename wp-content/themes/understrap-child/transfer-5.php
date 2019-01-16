@@ -31,7 +31,7 @@
           <div class="col-md-10 text-center">
             <h2>Exit Team & Attorney Scam</h2>
             <div class="scroll-div img-fluid">
-              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/TIMESHARE-RELEASE-COMPANY-SCAM.jpg" alt="TIMESHARE RELEASE COMPANY SCAM">
+              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/TIMESHARE-RELEASE-COMPANY-SCAM-2.png" alt="TIMESHARE RELEASE COMPANY SCAM">
             </div>
           </div>
         </div>
