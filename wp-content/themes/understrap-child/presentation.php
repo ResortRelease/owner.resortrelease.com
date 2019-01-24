@@ -11,7 +11,8 @@
  * @package understrap
  */
 
-get_header(); ?>
+get_header(); 
+?>
 <style>
   #accreditation-new-row,
   .main-nav,
@@ -145,12 +146,19 @@ if (($handle = fopen($spreadsheet_url, "r")) !== FALSE) {
 else
     die("Problem reading csv");
 echo "<br>";
-// first [] is column, second is [row]
+// first is [row], second is [column]
 $total_leads = $spreadsheet_data[11][1];
 $total_asap = $spreadsheet_data[11][5];
 $total_sales = $spreadsheet_data[11][15];
 $total_cr = $spreadsheet_data[11][16];
+/********** Previous Year **************/
+$prev_leads = $spreadsheet_data[24][1];
+$prev_sales = $spreadsheet_data[24][2];
+$prev_cr = $spreadsheet_data[24][3];
+$prev_asap = $spreadsheet_data[24][4];
+$prev_year = $spreadsheet_data[14][0];
 ?>
+<?php if ( ! post_password_required( $post ) ) : ?>
 <section id="section-1">
   <a href="#section-1">
     <div class="previous">
@@ -158,10 +166,8 @@ $total_cr = $spreadsheet_data[11][16];
     </div>
   </a>
   <div class="container">
-    <h1>Section 1</h1>
     <div class="row">
       <div class="col-md-3">
-        <h1>Data!</h1>
         <!-- <iframe src="https://exploratory.io/viz/wmf8uxX6CC/Leads-mnk9KoO7WX?embed=true" frameborder="0"></iframe> -->
       </div>
       <div class="col-md-9">
@@ -176,11 +182,11 @@ $total_cr = $spreadsheet_data[11][16];
             <div class="t d2">ASAP<br><b><?php echo $total_asap ?></b></div>
             <div class="t d3">SALES<br><b><?php echo $total_sales ?></b></div>
             <div class="t d4">DEALS<br><b><?php echo $total_cr ?></b></div>
-            <div class="b d5">LEADS<br><b><?php echo $poop ?></b></div>
-            <div class="b d6">ASAP<br><b><?php echo $poop ?></b></div>
-            <div class="b d7">SALES<br><b><?php echo $poop ?></b></div>
-            <div class="b d8">DEALS<br><b><?php echo $poop ?></b></div>
-            <div class="b d9"><b>JAN 2018</b></div>
+            <div class="b d5">LEADS<br><b><?php echo $prev_leads ?></b></div>
+            <div class="b d6">ASAP<br><b><?php echo $prev_asap ?></b></div>
+            <div class="b d7">SALES<br><b><?php echo $prev_sales ?></b></div>
+            <div class="b d8">DEALS<br><b><?php echo $prev_cr ?></b></div>
+            <div class="b d9"><b><?php echo $prev_year ?></b></div>
           </div>
           <img class="img-fluid" src="../wp-content/themes/understrap-child/assets/presentation/circles.jpg" alt="circles">
         </div>
@@ -219,3 +225,6 @@ $total_cr = $spreadsheet_data[11][16];
   </div>
 </section>
 <?php get_footer(); ?>
+<?php else : ?>
+<?php echo get_the_password_form();?>
+<?php endif; ?>
