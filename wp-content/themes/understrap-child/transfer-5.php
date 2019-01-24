@@ -9,7 +9,6 @@
       <div class="margin-top-40">
         <h3>Common Timeshare Scams:</h3>
         <ol>
-          <li><b>Exit Team And Attorney Scam</b></li>
           <li><b>Attorney Castle Law Group</b></li>
           <li><b>“Buyer In The Wing” resale Scam</b></li>
           <li><b>Donate to “charity” timeshare Scam</b></li>
@@ -20,30 +19,13 @@
     </div>
 <!-- SMTN and Ebay -->
     <!-- 1 -->
-    <div class="row margin-top-40 text-left">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-md-1">
-            <div class="p-number">
-              1
-            </div>
-          </div>
-          <div class="col-md-10 text-center">
-            <h2>Exit Team Complaints</h2>
-            <div class="scroll-div img-fluid">
-              <img class="img-fluid scroll-img" src="../wp-content/themes/understrap-child/assets/slides/5/TIMESHARE-RELEASE-COMPANY-SCAM-2.png" alt="TIMESHARE RELEASE COMPANY SCAM">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- 2 -->
     <div class="row margin-top-40 text-left">
       <div class="col-12">
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              2
+              1
             </div>
           </div>
           <div class="col-md-10 text-center">
@@ -61,7 +43,7 @@
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              3
+              2
             </div>
           </div>
           <div class="col-md-10 text-center">
@@ -79,7 +61,7 @@
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              4
+              3
             </div>
           </div>
           <div class="col-md-10 text-center">
@@ -97,7 +79,7 @@
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              5
+              4
             </div>
           </div>
           <div class="col-md-10 text-center">
@@ -115,7 +97,7 @@
         <div class="row">
           <div class="col-md-1">
             <div class="p-number">
-              6
+              5
             </div>
           </div>
           <div class="col-md-10 text-center">

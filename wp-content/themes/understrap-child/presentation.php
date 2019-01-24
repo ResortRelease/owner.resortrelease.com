@@ -12,35 +12,6 @@
  */
 
 get_header(); ?>
-<?php 
-require __DIR__ . '/vendor/autoload.php'; 
-
-putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/client_secret.json');
-$client = new Google_Client;
-$client->useApplicationDefaultCredentials();
-
-$client->setApplicationName("Get Lead Data");
-$client->setScopes(['https://www.googleapis.com/auth/drive','https://spreadsheets.google.com/feeds']);
-
-if ($client->isAccessTokenExpired()) {
-    $client->refreshTokenWithAssertion();
-}
-
-$accessToken = $client->fetchAccessTokenWithAssertion()["access_token"];
-ServiceRequestFactory::setInstance(
-    new DefaultServiceRequest($accessToken)
-);
-
-// // Get our spreadsheet
-// $spreadsheet = (new Google\Spreadsheet\SpreadsheetService)
-//    ->getSpreadsheetFeed()
-//    ->getByTitle('Client Survey - Live Production Doc');
-
-// // Get the first worksheet (tab)
-// $worksheets = $spreadsheet->getWorksheetFeed()->getEntries();
-// $worksheet = $worksheets[3];
-
-?>
 <style>
   #accreditation-new-row,
   .main-nav,
@@ -54,6 +25,9 @@ ServiceRequestFactory::setInstance(
     padding: 20px 0;
     background: #ffffff!important;
   }
+  h1 {
+	color: #333!important;
+	}
   .previous, .next {
     position: absolute;
     width: 30px;
@@ -158,6 +132,25 @@ ServiceRequestFactory::setInstance(
     bottom: 68px!important;
   }
 </style>
+<?php 
+$spreadsheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxWpaeo0Zvi1kyDwImolwLl4RC0jKypeI61p1-Rh0uXNzR9O2JQyrTU8hNC3SVy4EBVTHuNzErXBUt/pub?output=csv";
+if(!ini_set('default_socket_timeout', 15)) echo "<!-- unable to change socket timeout -->";
+
+if (($handle = fopen($spreadsheet_url, "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $spreadsheet_data[] = $data;
+    }
+    fclose($handle);
+}
+else
+    die("Problem reading csv");
+echo "<br>";
+// first [] is column, second is [row]
+$total_leads = $spreadsheet_data[11][1];
+$total_asap = $spreadsheet_data[11][5];
+$total_sales = $spreadsheet_data[11][15];
+$total_cr = $spreadsheet_data[11][16];
+?>
 <section id="section-1">
   <a href="#section-1">
     <div class="previous">
@@ -179,15 +172,15 @@ ServiceRequestFactory::setInstance(
               <p>RESULTS</p>
               <div class="sep"></div>
             </div>
-            <div class="t d1">LEADS<br><b>3973</b></div>
-            <div class="t d2">ASAP<br><b>4951</b></div>
-            <div class="t d3">SALES<br><b>418</b></div>
-            <div class="t d4">DEALS<br><b>500</b></div>
-            <div class="b d5">LEADS<br><b>3398</b></div>
-            <div class="b d6">ASAP<br><b>-</b></div>
-            <div class="b d7">SALES<br><b>400</b></div>
-            <div class="b d8">DEALS<br><b>461</b></div>
-            <div class="b d9"><b>JAN 2018<b></div>
+            <div class="t d1">LEADS<br><b><?php echo $total_leads ?></b></div>
+            <div class="t d2">ASAP<br><b><?php echo $total_asap ?></b></div>
+            <div class="t d3">SALES<br><b><?php echo $total_sales ?></b></div>
+            <div class="t d4">DEALS<br><b><?php echo $total_cr ?></b></div>
+            <div class="b d5">LEADS<br><b><?php echo $poop ?></b></div>
+            <div class="b d6">ASAP<br><b><?php echo $poop ?></b></div>
+            <div class="b d7">SALES<br><b><?php echo $poop ?></b></div>
+            <div class="b d8">DEALS<br><b><?php echo $poop ?></b></div>
+            <div class="b d9"><b>JAN 2018</b></div>
           </div>
           <img class="img-fluid" src="../wp-content/themes/understrap-child/assets/presentation/circles.jpg" alt="circles">
         </div>
