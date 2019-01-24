@@ -5,13 +5,13 @@
     "license": "GPL-2.0",
     "minimum-stability": "stable",
     "require": {
-        "monolog/monolog": "1.0.*",
-        "mautic/api-library": "*" 
+        "monolog/monolog": "^1.24",
+        "mautic/api-library": "*",
+        "google/apiclient": "^2.0",
+        "asimlqt/php-google-spreadsheet-client": "3.0.*"
     },
-    "autoload":{
-        "autoload": {
-            "psr-4": {"Acme\\": "src/"}
-          }
+    "autoload": {
+        "psr-4": {"Acme\\": "src/"}
     },
     "keywords": ["wordpress","theme","bootstrap"],
     "homepage": "https://github.com/holger1411/understrap-child"
