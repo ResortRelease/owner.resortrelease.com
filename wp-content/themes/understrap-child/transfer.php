@@ -33,6 +33,7 @@ get_header(); ?>
 <?php get_footer(); ?>
 <script>
 	// Load Current Page
+	var type = "Transfer";
 	jQuery(document).ready(function(){
 		var lastPage = window.location.hash;
 		lastPage == "" ? lastPage = 1 : lastPage = lastPage.replace("#", "");

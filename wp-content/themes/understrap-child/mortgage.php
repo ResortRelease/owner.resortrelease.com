@@ -30,6 +30,7 @@ get_header(); ?>
 </div>
 <?php get_footer(); ?>
 <script>
+	var type = "Mortgage";
 	// Load Current Page
 	jQuery(document).ready(function(){
 		var lastPage = window.location.hash;
