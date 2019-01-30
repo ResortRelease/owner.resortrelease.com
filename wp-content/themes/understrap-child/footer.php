@@ -25,8 +25,8 @@
     <div class="container text-center">
       <?php if (is_page( array('Mortgage', 'Transfer'))) :?>
       <div class="row" id="footer-buttons">
-        <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="prev" data-page="1">Prev</i></div></div>
-        <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="next" data-page="2">Next</div></div>    
+        <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="prev" onclick="direction(this)" data-page="1">Prev</i></div></div>
+        <div class="col-md-6 col-12 text-center"><div class="button success page-label" id="next" onclick="direction(this)" data-page="2">Next</div></div>    
       </div>
       <?php endif ;?>
       <div class="row text-left">
@@ -64,6 +64,13 @@
   <?php wp_footer(); ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.full.min.js"></script>
 </body>
+<script>
+  function direction($this) {
+    var dir = jQuery($this).attr('id');
+    var page = jQuery($this).attr('data-page');
+    buttonDirection(dir, page);
+  }
+</script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMJM9BD"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
