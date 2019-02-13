@@ -19,17 +19,17 @@
             <div class="col-md-4">
               <div class="input-header">Monthly Payment Amount</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="MPA" id="in-MPA" placeholder="e.g ( $200 )" tabindex=1 value="116">
+              <input class="input-calc" type="number" name="MPA" id="in-MPA" placeholder="e.g ( $200 )" tabindex=1 >
             </div>
             <div class="col-md-4">
               <div class="input-header">Original # of Payments</div>
               <div class="input-type">#</div>
-              <input class="input-calc" type="number" name="OP" id="in-OP" tabindex=2 value="120">
+              <input class="input-calc" type="number" name="OP" id="in-OP" tabindex=2>
             </div>
             <div class="col-md-4">
               <div class="input-header">Downpayment</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="DP" id="in-DP" tabindex=3 value="1000">
+              <input class="input-calc" type="number" name="DP" id="in-DP" tabindex=3 >
             </div>
             <div class="col-md-4 pull-right">
               <div class="input-header">&nbsp;</div>
@@ -46,7 +46,7 @@
             <div class="col-md-4">
               <div class="input-header">Payment Amount</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="MPA" id="mFees" placeholder="e.g ( $1500 )" tabindex=4 value="1500">
+              <input class="input-calc" type="number" name="MPA" id="mFees" placeholder="e.g ( $1500 )" tabindex=4>
             </div>
             <div class="col-md-4">
               <div class="input-header">Frequency Paid</div>
@@ -60,7 +60,7 @@
             <div class="col-md-4">
               <div class="input-header">Expected Annual Increase</div>
               <div class="input-type">%</div>
-              <input class="input-calc" type="number" name="DP" id="increase" tabindex=6 value="8">
+              <input class="input-calc" type="number" name="DP" id="increase" tabindex=6>
             </div>
           </div>
           <!-- 3rd row -->
