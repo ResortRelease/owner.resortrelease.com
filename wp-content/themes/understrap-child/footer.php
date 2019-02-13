@@ -14,6 +14,11 @@
     float: left;
     margin-top: 0;
   }
+  #show-price-all .thirtyYears {
+    position: static;
+    font-size: 1.5em;
+    font-family: "Serif"!important;
+  }
 </style>
 <?php if (!is_home()) :?>
   <div class="container svg-container">

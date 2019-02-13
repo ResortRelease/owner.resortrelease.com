@@ -107,7 +107,7 @@ jQuery(window).ready(function(){
     jQuery(this).removeClass('active').removeAttr( "aria-current" );
   });
   jQuery('.breadcrumb li.1').addClass('active').attr("aria-current", "page");
-  magnify("bill-of-rights", 2); 
+  // magnify("bill-of-rights", 2); 
   jQuery('#prev').addClass('disabled').attr('data-page', "1");
   jQuery('#next').removeClass('disabled').attr('data-page', "2");
   jQuery('.red-car').css('left', '9%');
