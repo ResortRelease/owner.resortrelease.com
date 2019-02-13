@@ -19,17 +19,17 @@
             <div class="col-md-4">
               <div class="input-header">Monthly Payment Amount</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="MPA" id="in-MPA" placeholder="e.g ( $200 )" tabindex=1>
+              <input class="input-calc" type="number" name="MPA" id="in-MPA" placeholder="e.g ( $200 )" tabindex=1 value="116">
             </div>
             <div class="col-md-4">
               <div class="input-header">Original # of Payments</div>
               <div class="input-type">#</div>
-              <input class="input-calc" type="number" name="OP" id="in-OP" tabindex=2>
+              <input class="input-calc" type="number" name="OP" id="in-OP" tabindex=2 value="120">
             </div>
             <div class="col-md-4">
               <div class="input-header">Downpayment</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="DP" id="in-DP" tabindex=3>
+              <input class="input-calc" type="number" name="DP" id="in-DP" tabindex=3 value="1000">
             </div>
             <div class="col-md-4 pull-right">
               <div class="input-header">&nbsp;</div>
@@ -46,7 +46,7 @@
             <div class="col-md-4">
               <div class="input-header">Payment Amount</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="MPA" id="mFees" placeholder="e.g ( $1500 )" tabindex=4>
+              <input class="input-calc" type="number" name="MPA" id="mFees" placeholder="e.g ( $1500 )" tabindex=4 value="1500">
             </div>
             <div class="col-md-4">
               <div class="input-header">Frequency Paid</div>
@@ -60,7 +60,7 @@
             <div class="col-md-4">
               <div class="input-header">Expected Annual Increase</div>
               <div class="input-type">%</div>
-              <input class="input-calc" type="number" name="DP" id="increase" tabindex=6>
+              <input class="input-calc" type="number" name="DP" id="increase" tabindex=6 value="8">
             </div>
           </div>
           <!-- 3rd row -->
@@ -98,18 +98,36 @@
             </div><!-- End Header -->
             <!-- Years Output -->
             <div class="col-md-4">
-              <div class="output blue text-center xtra" id="x-10Years">&nbsp;
+              <div class="output blue text-center xtra" id="x10">&nbsp;
                 <div class="small-text text-center">10 years</div>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="output blue text-center xtra" id="x-20Years">&nbsp;
-                <div class="small-text text-center">20 years</div>
+              <div class="output blue text-center xtra" id="x15">&nbsp;
+                <div class="small-text text-center">15 years</div>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="output blue text-center xtra" id="x-30Years">&nbsp;
-                <div class="small-text text-center" id="x-30Years-sub" >30 years</div>
+              <div class="output blue text-center xtra" id="x20">&nbsp;
+                <div class="small-text text-center">20 years</div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row margin-top-20">
+            <div class="col-md-4">
+              <div class="output blue text-center xtra" id="x25">&nbsp;
+                <div class="small-text text-center">25 years</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="output blue text-center xtra" id="x50">&nbsp;
+                <div class="small-text text-center">50 years</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="output blue text-center xtra" id="x99">&nbsp;
+                <div class="small-text text-center">99 years</div>
               </div>
             </div>
           </div>
