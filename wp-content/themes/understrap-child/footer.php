@@ -16,7 +16,7 @@
   }
   #show-price-all .thirtyYears {
     position: static;
-    font-size: 0.8em;
+    font-size: 0.8vw;
   }
 </style>
 <?php if (!is_home()) :?>
