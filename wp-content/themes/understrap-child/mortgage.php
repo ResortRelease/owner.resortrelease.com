@@ -119,7 +119,7 @@ jQuery(function($) {
       function initial(){
         if(flag == true) {
           initialCalc = fees + membership + exchange;
-          var totalInitial = $("#x-CAO");
+          var totalInitial = $("#initial");
               totalInitial.html("$"+addCommas(initialCalc.toFixed(2)));
         }
       }initial();
