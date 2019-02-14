@@ -19,7 +19,7 @@
             <div class="col-md-4">
               <div class="input-header">Monthly Payment Amount</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="MPA" id="in-MPA" placeholder="e.g ( $200 )" tabindex=1>
+              <input class="input-calc" type="number" name="MPA" id="in-MPA" placeholder="e.g ( $200 )" tabindex=1 >
             </div>
             <div class="col-md-4">
               <div class="input-header">Original # of Payments</div>
@@ -29,7 +29,7 @@
             <div class="col-md-4">
               <div class="input-header">Downpayment</div>
               <div class="input-type">$</div>
-              <input class="input-calc" type="number" name="DP" id="in-DP" tabindex=3>
+              <input class="input-calc" type="number" name="DP" id="in-DP" tabindex=3 >
             </div>
             <div class="col-md-4 pull-right">
               <div class="input-header">&nbsp;</div>
@@ -98,18 +98,36 @@
             </div><!-- End Header -->
             <!-- Years Output -->
             <div class="col-md-4">
-              <div class="output blue text-center xtra" id="x-10Years">&nbsp;
+              <div class="output blue text-center xtra" id="x10">&nbsp;
                 <div class="small-text text-center">10 years</div>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="output blue text-center xtra" id="x-20Years">&nbsp;
+              <div class="output blue text-center xtra" id="x15">&nbsp;
                 <div class="small-text text-center">20 years</div>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="output blue text-center xtra" id="x-30Years">&nbsp;
-                <div class="small-text text-center" id="x-30Years-sub" >30 years</div>
+              <div class="output blue text-center xtra" id="x20">&nbsp;
+                <div class="small-text text-center">30 years</div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row margin-top-20">
+            <div class="col-md-4">
+              <div class="output blue text-center xtra" id="x25">&nbsp;
+                <div class="small-text text-center">40 years</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="output blue text-center xtra" id="x50">&nbsp;
+                <div class="small-text text-center">50 years</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="output blue text-center xtra" id="x99">&nbsp;
+                <div class="small-text text-center">99 years</div>
               </div>
             </div>
           </div>
