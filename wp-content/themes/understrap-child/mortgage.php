@@ -101,6 +101,7 @@ jQuery(function($) {
       var mPay = parseFloat($('#in-MPA').val()) , ogPay = parseFloat($('#in-OP').val()), dPay = parseFloat($('#in-DP').val());
       var initialCalc = 0;
       var mortgageTotal;
+      var annualMort;
       // Validate the form
       function validateForm() {
         isNaN(membership) ? membership = 0 : membership = membership;
@@ -113,7 +114,6 @@ jQuery(function($) {
         isNaN(mFees) ? mFees = 0 : mFees = mFees;
         isNaN(membership) ? membership = 0 : membership = membership;
         isNaN(exchange) ? exchange = 0 : exchange = exchange;
-        isNaN(dPay) ? dPay = 0 : dPay = dPay;
         // if (isNaN(fees)) {
         //   errors.html("Payment amount missing!");
         //   flag = false;
@@ -134,6 +134,7 @@ jQuery(function($) {
           totalInitial.html("$"+addCommas(initialCalc.toFixed(0)));
           mortgageTotal = (mPay * ogPay) + dPay;
           mortgageTotalOut.html("$"+addCommas(mortgageTotal.toFixed(0)));
+          
         }
       }initial();
       // Calculate over the years
@@ -141,16 +142,29 @@ jQuery(function($) {
         if(flag == true) {
           var currentFee = mFees;
           var nextFee, 
-              totalFees = currentFee + mortgageTotal;
+              totalFees = currentFee;
           var currentMem = membership;
           var currentExc = exchange;
           var totalDues, totalAdd = currentMem + currentExc, nextMem, nextExc;
           // Loop to calculate
+          var yearsToPay = ogPay / 12; // if 120 payments then 10 years
+          var terms = ogPay / 12;
           for(var i = 0; i < 100; i++){
-            totalFees += currentFee + currentMem + currentExc;
-            nextFee = currentFee + (currentFee * 0.05); //increase current Maintenance Fees
-            nextMem = currentMem + (currentMem * 0.05); //increase current Membership Dues
-            nextExc = currentExc + (currentExc * 0.05); //increase current Exchange Dues
+            // Pay Mortgage Only for the Term.
+            if(i <= terms){
+              annualMort = mPay * 12;
+            }else{
+              annualMort = 0;
+            }
+            // First Year Obligation.
+            if(i == 0 ){
+              totalFees = 0;
+            } else {
+              totalFees += currentFee + annualMort + currentMem + currentExc;
+            }
+            nextFee = currentFee + (currentFee * inc); //increase current Maintenance Fees
+            nextMem = currentMem + (currentMem * inc); //increase current Membership Dues
+            nextExc = currentExc + (currentExc * inc); //increase current Exchange Dues
             totalDues = currentMem + currentExc;
             currentMem = nextMem;
             currentExc = nextExc;

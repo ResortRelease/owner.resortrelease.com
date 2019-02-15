@@ -20,13 +20,13 @@
 </style>
 <script>
 // DELETE THIS PART **********************
-  jQuery('#in-MPA').val(200);
-  jQuery('#in-OP').val(120);
+  jQuery('#in-MPA').val(116);
+  jQuery('#in-OP').val(60);
   jQuery('#in-DP').val(0);
-  jQuery('#mFees').val(765);
-  jQuery('#increase').val(5);
-  jQuery('#rci').val(150);
-  jQuery('#ecd').val(169);
+  jQuery('#mFees').val(1000);
+  jQuery('#increase').val(8);
+  jQuery('#rci').val(0);
+  jQuery('#ecd').val(0);
 // DELETE THIS PART **********************
 
 var type = "Mortgage";
@@ -69,6 +69,7 @@ jQuery(function($) {
       var mPay = parseFloat($('#in-MPA').val()) , ogPay = parseFloat($('#in-OP').val()), dPay = parseFloat($('#in-DP').val());
       var initialCalc = 0;
       var mortgageTotal;
+      var annualMort;
       // Validate the form
       function validateForm() {
         isNaN(membership) ? membership = 0 : membership = membership;
@@ -101,6 +102,7 @@ jQuery(function($) {
           totalInitial.html("$"+addCommas(initialCalc.toFixed(0)));
           mortgageTotal = (mPay * ogPay) + dPay;
           mortgageTotalOut.html("$"+addCommas(mortgageTotal.toFixed(0)));
+          
         }
       }initial();
       // Calculate over the years
@@ -108,20 +110,34 @@ jQuery(function($) {
         if(flag == true) {
           var currentFee = mFees;
           var nextFee, 
-              totalFees = currentFee + mortgageTotal;
+              totalFees = currentFee;
           var currentMem = membership;
           var currentExc = exchange;
           var totalDues, totalAdd = currentMem + currentExc, nextMem, nextExc;
           // Loop to calculate
+          var yearsToPay = ogPay / 12; // if 120 payments then 10 years
+          var terms = ogPay / 12;
           for(var i = 0; i < 100; i++){
-            totalFees += currentFee + currentMem + currentExc;
-            nextFee = currentFee + (currentFee * 0.05); //increase current Maintenance Fees
-            nextMem = currentMem + (currentMem * 0.05); //increase current Membership Dues
-            nextExc = currentExc + (currentExc * 0.05); //increase current Exchange Dues
+            // Pay Mortgage Only for the Term.
+            if(i <= terms){
+              annualMort = mPay * 12;
+            }else{
+              annualMort = 0;
+            }
+            // First Year Obligation.
+            if(i == 0 ){
+              totalFees = 0;
+            } else {
+              totalFees += currentFee + annualMort + currentMem + currentExc;
+            }
+            nextFee = currentFee + (currentFee * inc); //increase current Maintenance Fees
+            nextMem = currentMem + (currentMem * inc); //increase current Membership Dues
+            nextExc = currentExc + (currentExc * inc); //increase current Exchange Dues
             totalDues = currentMem + currentExc;
             currentMem = nextMem;
             currentExc = nextExc;
             currentFee = nextFee;
+            console.log('Year : ' + i + " / " + addCommas(totalFees.toFixed(0)));
             
             // 8 13 18 23 48 97 = 10 15 20 25 50 99 years respectively toFixed(2)
             if(i == 9){ 
