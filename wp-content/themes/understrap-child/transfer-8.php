@@ -145,22 +145,22 @@
             <div class="row">
               <div class="col">
                 <label class="control-label">Payment Amount</label>
-                <input autocomplete="off" class="form-control" id="mFees" name="house-price" placeholder="Maintenance fees" tabindex="1" type="number">
+                <input autocomplete="off" class="form-control" id="mFees" name="house-price" placeholder="Maintenance fees" tabindex="1" type="number" value="1000">
               </div>
               <div class="col">
                 <label class="control-label">Expected Annual Increase</label>
-                <input autocomplete="off" class="form-control" id="increase" name="house-price" placeholder="Increase" tabindex="1" type="number">
+                <input autocomplete="off" class="form-control" id="increase" name="house-price" placeholder="Increase" tabindex="1" type="number" value="8">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <label class="control-label">Membership Dues <small>(RCI/II)($150 Average annually)</small></label>
-              <input autocomplete="off" class="form-control" id="rci" name="house-price" placeholder="Payment amount" tabindex="1" type="number">
+              <input autocomplete="off" class="form-control" id="rci" name="house-price" placeholder="Payment amount" tabindex="1" type="number" value="0">
             </div>
             <div class="col">
               <label class="control-label">Exchange Company Dues <small>($169 Average annually)</small></label>
-              <input autocomplete="off" class="form-control" id="ecd" name="house-price" placeholder="Payment amount" tabindex="1" type="number">
+              <input autocomplete="off" class="form-control" id="ecd" name="house-price" placeholder="Payment amount" tabindex="1" type="number" value="0">
             </div>
           </div>
           <div class="text-center">
@@ -171,7 +171,7 @@
           <div class="margin-top-40">
             <div class="form-group">
               <div class="col-md-12">
-                <h2>First annual obligations: <span class="text-success" id="initial"></span></h2>
+                <h2>First annual obligations: <span class="text-success" id="initial" style="font-family:'Quicksand'"></span></h2>
               </div>
             </div>
             <div class="form-group">
@@ -181,17 +181,34 @@
               <div class="row">
                 <div class="col-md-4 col-sm-4 years text-center">
                   <div class="text-muted tenYears text">
-                    <span class="animated zoomInDown" id="totalTenYears" style="display: none;"></span>
+                    <span class="animated zoomInDown" id="total10" style="display: none;"></span>
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-4 years text-center">
                   <div class="text-warning twentyYears text">
-                    <span class="animated zoomInDown" id="totalTwentyYears" style="display: none;"></span>
+                    <span class="animated zoomInDown" id="total20" style="display: none;"></span>
                   </div>
                 </div>
                 <div class="col-md-4 col-sm-4 years text-center">
                   <div class="text-danger thirtyYears text">
-                    <span class="animated zoomInDown" id="totalThirtyYears" style="display: none;"></span>
+                    <span class="animated zoomInDown" id="total30" style="display: none;"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row margin-top-20">
+                <div class="col-md-4 col-sm-4 years text-center">
+                  <div class="text-muted tenYears text">
+                    <span class="animated zoomInDown" id="total40" style="display: none;"></span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 years text-center">
+                  <div class="text-warning twentyYears text">
+                    <span class="animated zoomInDown" id="total50" style="display: none;"></span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 years text-center">
+                  <div class="text-danger thirtyYears text">
+                    <span class="animated zoomInDown" id="total99" style="display: none;"></span>
                   </div>
                 </div>
               </div>
@@ -206,12 +223,12 @@
     <script>
       jQuery(function($) {
       $("form input").keypress(function (e) {
-              if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
-                      $("#button-submit").click();
-                      return false;
-              } else {
-                      return true;
-              }
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                $("#button-submit").click();
+                return false;
+        } else {
+                return true;
+        }
       });
       });
       function addCommas(nStr) {
@@ -229,14 +246,17 @@
       jQuery(function($){
         // totals
         var totalOverYears = $("#totalOverYears"),
-            totalTenYears = $("#totalTenYears"),
-            totalTwentyYears = $("#totalTwentyYears"),
-            totalThirtyYears = $("#totalThirtyYears"),
+            $10 = $("#total10"),
+            $20 = $("#total20"),
+            $30 = $("#total30"),
+            $40 = $("#total40"),
+            $50 = $("#total50"),
+            $99 = $("#total99"),
             errors = $("#error_msg");
         var flag = true;
         // User Inputs
         var freq = $("#frequency").val(),
-            fees = parseFloat($("#mFees").val()) * freq,
+            mFees = parseFloat($("#mFees").val()) * freq,
             inc = parseFloat($("#increase").val()) / 100,
             membership = parseFloat($("#rci").val()),
             exchange = parseFloat($("#ecd").val())
@@ -246,11 +266,11 @@
           isNaN(membership) ? membership = 0 : membership = membership;
           isNaN(exchange) ? exchange = 0 : exchange = exchange;
           isNaN(inc) ? inc = 0 : inc = inc;
-          if (isNaN(fees)) {
+          if (isNaN(mFees)) {
             errors.html("Payment amount missing!");
             flag = false;
           }else if (inc == 0){
-            errors.html("No annual increase")
+            errors.html("No annual increase");
           }else {
             errors.html("");
           }
@@ -259,7 +279,7 @@
         // Calculate initial
         function initial(){
           if(flag == true) {
-            initialCalc = fees + membership + exchange;
+            initialCalc = mFees + membership + exchange;
             var totalInitial = $("#initial");
                 totalInitial.html("$"+addCommas(initialCalc.toFixed(2)));
           }
@@ -267,38 +287,57 @@
         // Calculate over the years
         function calcYears(){
           if(flag == true) {
-            var a = fees,
+            var a = mFees,
                 b = membership,
                 c = exchange;
             var sumTotal = initialCalc;
+            var currentFee = mFees;
+            var nextFee, totalFees = currentFee;
+            var currentMem = membership;
+            var currentExc = exchange;
             // Loop to calculate
-            for(var i = 0; i < 29; i++){
-              // compound is initialCalc + every loop sum 
-              var calcA = a + (a * inc),
-                  calcB = b + (b * inc),
-                  calcC = c + (c * inc);
-              var total = calcA + calcB + calcC;
-              sumTotal += total;
-              
+            for(var i = 0; i < 101; i++){
+              if(i == 0 ){
+                totalFees = 0;
+              } else {
+                totalFees += currentFee + currentMem + currentExc;
+              }
+              nextFee = currentFee + (currentFee * inc); //increase current Maintenance Fees
+              nextMem = currentMem + (currentMem * inc); //increase current Membership Dues
+              nextExc = currentExc + (currentExc * inc); //increase current Exchange Dues
+              totalDues = currentMem + currentExc;
+              currentMem = nextMem;
+              currentExc = nextExc;
+              currentFee = nextFee;
+
               // 8 18 28 = 10 20 30 years respectively toFixed(2)
-              if(i == 8){ 
-                totalTenYears.html("$"+addCommas(sumTotal.toFixed(2))+"<br>10 Years").css("display", "block"); 
+              if(i == 10){ 
+                $10.html("$"+addCommas(totalFees.toFixed(2))+"<br>10 Years").css("display", "block"); 
               }
-              if(i == 18){ 
-                totalTwentyYears.html("$"+addCommas(sumTotal.toFixed(2))+"<br>20 Years").css("display", "block"); 
+              if(i == 20){ 
+                $20.html("$"+addCommas(totalFees.toFixed(2))+"<br>20 Years").css("display", "block"); 
               }
-              if(i == 28){ 
-                totalThirtyYears.html("$"+addCommas(sumTotal.toFixed(2))+"<br>30 Years").css("display", "block");
-                showPrice(sumTotal.toFixed(2)); 
+              if(i == 30){ 
+                $30.html("$"+addCommas(totalFees.toFixed(2))+"<br>30 Years").css("display", "block");
+                showPrice(totalFees.toFixed(2)); 
               }
-              a = calcA
-              b = calcB
-              c = calcC
+              if(i == 40){ 
+                $40.html("$"+addCommas(totalFees.toFixed(2))+"<br>40 Years").css("display", "block");
+                showPrice(totalFees.toFixed(2)); 
+              }
+              if(i == 50){ 
+                $50.html("$"+addCommas(totalFees.toFixed(2))+"<br>50 Years").css("display", "block");
+                showPrice(totalFees.toFixed(2)); 
+              }
+              if(i == 99){ 
+                $99.html("$"+addCommas(totalFees.toFixed(2))+"<br>90 Years").css("display", "block");
+                showPrice(totalFees.toFixed(2)); 
+              }
             };
           }
         }calcYears();
         function showPrice(sum){
-          $("#show-price-all").show().find(".thirtyYears").html("<h1>$"+addCommas(sum)+"<\/h1>Expected Debt To Resort");
+          $("#show-price-all").show().find(".thirtyYears").html("<h2>$"+addCommas(sum)+"</h2><p>Expected Debt To Resort</p>");
         }
       });
       }

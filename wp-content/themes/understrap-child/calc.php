@@ -137,7 +137,6 @@ jQuery(function($) {
             currentMem = nextMem;
             currentExc = nextExc;
             currentFee = nextFee;
-            console.log('Year : ' + i + " / " + addCommas(totalFees.toFixed(0)));
             
             // 8 13 18 23 48 97 = 10 15 20 25 50 99 years respectively toFixed(2)
             if(i == 9){ 
