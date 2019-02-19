@@ -140,7 +140,7 @@ jQuery(function($) {
       // Calculate over the years
       function calcYears(){
         if(flag == true) {
-          var currentFee = mFees;
+          var currentFee = mFees * freq;
           var nextFee, 
               totalFees = currentFee;
           var currentMem = membership;
