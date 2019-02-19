@@ -145,22 +145,22 @@
             <div class="row">
               <div class="col">
                 <label class="control-label">Payment Amount</label>
-                <input autocomplete="off" class="form-control" id="mFees" name="house-price" placeholder="Maintenance fees" tabindex="1" type="number" value="1000">
+                <input autocomplete="off" class="form-control" id="mFees" name="house-price" placeholder="Maintenance fees" tabindex="1" type="number">
               </div>
               <div class="col">
                 <label class="control-label">Expected Annual Increase</label>
-                <input autocomplete="off" class="form-control" id="increase" name="house-price" placeholder="Increase" tabindex="1" type="number" value="8">
+                <input autocomplete="off" class="form-control" id="increase" name="house-price" placeholder="Increase" tabindex="1" type="number">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <label class="control-label">Membership Dues <small>(RCI/II)($150 Average annually)</small></label>
-              <input autocomplete="off" class="form-control" id="rci" name="house-price" placeholder="Payment amount" tabindex="1" type="number" value="0">
+              <input autocomplete="off" class="form-control" id="rci" name="house-price" placeholder="Payment amount" tabindex="1" type="number">
             </div>
             <div class="col">
               <label class="control-label">Exchange Company Dues <small>($169 Average annually)</small></label>
-              <input autocomplete="off" class="form-control" id="ecd" name="house-price" placeholder="Payment amount" tabindex="1" type="number" value="0">
+              <input autocomplete="off" class="form-control" id="ecd" name="house-price" placeholder="Payment amount" tabindex="1" type="number">
             </div>
           </div>
           <div class="text-center">
