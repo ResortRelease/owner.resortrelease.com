@@ -20,11 +20,11 @@
 </style>
 <script>
 // DELETE THIS PART **********************
-  jQuery('#in-MPA').val(116);
-  jQuery('#in-OP').val(60);
-  jQuery('#in-DP').val(0);
-  jQuery('#mFees').val(1000);
-  jQuery('#increase').val(8);
+  jQuery('#in-MPA').val(573);
+  jQuery('#in-OP').val(120);
+  jQuery('#in-DP').val(4077);
+  jQuery('#mFees').val(835);
+  jQuery('#increase').val(4);
   jQuery('#rci').val(0);
   jQuery('#ecd').val(0);
 // DELETE THIS PART **********************
@@ -119,16 +119,20 @@ jQuery(function($) {
           var terms = ogPay / 12;
           for(var i = 0; i < 100; i++){
             // Pay Mortgage Only for the Term.
-            if(i <= terms){
+            if( i <= terms ){
               annualMort = mPay * 12;
             }else{
               annualMort = 0;
             }
             // First Year Obligation.
-            if(i == 0 ){
+            if( i == 0 ){
               totalFees = 0;
             } else {
               totalFees += currentFee + annualMort + currentMem + currentExc;
+            }
+            
+            if( mFees == 0 ){
+              totalFees = mortgageTotal;
             }
             nextFee = currentFee + (currentFee * inc); //increase current Maintenance Fees
             nextMem = currentMem + (currentMem * inc); //increase current Membership Dues
@@ -137,21 +141,22 @@ jQuery(function($) {
             currentMem = nextMem;
             currentExc = nextExc;
             currentFee = nextFee;
+            console.log("Year " + i + " / $" + totalFees);
             
-            // 8 13 18 23 48 97 = 10 15 20 25 50 99 years respectively toFixed(2)
-            if(i == 9){ 
+            // 10 20 30 40 50 99 years respectively toFixed(2)
+            if(i == 10){ 
 							x10.html("$"+addCommas(totalFees.toFixed(2))+"<div class='small-text text-center'>10 years</div>").css("display", "block"); 
             }
-            if(i == 19){ 
+            if(i == 20){ 
               x15.html("$"+addCommas(totalFees.toFixed(2))+"<div class='small-text text-center'>20 years</div>").css("display", "block"); 
 						}
-						if(i == 29){ 
+						if(i == 30){ 
               x20.html("$"+addCommas(totalFees.toFixed(2))+"<div class='small-text text-center'>30 years</div>").css("display", "block"); 
 						}
-						if(i == 39){ 
+						if(i == 40){ 
               x25.html("$"+addCommas(totalFees.toFixed(2))+"<div class='small-text text-center'>40 years</div>").css("display", "block"); 
 						}
-						if(i == 49){ 
+						if(i == 50){ 
               x50.html("$"+addCommas(totalFees.toFixed(2))+"<div class='small-text text-center'>50 years</div>").css("display", "block"); 
             }
             if(i == 99){ 
