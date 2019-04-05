@@ -353,7 +353,7 @@
         <img src="../wp-content/themes/understrap-child/assets/slides/8/Transfer-Presentation.jpg" alt="Services Overview Resort Release">
       </div>
       <div class="margin-top-20 text-center">
-        <img src="../wp-content/themes/understrap-child/assets/slides/5/three-guarantees.jpg" alt="Three Guarantees Resort Release">
+        <img src="../wp-content/themes/understrap-child/assets/slides/5/one-guarantee.jpg" alt="Three Guarantees Resort Release">
       </div>
     </div>
 
