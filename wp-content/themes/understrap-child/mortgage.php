@@ -158,7 +158,7 @@ jQuery(function($) {
             }
             // First Year Obligation.
             if( i == 0 ){
-              totalFees = 0;
+              totalFees = dPay;
             } else {
               totalFees += currentFee + annualMort + currentMem + currentExc;
             }

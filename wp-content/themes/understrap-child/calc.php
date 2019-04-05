@@ -20,11 +20,11 @@
 </style>
 <script>
 // DELETE THIS PART **********************
-  jQuery('#in-MPA').val(573);
+  jQuery('#in-MPA').val(821);
   jQuery('#in-OP').val(120);
-  jQuery('#in-DP').val(4077);
-  jQuery('#mFees').val(835);
-  jQuery('#increase').val(4);
+  jQuery('#in-DP').val(11475);
+  jQuery('#mFees').val(220);
+  jQuery('#increase').val(6);
   jQuery('#rci').val(0);
   jQuery('#ecd').val(0);
 // DELETE THIS PART **********************
@@ -105,7 +105,8 @@ jQuery(function($) {
           
         }
       }initial();
-      // Calculate over the years
+      // Calculate over the years+
+      // 11475+(821*12)+220 = 21,547
       function calcYears(){
         if(flag == true) {
           var currentFee = mFees * freq;
@@ -126,7 +127,7 @@ jQuery(function($) {
             }
             // First Year Obligation.
             if( i == 0 ){
-              totalFees = 0;
+              totalFees = dPay;
             } else {
               totalFees += currentFee + annualMort + currentMem + currentExc;
             }
@@ -142,7 +143,6 @@ jQuery(function($) {
             currentExc = nextExc;
             currentFee = nextFee;
             console.log("Year " + i + " / $" + totalFees);
-            
             // 10 20 30 40 50 99 years respectively toFixed(2)
             if(i == 10){ 
 							x10.html("$"+addCommas(totalFees.toFixed(2))+"<div class='small-text text-center'>10 years</div>").css("display", "block"); 
