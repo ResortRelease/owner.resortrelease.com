@@ -31,6 +31,8 @@
               <div class="input-type">$</div>
               <input class="input-calc" type="number" name="DP" id="in-DP" tabindex=3 >
             </div>
+          </div>
+          <div class="row">
             <div class="col-md-4 pull-right">
               <div class="input-header">&nbsp;</div>
               <div class="input-calc margin-10 calculate text-center" id="calculate-btn" onClick="total()">Calculate <i class="fa fa-calculator"></i></div>  
