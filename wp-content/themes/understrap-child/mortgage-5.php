@@ -22,11 +22,11 @@
           <li class="chart-color chart-header ribbon-content" >Price</li>
         </ul>
         <ul class="chart-content-r chart">
-          <li><div>$4,595</div></li>
-          <li><div>$5,495</div></li>
-          <li><div>$5,995</div></li>
-          <li><div>$6,495</div></li>
-          <li><div>$6,496+</div></li>
+          <li><div>$5,795</div></li>
+          <li><div>$6,695</div></li>
+          <li><div>$7,195</div></li>
+          <li><div>$7,695</div></li>
+          <li><div>$7,696+</div></li>
         </ul>
       </div>      
     </div>
