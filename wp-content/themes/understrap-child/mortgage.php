@@ -22,6 +22,7 @@ get_header(); ?>
 			<li class="breadcrumb-item 4 page-label" data-page="4">4</li>
 			<li class="breadcrumb-item 5 page-label" data-page="5">5</li>
 			<li class="breadcrumb-item 6 page-label" data-page="6">6</li>
+      <li class="breadcrumb-item 6 page-label" data-page="7">7</li>
 		</ol>
 	</nav>
 </div><!-- End Breadcrumbs -->

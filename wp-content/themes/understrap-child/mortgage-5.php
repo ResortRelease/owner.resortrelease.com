@@ -43,6 +43,6 @@ jQuery(document).ready(function(){
   jQuery('.breadcrumb li.5').addClass('active').attr("aria-current", "page");
   jQuery('#prev').removeClass('disabled').attr('data-page', "4");
   jQuery('#next').removeClass('disabled').attr('data-page', "6");
-  jQuery('.red-car').css('left', '73%');  
+  jQuery('.red-car').css('left', '65%');  
 });
 </script>
