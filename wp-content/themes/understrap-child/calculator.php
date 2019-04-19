@@ -55,6 +55,7 @@
               <select class="input-calc" id="frequency" tabindex=5>
                 <option value="1">Annually</option>
                 <option value="0.5">Bi-annual</option>
+                <option value="0.33">Tri-annual</option>
                 <option value="4">Quarterly</option>
                 <option value="12">Monthly</option>
               </select>
